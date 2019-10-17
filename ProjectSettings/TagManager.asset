@@ -25,6 +25,8 @@ TagManager:
   - SpawnPoint1
   - SpawnPoint2
   - bomb
+  - Candy
+  - candy
   layers:
   - Default
   - TransparentFX

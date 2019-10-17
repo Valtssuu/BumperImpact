@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -11,8 +12,7 @@ public class EnemyAI : MonoBehaviour
     public float lookRadius = 15f;
     public GameObject explosion;
     public Transform direction = null;
-
-    //public GameObject player;
+    public GameObject player;
 
     float eForce;
 
@@ -21,7 +21,6 @@ public class EnemyAI : MonoBehaviour
     private Vector3 updatePointPos;
 
     private float eChaseSpeed = 6.0f;
-
     Rigidbody eBody;
 
     NavMeshAgent agent;
@@ -33,6 +32,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         enemyLives = enemyStartLives;
 
         eBody = this.GetComponent<Rigidbody>();
@@ -117,6 +117,7 @@ public class EnemyAI : MonoBehaviour
     void Explode()
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
+        player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 1;
         Destroy(gameObject);
         Destroy(clone, 1f);
     }

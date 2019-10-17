@@ -4244,6 +4244,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 248523608}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &281277951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 281277952}
+  - component: {fileID: 281277954}
+  - component: {fileID: 281277953}
+  m_Layer: 5
+  m_Name: CandyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &281277952
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281277951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5620262653193506853}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -67, y: -40}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &281277953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281277951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Candies!
+--- !u!222 &281277954
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281277951}
+  m_CullTransparentMesh: 0
 --- !u!1001 &286924149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9024,7 +9103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604078570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8, y: 28, z: 16.9}
+  m_LocalPosition: {x: -3.8, y: 28, z: 1.28}
   m_LocalScale: {x: 23.437008, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 340660999}
@@ -10488,6 +10567,7 @@ MonoBehaviour:
   cameraBridge1: {fileID: 340660998}
   cameraBridge2: {fileID: 597868564}
   hintCanvas: {fileID: 0}
+  sceneName: 
 --- !u!114 &681278565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10520,10 +10600,12 @@ MonoBehaviour:
   dragAmount: 5
   image: {fileID: 21300000, guid: cf7da1a28462cfd429947f624d8a3cbd, type: 3}
   camera: {fileID: 8155547554257170314}
+  score: 0
   radius: 7.37
   ShockwaveForce: 3000
   mine: {fileID: 5826213005888084523, guid: 870615eb47c98664bb31c906d0ed477a, type: 3}
   rocket: {fileID: 5291793624068601381, guid: 0545468d9524ac1449bd815edc069d41, type: 3}
+  scoreText: {fileID: 281277953}
   shieldButton: {fileID: 163311704}
   mineButton: {fileID: 1554803992}
   rocketButton: {fileID: 575170128}
@@ -14989,7 +15071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945933178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8000057, y: 28, z: 19.710003}
+  m_LocalPosition: {x: -3.8000038, y: 28, z: 4.09}
   m_LocalScale: {x: 23.437025, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 340660999}
@@ -20709,6 +20791,7 @@ MonoBehaviour:
   explosion: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
     type: 3}
   direction: {fileID: 0}
+  player: {fileID: 0}
   playerBody: {fileID: 681278562}
 --- !u!195 &1420799253
 NavMeshAgent:
@@ -29288,6 +29371,7 @@ RectTransform:
   - {fileID: 1554803996}
   - {fileID: 575170129}
   - {fileID: 163311705}
+  - {fileID: 281277952}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29825,6 +29909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020325891802662922, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: player
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662932, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}

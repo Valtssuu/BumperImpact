@@ -8832,7 +8832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604078570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8, y: 28, z: 12.8}
+  m_LocalPosition: {x: -3.8, y: 28, z: 3.59}
   m_LocalScale: {x: 23.437008, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 340660999}
@@ -10324,10 +10324,12 @@ MonoBehaviour:
   dragAmount: 5
   image: {fileID: 21300000, guid: cf7da1a28462cfd429947f624d8a3cbd, type: 3}
   camera: {fileID: 8155547554257170314}
+  score: 0
   radius: 7.37
   ShockwaveForce: 3000
   mine: {fileID: 5826213005888084523, guid: 870615eb47c98664bb31c906d0ed477a, type: 3}
   rocket: {fileID: 5291793624068601381, guid: 0545468d9524ac1449bd815edc069d41, type: 3}
+  scoreText: {fileID: 0}
   shieldButton: {fileID: 163311704}
   mineButton: {fileID: 1554803992}
   rocketButton: {fileID: 575170128}
@@ -14793,7 +14795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945933178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8000052, y: 28, z: 15.610004}
+  m_LocalPosition: {x: -3.8000042, y: 28, z: 6.4000015}
   m_LocalScale: {x: 23.437025, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 340660999}
@@ -20618,6 +20620,7 @@ MonoBehaviour:
   explosion: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
     type: 3}
   direction: {fileID: 0}
+  player: {fileID: 0}
   playerBody: {fileID: 681278562}
 --- !u!195 &1420799253
 NavMeshAgent:
