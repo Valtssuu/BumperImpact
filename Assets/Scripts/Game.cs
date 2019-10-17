@@ -31,4 +31,8 @@ public class Game : MonoBehaviour
     {
         SceneManager.LoadScene("Level3");
     }
+    public void Store()
+    {
+        SceneManager.LoadScene("Store");
+    }
 }
