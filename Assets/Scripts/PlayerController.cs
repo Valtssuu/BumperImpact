@@ -60,12 +60,14 @@ public class PlayerController : MonoBehaviour
         mineButtonClicks = 0;
         rocketButtonClicks = 0;
         shieldButtonClicks = 0;
-        score = 0;
+        score = PlayerPrefs.GetInt("score", 0);
     }
 
     void FixedUpdate()
     {
+        PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString(""); 
+
         Debug.Log(score);
         //check the position of the joystick and move the player accordingly
         Vector3 moveVec = new Vector3(CrossPlatformInputManager.GetAxis("Vertical"), 0, -CrossPlatformInputManager.GetAxis("Horizontal")) * moveForce;
