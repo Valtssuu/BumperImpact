@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Killzone
+  - Special Item
+  - Enemy1
+  - Enemy1A2
+  - Enemy1A3
+  - 50Fov
+  - BackToNormal
+  - environment
+  - hit
+  - Enemy2
+  - shield
+  - PlayerShield
+  - Mine
+  - Rocket
+  - RealItems
+  - Enemy
+  - game
+  - MoreDash
+  - SpawnPoint1
+  - SpawnPoint2
+  - bomb
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
