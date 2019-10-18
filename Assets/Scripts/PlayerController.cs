@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sprite;
     public Camera camera;
     private bool toohigh;
+    public int score;
     // force is how forcefully we will push the player away from the enemy.
     public static float force;
     bool hasShockwaved;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject rocket;
 
+    public Text scoreText;
     public GameObject shieldButton;
 
     public GameObject mineButton;
@@ -58,12 +60,15 @@ public class PlayerController : MonoBehaviour
         mineButtonClicks = 0;
         rocketButtonClicks = 0;
         shieldButtonClicks = 0;
+        score = PlayerPrefs.GetInt("score", 0);
     }
 
     void FixedUpdate()
     {
+        PlayerPrefs.SetInt("score", score);
+        scoreText.text = score.ToString(""); 
 
-
+        Debug.Log(score);
         //check the position of the joystick and move the player accordingly
         Vector3 moveVec = new Vector3(CrossPlatformInputManager.GetAxis("Vertical"), 0, -CrossPlatformInputManager.GetAxis("Horizontal")) * moveForce;
 

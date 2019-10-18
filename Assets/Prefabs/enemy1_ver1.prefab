@@ -182,6 +182,7 @@ MonoBehaviour:
   explosion: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
     type: 3}
   direction: {fileID: 0}
+  player: {fileID: 6670455420638857518, guid: 27531e62975c12e45a7e26013408c1b2, type: 3}
   playerBody: {fileID: 0}
 --- !u!1 &2553186819414790289
 GameObject:
