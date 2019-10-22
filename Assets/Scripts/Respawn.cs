@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
  using System.Collections;
  using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
  
  public class Respawn : MonoBehaviour {
  
@@ -80,6 +81,11 @@
             MainCamera.GetComponent<CameraController>().distance = 46;
             if (PlayerHealth.Lives <= 30)
               {
+
+                if (Advertisement.IsReady("video"))
+                {
+                    Advertisement.Show("video");
+                }
                 loseCanvas.SetActive(true);
                 Time.timeScale = 0;
               }
@@ -129,6 +135,10 @@
         {
           loseCanvas.SetActive(true);
           Time.timeScale = 0;
+        if (Advertisement.IsReady("video"))
+        {
+            Advertisement.Show("video");
+        }
         }
 
     }

@@ -53,12 +53,19 @@ public class Game : MonoBehaviour
     public void Buy()
     {
         //ei toimi ku ei updateta sitä heti
-        if(score > 2)
+        if(score >= 2)
         {
             score = score - 2;
             PlayerPrefs.SetInt("score", score);
             Debug.Log("terve");
             scoreText.text = score.ToString();
         }
+    }
+
+    public void AdWasClicked()
+    {
+        score = score + 10;
+        PlayerPrefs.SetInt("score", score);
+        scoreText.text = score.ToString();
     }
 }
