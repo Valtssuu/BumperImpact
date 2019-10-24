@@ -50,18 +50,30 @@ public class EnemyAI : MonoBehaviour
         playerBody = target.GetComponent<Rigidbody>();
 
         //playerBody.GetComponent<PlayerController>().myBody;
+        enemyLives = enemyStartLives;
+        lookRadius = 15f;
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (enemyLives > enemyStartLives)
         {
             enemyLives = enemyStartLives;
         }
 
+        if (enemyLives <= 0)
+        {
+            Explode();
+        }
+
         //check HP to set bump force
+        if (enemyLives > 100)
+        {
+            eForce = 400;
+        }
+
         if (enemyLives <= 100 && enemyLives > 75)
         {
             eForce = 400;
@@ -89,9 +101,10 @@ public class EnemyAI : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            //lookRadius = 9999f;
+            
             //disable patrol script
             this.GetComponent<Patrol>().enabled = false;
+            this.GetComponent<PatrolE>().enabled = false;
             //chase player
             agent.SetDestination(target.position);
 
@@ -110,6 +123,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
             this.GetComponent<Patrol>().enabled = true;
+            this.GetComponent<PatrolE>().enabled = true;
         }
 
     }
@@ -124,13 +138,11 @@ public class EnemyAI : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        if (enemyLives < 0)
-        {
-            Explode();
-        }
+        
 
         if (collision.gameObject.tag == "Player")
         {
+            lookRadius = Mathf.Infinity;
             // Calculate Angle Between the collision point and the player
             Vector3 dir = collision.contacts[0].point - transform.position;
             // We then get the opposite (-Vector3) and normalize it

@@ -13,13 +13,12 @@ GameObject:
   - component: {fileID: 6970755017596524667}
   - component: {fileID: 6970755017596524664}
   - component: {fileID: 6970755017596524671}
-  - component: {fileID: 6970755017596524665}
   - component: {fileID: 6970755017596524668}
   - component: {fileID: 6970755017596524642}
   - component: {fileID: 3610733041564871296}
   m_Layer: 0
   m_Name: enemyType1
-  m_TagString: Enemy1A3
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,19 +129,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6970755017596524665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413274689392276436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f2c01e3d8e8132428c8e7f99936f02b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: []
 --- !u!195 &6970755017596524668
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -180,7 +166,9 @@ MonoBehaviour:
   enemyLives: 0
   enemyStartLives: 100
   lookRadius: 15
+  explosion: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
   direction: {fileID: 0}
+  player: {fileID: 0}
   playerBody: {fileID: 0}
 --- !u!114 &3610733041564871296
 MonoBehaviour:

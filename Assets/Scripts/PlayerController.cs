@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        Debug.Log(mineButton.activeInHierarchy);
+        
         
         //adding force to the player based on the position of the joystick
         myBody.AddForce(moveVec);

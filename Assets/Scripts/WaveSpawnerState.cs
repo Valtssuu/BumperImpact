@@ -11,8 +11,15 @@ public class WaveSpawnerState : MonoBehaviour
     {
         public string name;
         public Transform enemy;
+        //public List<Transform> enemies = new List<Transform>();
         public int count;
         //public float rate;
+        //public Transform enemy = enemies[Random.Range(0, enemies.Count)];
+
+        /*void Start()
+        {
+            enemy = enemies[Random.Range(0, enemies.Count)];
+        }*/
     }
 
     public Wave[] waves;
@@ -35,6 +42,8 @@ public class WaveSpawnerState : MonoBehaviour
         }
         
         waveCountdown = timeBetweenWaves;
+
+        
     }
 
     
@@ -77,8 +86,8 @@ public class WaveSpawnerState : MonoBehaviour
 
         if (nextWave + 1 > waves.Length - 1)
         {
-            //looping back wave
-            nextWave = 0;
+            //looping back last wave
+            nextWave = waves.Length - 1;
         }
         else
         {

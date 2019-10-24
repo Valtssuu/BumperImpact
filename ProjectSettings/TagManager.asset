@@ -27,6 +27,7 @@ TagManager:
   - bomb
   - Candy
   - candy
+  - Enemy1E
   layers:
   - Default
   - TransparentFX
