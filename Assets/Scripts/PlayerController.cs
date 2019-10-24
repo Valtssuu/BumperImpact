@@ -334,7 +334,7 @@ public class PlayerController : MonoBehaviour
                 shieldButton.SetActive(true);
             }
 
-            //Destroy(other.gameObject);
+            Destroy(other.gameObject);
             }
 
             
