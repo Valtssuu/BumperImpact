@@ -7577,6 +7577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 943902490}
   loseCanvas: {fileID: 1378025870}
+  gameManager: {fileID: 0}
   BridgeController: {fileID: 1501296180}
   Bridge2Controller: {fileID: 0}
   winCanvas: {fileID: 1853659320}
@@ -7624,6 +7625,7 @@ MonoBehaviour:
   score: 0
   radius: 7.37
   ShockwaveForce: 3000
+  boostActivated: 0
   mine: {fileID: 7136854991909951091, guid: 070382945cddbeb4d8decfcd0889d930, type: 3}
   rocket: {fileID: 4987508925903845954, guid: 0545468d9524ac1449bd815edc069d41, type: 3}
   scoreText: {fileID: 1100683048}
@@ -16914,6 +16916,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704678328}
   m_CullTransparentMesh: 0
+--- !u!1 &1727111614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727111615}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: WhereToLook
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1727111615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727111614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -86.06021, y: 85.51555, z: -134.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735164083
 GameObject:
   m_ObjectHideFlags: 0
