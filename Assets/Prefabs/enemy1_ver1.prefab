@@ -512,7 +512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7257720270341943710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ RectTransform:
   m_GameObject: {fileID: 4642509482314319552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.063400224, y: 0.063400224, z: 0.063400224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2926576142252936723}
   m_Father: {fileID: 3042004704269226415}
@@ -840,6 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2926576142252936723}
   - component: {fileID: 5309339947824969989}
+  - component: {fileID: 5577560709296861464}
   m_Layer: 5
   m_Name: HPBar
   m_TagString: Untagged
@@ -856,7 +857,7 @@ RectTransform:
   m_GameObject: {fileID: 8156220568366524057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.04125111, y: 0.04588198, z: 0.04588198}
   m_Children:
   - {fileID: 3456777162417057866}
   - {fileID: 7928859684688597847}
@@ -865,7 +866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.7225001}
+  m_AnchoredPosition: {x: 0, y: -0.026558}
   m_SizeDelta: {x: 100, y: 10.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5309339947824969989
@@ -880,10 +881,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ff39a695470e34891c1d3e8241b2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imgHPBar: {fileID: 7476489379640486398}
+  imgHPBarE: {fileID: 7476489379640486398}
   MinE: 0
-  MaxE: 0
+  MaxE: 100
   enemy: {fileID: 2048019565465445308}
+  camera: {fileID: 0}
+--- !u!1773428102 &5577560709296861464
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8156220568366524057}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: -0.026558, z: 0}
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffsets: []
+  m_RotationOffsets: []
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources: []
 --- !u!1 &8754281811748627619
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class enemyHPBar : MonoBehaviour
 {
-    public Image imgHPBar;
+    public Image imgHPBarE;
 
     public int MinE;
 
@@ -18,7 +18,12 @@ public class enemyHPBar : MonoBehaviour
     private float mCurrentPercentE;
 
 
+    public Transform WhereToLook;
 
+    private void Start()
+    {
+        WhereToLook = GameObject.FindWithTag("WhereToLook").GetComponent<Transform>();
+    }
     public void SetHealth(int health)
     {
         if (health != mCurrentValueE)
@@ -31,10 +36,11 @@ public class enemyHPBar : MonoBehaviour
             else
             {
                 mCurrentValueE = health;
-                mCurrentPercentE = (int)mCurrentValueE / (int)(MaxE - MinE) * 100;
-            }
+                mCurrentPercentE = (int)mCurrentValueE * 100 / (int)(MaxE - MinE) ;
 
-            imgHPBar.fillAmount = mCurrentPercentE;
+            }
+            imgHPBarE.fillAmount = mCurrentPercentE / 100;
+
 
         }
     }
@@ -54,7 +60,7 @@ public class enemyHPBar : MonoBehaviour
     void Update()
     {
         SetHealth(enemy.GetComponent<EnemyAI>().enemyLives);
-        
+        gameObject.transform.LookAt(WhereToLook);
     }
 
 }
