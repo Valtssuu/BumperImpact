@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
  using System.Collections;
  using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
  
  public class Respawn : MonoBehaviour {
  
      public GameObject spawnPoint;
-
+     private int showAd;
      public GameObject loseCanvas;
+    public GameObject gameManager;
 
     [SerializeField] private Animator BridgeController;
     [SerializeField] private Animator Bridge2Controller;
@@ -40,13 +42,14 @@
         cameraBridge2.SetActive(false);
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-
+        showAd = PlayerPrefs.GetInt("showAd", 0);
+        
 
     }
 
     void Update ()
      {
-       
+        PlayerPrefs.SetInt("showAd", showAd);
        if(GameObject.FindGameObjectsWithTag("Enemy1").Length == 0)
        {
           
@@ -75,13 +78,24 @@
      {
          if(col.transform.tag == "Killzone")
          {
+            showAd++;
 
             player.GetComponent<PlayerController>().camera.fieldOfView = 18;
             MainCamera.GetComponent<CameraController>().distance = 46;
+            Debug.Log(showAd);
             if (PlayerHealth.Lives <= 30)
               {
+                if(showAd%2 == 0)
+                {
+                    if (Advertisement.IsReady("video"))
+                    {
+                        Advertisement.Show("video");
+                    }
+                }
+
                 loseCanvas.SetActive(true);
                 Time.timeScale = 0;
+                showAd--;
               }
               else
               {
@@ -129,6 +143,14 @@
         {
           loseCanvas.SetActive(true);
           Time.timeScale = 0;
+            if (showAd % 2 == 0)
+            {
+                if (Advertisement.IsReady("video"))
+                {
+                    Advertisement.Show("video");
+                }
+            }
+            
         }
 
     }

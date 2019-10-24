@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     bool hasShockwaved;
     public float radius = 5f;
     public float ShockwaveForce = 700f;
-
+    public bool boostActivated;
     public GameObject mine;
 
     public GameObject rocket;
@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         rocketButtonClicks = 0;
         shieldButtonClicks = 0;
         score = PlayerPrefs.GetInt("score", 0);
+        boostActivated = false;
     }
 
     void FixedUpdate()
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString(""); 
 
-        Debug.Log(score);
+
         //check the position of the joystick and move the player accordingly
         Vector3 moveVec = new Vector3(CrossPlatformInputManager.GetAxis("Vertical"), 0, -CrossPlatformInputManager.GetAxis("Horizontal")) * moveForce;
 
@@ -150,7 +151,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(clone, 0.2f);
                 StartCoroutine(StopBoosting());
 
-
+                boostActivated = true;
             }
 
         }
@@ -250,7 +251,10 @@ public class PlayerController : MonoBehaviour
 
             Collider myCollider = other.contacts[0].thisCollider;
 
-           
+            if (boostActivated)
+            {
+                PlayerHealth.Lives += 5;
+            }
 
 
             if (myCollider.gameObject.name == "PlayerShield")
@@ -278,6 +282,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         myBody.velocity = Vector3.zero;
+        boostActivated = false;
     }
     
    
