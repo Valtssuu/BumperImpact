@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8020325891802662929}
   - component: {fileID: 8020325891802662932}
   - component: {fileID: 8020325891802662922}
-  - component: {fileID: 7876090034421879192}
+  - component: {fileID: 2244283380879232376}
   m_Layer: 0
   m_Name: enemy1_ver1
   m_TagString: Enemy
@@ -186,6 +186,26 @@ MonoBehaviour:
   direction: {fileID: 0}
   player: {fileID: 6670455420638857518, guid: 27531e62975c12e45a7e26013408c1b2, type: 3}
   playerBody: {fileID: 0}
+--- !u!114 &2244283380879232376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048019565465445308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aabad110e6ba6045a2f9e7b9105ffe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2466326518178759749
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +906,7 @@ MonoBehaviour:
   MinE: 0
   MaxE: 100
   enemy: {fileID: 2048019565465445308}
-  camera: {fileID: 0}
+  WhereToLook: {fileID: 0}
 --- !u!1773428102 &5577560709296861464
 ParentConstraint:
   m_ObjectHideFlags: 0
