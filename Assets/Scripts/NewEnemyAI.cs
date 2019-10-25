@@ -42,6 +42,7 @@ public class NewEnemyAI : MonoBehaviour
         enemyLives = enemyStartLives;
         shieldLives = 100;
 
+        player = GameObject.FindWithTag("Player");
 
         eBody = this.GetComponent<Rigidbody>();
 
