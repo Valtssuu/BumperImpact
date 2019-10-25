@@ -12906,14 +12906,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: W1
-    enemy: {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
     count: 5
+    enemies:
+    - {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
+    - {fileID: 1553534639812742021, guid: 2f1f177ffb001c4418d45a57764e7aa5, type: 3}
   - name: W2
-    enemy: {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
     count: 8
+    enemies:
+    - {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
+    - {fileID: 1553534639812742021, guid: 2f1f177ffb001c4418d45a57764e7aa5, type: 3}
   - name: W3
-    enemy: {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
     count: 10
+    enemies:
+    - {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
+    - {fileID: 1553534639812742021, guid: 2f1f177ffb001c4418d45a57764e7aa5, type: 3}
   spawnPoints:
   - {fileID: 1210039043}
   - {fileID: 1267855305}
@@ -16972,7 +16978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1727111615}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: WhereToLoockAt
   m_TagString: WhereToLook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

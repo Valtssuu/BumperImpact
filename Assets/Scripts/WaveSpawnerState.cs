@@ -10,9 +10,11 @@ public class WaveSpawnerState : MonoBehaviour
     public class Wave
     {
         public string name;
-        public Transform enemy;
+        //public Transform enemy;
         //public List<Transform> enemies = new List<Transform>();
         public int count;
+
+        public List<Transform> enemies;
         //public float rate;
         //public Transform enemy = enemies[Random.Range(0, enemies.Count)];
 
@@ -33,6 +35,8 @@ public class WaveSpawnerState : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
+
+    private bool looping = false;
     
     void Start()
     {
@@ -43,7 +47,9 @@ public class WaveSpawnerState : MonoBehaviour
         
         waveCountdown = timeBetweenWaves;
 
-        
+        looping = false;
+
+
     }
 
     
@@ -79,7 +85,7 @@ public class WaveSpawnerState : MonoBehaviour
 
     void WaveCompleted()
     {
-        //PlayerHealth.Lives = 100;
+        
         
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
@@ -88,13 +94,16 @@ public class WaveSpawnerState : MonoBehaviour
         {
             //looping back last wave
             nextWave = waves.Length - 1;
+            looping = true;
         }
         else
         {
             nextWave++;
         }
+
         
-        
+
+
     }
 
     bool EnemyIsAlive()
@@ -103,7 +112,7 @@ public class WaveSpawnerState : MonoBehaviour
         if(searchCountdown <= 0f)
         {
             searchCountdown = 1f;
-            if (GameObject.FindGameObjectWithTag("Enemy") == null)
+            if (GameObject.FindGameObjectWithTag("Enemy") == null && GameObject.FindGameObjectWithTag("Enemy2") == null)
             {
                 return false;
             }
@@ -117,10 +126,19 @@ public class WaveSpawnerState : MonoBehaviour
     IEnumerator SpawnWave (Wave _wave)
     {
         state = SpawnState.SPAWNING;
+        
         //Spawn
+        if (nextWave + 1 > waves.Length - 1 && looping == true)
+        {
+            //Add 1 more enemy
+            _wave.count = _wave.count + 1;
+            
+
+        }
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnEnemy(_wave.enemy);
+            int enemy = Random.Range(0, _wave.enemies.Count);
+            SpawnEnemy(_wave.enemies[enemy]);
             yield return new WaitForSeconds(2f);
         }
 

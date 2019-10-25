@@ -65,7 +65,7 @@ using UnityEngine.Advertisements;
            cameraBridge2.SetActive(true);
        }
 
-       if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+       if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
        {
           winCanvas.SetActive(true);
           Time.timeScale = 0;
