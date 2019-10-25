@@ -50,27 +50,33 @@ using UnityEngine.Advertisements;
     void Update ()
      {
         PlayerPrefs.SetInt("showAd", showAd);
-       if(GameObject.FindGameObjectsWithTag("Enemy1").Length == 0)
-       {
-          
-            BridgeController.SetBool("BridgeUp", true);
-            cameraBridge1.SetActive(true);
-            
-       }
+       
 
-       if(GameObject.FindGameObjectsWithTag("Enemy1A2").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
-       {
-            Bridge2Controller.SetBool("BridgeUp", true);
-            //Bridge2.SetActive(true);
-           cameraBridge2.SetActive(true);
-       }
+       if (sceneName != "Endless level")
+        {
+            if (GameObject.FindGameObjectsWithTag("Enemy1").Length == 0)
+            {
 
-       if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
-       {
-          winCanvas.SetActive(true);
-          Time.timeScale = 0;
+                BridgeController.SetBool("BridgeUp", true);
+                cameraBridge1.SetActive(true);
 
-       }
+            }
+
+            if (GameObject.FindGameObjectsWithTag("Enemy1A2").Length == 0)
+            {
+                Bridge2Controller.SetBool("BridgeUp", true);
+                //Bridge2.SetActive(true);
+                cameraBridge2.SetActive(true);
+            }
+
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
+            {
+                winCanvas.SetActive(true);
+                Time.timeScale = 0;
+
+            }
+        }
+        
 
      }
    
