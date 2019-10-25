@@ -125,7 +125,7 @@ using UnityEngine.Advertisements;
 
      void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "shield")
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "shield" || collision.gameObject.tag == "Enemy2")
         {
             
 

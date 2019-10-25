@@ -44,6 +44,8 @@ public class NewEnemyAI : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
 
+        target = player.transform;
+
         eBody = this.GetComponent<Rigidbody>();
 
         //find target according to PlayerManager script
@@ -204,12 +206,12 @@ public class NewEnemyAI : MonoBehaviour
 
             }
 
-            if (myCollider.gameObject.name == "NEW ENEMY")
+            else
             {
                 enemyLives -= 30;
             }
 
-            if (enemyLives < 0)
+            if (enemyLives <= 0)
             {
                 Explode();
             }

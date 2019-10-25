@@ -13081,14 +13081,17 @@ MonoBehaviour:
     count: 5
     enemies:
     - {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
+    - {fileID: 1553534639812742021, guid: 2f1f177ffb001c4418d45a57764e7aa5, type: 3}
   - name: W2
     count: 8
     enemies:
     - {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
+    - {fileID: 1553534639812742021, guid: 2f1f177ffb001c4418d45a57764e7aa5, type: 3}
   - name: W3
     count: 10
     enemies:
     - {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
+    - {fileID: 1553534639812742021, guid: 2f1f177ffb001c4418d45a57764e7aa5, type: 3}
   spawnPoints:
   - {fileID: 1210039043}
   - {fileID: 1267855305}
@@ -14874,12 +14877,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 953b676422b795a46aa3d69cce3f174e,
     type: 3}
   m_PrefabInstance: {fileID: 1472388023}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1473833091 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ce7b353d9ee4cae4399a0533ecd36b0d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1367996738}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477487131
 GameObject:

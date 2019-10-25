@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLives: 0
   enemyStartLives: 100
-  lookRadius: 30
+  lookRadius: 20
   explosion: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
     type: 3}
   direction: {fileID: 0}

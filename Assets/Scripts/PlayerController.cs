@@ -187,6 +187,10 @@ public class PlayerController : MonoBehaviour
         myBody.AddForce(moveVec);
 
         //check HP to set bump force
+        if (PlayerHealth.Lives > 100)
+        {
+            force = 200;
+        }
         if (PlayerHealth.Lives <= 100 && PlayerHealth.Lives > 75)
         {
             force = 200;
