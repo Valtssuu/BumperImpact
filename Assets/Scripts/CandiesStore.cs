@@ -19,7 +19,6 @@ public class CandiesStore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // you have been hacked
-        Debug.LogError("you have been hacked");
+        
     }
 }
