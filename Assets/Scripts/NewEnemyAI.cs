@@ -144,6 +144,7 @@ public class NewEnemyAI : MonoBehaviour
     void Explode()
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
+        player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 2;
         Destroy(gameObject);
         Destroy(clone, 1f);
 

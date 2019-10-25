@@ -12,6 +12,7 @@ public class BombEnemy : MonoBehaviour
     public GameObject explosion;
     public Transform direction = null;
     public GameObject bomb;
+    public GameObject player;
 
     //public GameObject player;
 
@@ -47,7 +48,7 @@ public class BombEnemy : MonoBehaviour
         //updatePoint = GameObject.Find("updatePoint");
 
         this.GetComponent<Patrol>().enabled = true;
-
+        player = GameObject.FindWithTag("Player");
         playerBody = target.GetComponent<Rigidbody>();
 
         //playerBody.GetComponent<PlayerController>().myBody;
@@ -126,6 +127,7 @@ public class BombEnemy : MonoBehaviour
     void Explode()
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
+        player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 2;
         Destroy(gameObject);
         Destroy(clone, 1f);
     }
@@ -153,7 +155,7 @@ public class BombEnemy : MonoBehaviour
 
             StartCoroutine(PlayerDelayBump(pdir));
 
-            StartCoroutine(EneNavControl());
+            //StartCoroutine(EneNavControl());
 
 
             enemyLives = enemyLives - 30;
