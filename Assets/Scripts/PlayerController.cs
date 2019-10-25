@@ -252,7 +252,7 @@ public class PlayerController : MonoBehaviour
     //add value to dashmeter upon collision
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
             if (dashmeter <= 9)
             {
