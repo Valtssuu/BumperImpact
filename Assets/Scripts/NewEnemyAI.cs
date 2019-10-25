@@ -57,6 +57,13 @@ public class NewEnemyAI : MonoBehaviour
 
         playerBody = target.GetComponent<Rigidbody>();
 
+        eBody.centerOfMass = new Vector3(0, 0, 1.85f);
+
+        if(shieldLives <= 0)
+        {
+            eBody.ResetCenterOfMass();
+        }
+
         //playerBody.GetComponent<PlayerController>().myBody;
 
     }
