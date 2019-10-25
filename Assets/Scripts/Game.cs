@@ -20,7 +20,13 @@ public class Game : MonoBehaviour
         {
             TApanel.SetActive(true);
         }
-        
+
+        if (PlayerPrefs.GetInt("skin") == 1)
+        {
+            buyButton.interactable = false;
+
+        }
+
     }
 
     // Update is called once per frame
@@ -62,7 +68,6 @@ public class Game : MonoBehaviour
 
     public void Buy()
     {
-        //ei toimi ku ei updateta sitä heti
         if(score >= 2)
         {
             score = score - 2;
@@ -70,8 +75,9 @@ public class Game : MonoBehaviour
             Debug.Log("terve");
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("skin", 1);
-
         }
+
+        
     }
 
     public void Reset()
