@@ -104,7 +104,7 @@ public class EnemyAI : MonoBehaviour
             
             //disable patrol script
             this.GetComponent<Patrol>().enabled = false;
-            this.GetComponent<PatrolE>().enabled = false;
+            
             //chase player
             agent.SetDestination(target.position);
 
@@ -123,7 +123,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
             this.GetComponent<Patrol>().enabled = true;
-            this.GetComponent<PatrolE>().enabled = true;
+            
         }
 
     }

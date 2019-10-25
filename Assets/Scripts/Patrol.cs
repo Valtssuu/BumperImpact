@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
-    public class Patrol : MonoBehaviour {
+public class Patrol : MonoBehaviour {
 
         public Transform[] points;
         private int destPoint = 0;
@@ -18,16 +19,27 @@ using System.Collections;
             // approaches a destination point).
             agent.autoBraking = false;
 
+            Scene currentScene = SceneManager.GetActiveScene();
+
+            string sceneName = currentScene.name;
+
+            if (sceneName == "Endless level")
+            {
             //add items into array
-            /*points[0] = GameObject.Find("Waypoint").transform;
-            points[1] = GameObject.Find("Waypoint (1)").transform;
-            points[2] = GameObject.Find("Waypoint (2)").transform;
-            points[3] = GameObject.Find("Waypoint (3)").transform;
-            points[4] = GameObject.Find("Waypoint (4)").transform;
-            points[5] = GameObject.Find("Waypoint (5)").transform;
-            points[6] = GameObject.Find("Waypoint (6)").transform;*/
+                points = new Transform[7];
+                points[0] = GameObject.Find("Waypoint").transform;
+                points[1] = GameObject.Find("Waypoint (1)").transform;
+                points[2] = GameObject.Find("Waypoint (2)").transform;
+                points[3] = GameObject.Find("Waypoint (3)").transform;
+                points[4] = GameObject.Find("Waypoint (4)").transform;
+                points[5] = GameObject.Find("Waypoint (5)").transform;
+                points[6] = GameObject.Find("Waypoint (6)").transform;
+            }
+            
 
             
+
+
 
             GotoNextPoint();
         }

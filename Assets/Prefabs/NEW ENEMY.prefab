@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 5833840784570405437}
   - component: {fileID: 5833840784570405435}
   - component: {fileID: 5833840784570405438}
-  - component: {fileID: -4872239690236146057}
   m_Layer: 0
   m_Name: NEW ENEMY
   m_TagString: Enemy2
@@ -260,26 +259,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-4872239690236146057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2581717480906652054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aabad110e6ba6045a2f9e7b9105ffe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &3949150396091480392
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,11 +851,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1553534639812742021}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: d142553173371d14a93d7231dca53db6,
-        type: 3}
-      propertyPath: m_Name
-      value: enemy_big
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d142553173371d14a93d7231dca53db6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -946,6 +920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 43.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d142553173371d14a93d7231dca53db6,
+        type: 3}
+      propertyPath: m_Name
+      value: enemy_big
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d142553173371d14a93d7231dca53db6, type: 3}
