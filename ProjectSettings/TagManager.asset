@@ -28,6 +28,8 @@ TagManager:
   - Candy
   - candy
   - WhereToLook
+  - PlayerChild
+  - PlayerSkin
   layers:
   - Default
   - TransparentFX

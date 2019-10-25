@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: black
-    second: {fileID: 2100000, guid: 12e980a7ec6c8e54280207b405d79a09, type: 2}
+    second: {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: browns
-    second: {fileID: 2100000, guid: 88c155e2f69a29a4bbb3e8a0ecb5c332, type: 2}
+    second: {fileID: 2100000, guid: e2f491f28832ceb45a4f9b6d7ff726c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: greys
-    second: {fileID: 2100000, guid: c1c8460872ce46b4f840981e4f004f32, type: 2}
+    second: {fileID: 2100000, guid: 5748606620cb41547ba9e2f635e3d59e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: outer lines
-    second: {fileID: 2100000, guid: b86767e2313da774c85d00be237cd2d4, type: 2}
+    second: {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: reds
-    second: {fileID: 2100000, guid: fd00d47702f8b9d40bfa7f81d704a043, type: 2}
+    second: {fileID: 2100000, guid: 1f10bed88e8c5584cb5074d3ece660f1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

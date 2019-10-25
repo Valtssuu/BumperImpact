@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float moveForce, dashmeter, playerShieldLives, dashspeed;
-    public GameObject MainCamera, hitParticle, dashParticle, dashbarover50, shield, Bar, Dust, dash, dashbar;
+    public GameObject MainCamera, hitParticle, dashParticle, dashbarover50, shield, Bar, Dust, dash, dashbar, pumpkinSkin;
 
     public Rigidbody myBody;
     public Transform direction = null;
@@ -25,14 +25,13 @@ public class PlayerController : MonoBehaviour
     public float ShockwaveForce = 700f;
     public bool boostActivated;
     public GameObject mine;
-
+    public Renderer[] playerMeshChildren;
     public GameObject rocket;
-
+    public int skin;
     public Text scoreText;
     public GameObject shieldButton;
-
     public GameObject mineButton;
-
+    public GameObject[] PlayerChildren;
     private int mineButtonClicks;
     private int shieldButtonClicks;
     private int rocketButtonClicks;
@@ -62,13 +61,27 @@ public class PlayerController : MonoBehaviour
         shieldButtonClicks = 0;
         score = PlayerPrefs.GetInt("score", 0);
         boostActivated = false;
+        skin = PlayerPrefs.GetInt("skin", 0);
+        if (skin == 1)
+        {
+            PlayerChildren = GameObject.FindGameObjectsWithTag("PlayerChild");
+            foreach(GameObject Child in PlayerChildren)
+            {
+                Child.SetActive(false);
+            }
+            
+            
+
+            pumpkinSkin.SetActive(true);
+        }
+
     }
 
     void FixedUpdate()
     {
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString(""); 
-
+        
 
         //check the position of the joystick and move the player accordingly
         Vector3 moveVec = new Vector3(CrossPlatformInputManager.GetAxis("Vertical"), 0, -CrossPlatformInputManager.GetAxis("Horizontal")) * moveForce;

@@ -7,13 +7,20 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
     public int score;
-
+    public Button buyButton;
     public Text scoreText;
+    public GameObject TApanel;
+    public int accept;
     // Start is called before the first frame update
     void Start()
     {
+        accept = PlayerPrefs.GetInt("AcceptTA", 0);
         score = PlayerPrefs.GetInt("score", 0);
-
+        if(accept == 0)
+        {
+            TApanel.SetActive(true);
+        }
+        
     }
 
     // Update is called once per frame
@@ -30,7 +37,6 @@ public class Game : MonoBehaviour
     {
         Debug.Log ("QUIT!");
         Application.Quit();
-        //UnityEditor.EditorApplication.isPlaying = false;
     }
     public void TestLevel()
     {
@@ -49,6 +55,10 @@ public class Game : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelection");
     }
+    public void Endless()
+    {
+        SceneManager.LoadScene("Endless level");
+    }
 
     public void Buy()
     {
@@ -59,7 +69,14 @@ public class Game : MonoBehaviour
             PlayerPrefs.SetInt("score", score);
             Debug.Log("terve");
             scoreText.text = score.ToString();
+            PlayerPrefs.SetInt("skin", 1);
+
         }
+    }
+
+    public void Reset()
+    {
+        PlayerPrefs.SetInt("skin", 0);
     }
 
     public void AdWasClicked()
@@ -67,5 +84,19 @@ public class Game : MonoBehaviour
         score = score + 10;
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString();
+    }
+
+    public void OpenTerms()
+    {
+        Application.OpenURL("http://www.oulugamelab.net/t-a-c");
+    }
+    public void OpenPrivacy()
+    {
+        Application.OpenURL("http://www.oulugamelab.net/policy");
+    }
+    public void Accept()
+    {
+        TApanel.SetActive(false);
+        PlayerPrefs.SetInt("AcceptTA", 1);
     }
 }
