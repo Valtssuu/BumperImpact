@@ -274,6 +274,12 @@ public class PlayerController : MonoBehaviour
             }
 
 
+            if (myCollider.gameObject.name == "Butt")
+            {
+                PlayerHealth.Lives = PlayerHealth.Lives - 10;
+            }
+
+
             if (myCollider.gameObject.name == "PlayerShield")
             {
                 playerShieldLives -= 25;
@@ -285,7 +291,7 @@ public class PlayerController : MonoBehaviour
                     playerShieldLives = 0;
                 }
 
-        }
+            }
 
         }
 

@@ -19917,6 +19917,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NEW ENEMYA3
       objectReference: {fileID: 0}
+    - target: {fileID: 2581717480906652054, guid: 2f1f177ffb001c4418d45a57764e7aa5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1553534639812742021, guid: 2f1f177ffb001c4418d45a57764e7aa5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19982,11 +19987,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.6842989
       objectReference: {fileID: 0}
-    - target: {fileID: 5833840784570405439, guid: 2f1f177ffb001c4418d45a57764e7aa5,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5833840784570405435, guid: 2f1f177ffb001c4418d45a57764e7aa5,
         type: 3}
       propertyPath: points.Array.size
@@ -20002,6 +20002,11 @@ PrefabInstance:
       propertyPath: points.Array.data[1]
       value: 
       objectReference: {fileID: 1228430459}
+    - target: {fileID: 5833840784570405439, guid: 2f1f177ffb001c4418d45a57764e7aa5,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1298542852456406528, guid: 2f1f177ffb001c4418d45a57764e7aa5,
         type: 3}
       propertyPath: m_TagString

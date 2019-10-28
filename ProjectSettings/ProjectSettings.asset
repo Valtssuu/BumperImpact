@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.10
+  bundleVersion: 0.12
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -165,7 +165,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier: {}
   buildNumber: {}
-  AndroidBundleVersionCode: 10
+  AndroidBundleVersionCode: 12
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -255,7 +255,7 @@ PlayerSettings:
   clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
   templatePackageId: com.unity.template.3d@3.1.2
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  AndroidTargetArchitectures: 7
+  AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: C:/Users/n6niva00/Downloads/Bumber_Impact.keystore
@@ -765,10 +765,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 6f3f8eeb-dc36-436a-9403-98dcc8169863
+  cloudProjectId: 9f14203d-6a14-4cc2-91e6-b4dbbf230d7a
   framebufferDepthMemorylessMode: 0
-  projectName: Unity import
-  organizationId: unity_xhgyddvkgdlq0q
+  projectName: Bumper Impact
+  organizationId: valtssu
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

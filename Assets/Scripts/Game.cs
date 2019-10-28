@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
     public int score;
     public Button buyButton;
     public Text scoreText;
-    public GameObject TApanel;
+    public GameObject TApanel, GoldPanel, NormalPanel;
     public int accept;
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,7 @@ public class Game : MonoBehaviour
     {
         if(score >= 2)
         {
-            score = score - 200;
+            score = score - 2;
             PlayerPrefs.SetInt("score", score);
             Debug.Log("terve");
             scoreText.text = score.ToString();
@@ -104,5 +104,17 @@ public class Game : MonoBehaviour
     {
         TApanel.SetActive(false);
         PlayerPrefs.SetInt("AcceptTA", 1);
+    }
+
+    public void OpenGoldTickets()
+    {
+        GoldPanel.SetActive(true);
+        NormalPanel.SetActive(false);
+    }
+
+    public void OpenNormalTickets()
+    {
+        GoldPanel.SetActive(false);
+        NormalPanel.SetActive(true);
     }
 }

@@ -15,7 +15,7 @@ public class PlatformAttach : MonoBehaviour
             
             player.transform.SetParent(this.transform, true);
 
-            PlatformController.SetBool("playPlatform", true);
+            //PlatformController.SetBool("playPlatform", true);
 
         }
     }

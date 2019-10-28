@@ -88,6 +88,7 @@ using UnityEngine.Advertisements;
 
             player.GetComponent<PlayerController>().camera.fieldOfView = 18;
             MainCamera.GetComponent<CameraController>().distance = 46;
+            player.GetComponent<PlayerController>().myBody.velocity = Vector3.zero;
             Debug.Log(showAd);
             if (PlayerHealth.Lives <= 30)
               {
@@ -131,12 +132,12 @@ using UnityEngine.Advertisements;
 
             Collider myCollider = collision.contacts[0].thisCollider;
 
-            if (myCollider.gameObject.name != "PlayerShield")
+            /*if (myCollider.gameObject.name != "PlayerShield")
             {
                 PlayerHealth.Lives = PlayerHealth.Lives - 5;
 
             }
-
+            */
 
 
 
