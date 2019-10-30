@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
             {
                 
                 myBody.AddForce(-direction.forward * dashspeed);
-                dashmeter -= 5;
+                dashmeter -= 10;
                 //dash.SetActive(true);
                 GameObject clone = (GameObject)Instantiate(dashParticle, transform.position, transform.rotation);
                 clone.transform.parent = gameObject.transform;
@@ -258,11 +258,17 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
-            if (dashmeter <= 9)
+            if(boostActivated == true)
             {
-                dashmeter += 1;
+                
+                    dashmeter += 10;
+                
             }
-            
+
+            else
+            {
+                dashmeter += 2;
+            }
             GameObject clone = (GameObject)Instantiate(hitParticle, other.contacts[0].point, Quaternion.identity);
                     Destroy(clone, 0.2f);
 
@@ -303,7 +309,7 @@ public class PlayerController : MonoBehaviour
     //delay before changing the drag
     private IEnumerator StopBoosting()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         myBody.velocity = Vector3.zero;
         boostActivated = false;
     }
