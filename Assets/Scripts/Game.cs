@@ -36,7 +36,7 @@ public class Game : MonoBehaviour
     }
     public void PlayGame () 
     {
-        SceneManager.LoadScene ("Game");
+        SceneManager.LoadScene ("1st Level");
     }
  
     public void QuitGame ()
@@ -70,7 +70,7 @@ public class Game : MonoBehaviour
     {
         if(score >= 2)
         {
-            score = score - 2;
+            score = score - 200;
             PlayerPrefs.SetInt("score", score);
             Debug.Log("terve");
             scoreText.text = score.ToString();

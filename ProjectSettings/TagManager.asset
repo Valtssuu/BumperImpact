@@ -30,6 +30,7 @@ TagManager:
   - WhereToLook
   - PlayerChild
   - PlayerSkin
+  - winTrigger
   layers:
   - Default
   - TransparentFX
