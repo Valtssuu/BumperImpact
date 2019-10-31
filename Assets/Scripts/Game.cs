@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
     public int score;
-    public Button buyButton;
+    public Button buyButton, buyDashButton;
     public Text scoreText;
     public int dashDmg;
-    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton;
+    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy;
     public int accept;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,15 @@ public class Game : MonoBehaviour
             buyButton.interactable = false;
             activeButton.SetActive(false);
             disabledButton.SetActive(true);
+            
+        }
+
+        if (PlayerPrefs.GetInt("hasDash") == 1)
+        {
+
+            activeDashBuy.SetActive(false);
+            disabledDashBuy.SetActive(true);
+            buyDashButton.interactable = false;
         }
 
     }
@@ -89,21 +98,28 @@ public class Game : MonoBehaviour
 
     public void UpgradeDash()
     {
-        if(score >= 2)
+        if(score >= 500)
         {
-            score = score - 2;
+            score = score - 500;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
             dashDmg += 70;
             PlayerPrefs.SetInt("dashDmg", dashDmg);
+            PlayerPrefs.SetInt("hasDash", 1);
+            activeDashBuy.SetActive(false);
+            disabledDashBuy.SetActive(true);
+            buyDashButton.interactable = false;
+
         }
-        
+
     }
 
     public void Reset()
     {
         PlayerPrefs.SetInt("skin", 0);
         PlayerPrefs.SetInt("dashDmg", 0);
+        PlayerPrefs.SetInt("hasDash", 0);
+
     }
 
     public void AdWasClicked()
