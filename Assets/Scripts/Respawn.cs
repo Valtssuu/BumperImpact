@@ -88,8 +88,14 @@ using UnityEngine.Advertisements;
                     winCanvas.SetActive(true);
                     Time.timeScale = 0;
                 }
-               
+                //7.132948e-08
+                //1.121883e-07
+                //-0.01921162
 
+
+                //0.2106163
+                //0.6024002
+                //0.06418055
             }
         }
 
