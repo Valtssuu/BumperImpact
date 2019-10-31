@@ -33,6 +33,8 @@ using UnityEngine.Advertisements;
 
     public GameObject hintCanvas;
 
+    public GameObject pausePanel;
+
     public string sceneName;
      void Start ()
      {
@@ -204,5 +206,22 @@ using UnityEngine.Advertisements;
     public void OnNextLevelClicked()
     {
         SceneManager.LoadScene("Level2");
+    }
+
+    public void Pause()
+    {
+
+        Time.timeScale = 0;
+        pausePanel.SetActive(true);
+    }
+
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(sceneName);
     }
  }
