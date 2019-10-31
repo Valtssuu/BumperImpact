@@ -9,7 +9,7 @@ using UnityEngine.Advertisements;
      private int showAd;
      public GameObject loseCanvas;
     public GameObject gameManager;
-    bool winTrigger;
+    //bool winTrigger;
 
     [SerializeField] private Animator BridgeController;
     [SerializeField] private Animator Bridge2Controller;
@@ -47,7 +47,7 @@ using UnityEngine.Advertisements;
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         showAd = PlayerPrefs.GetInt("showAd", 0);
-        winTrigger = false;
+        //winTrigger = false;
 
         if (sceneName != "Endless level")
         {
@@ -83,11 +83,7 @@ using UnityEngine.Advertisements;
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
             {
                 Bridge3Controller.SetBool("BridgeUp", true);
-                if(winTrigger == true)
-                {
-                    winCanvas.SetActive(true);
-                    Time.timeScale = 0;
-                }
+                
                 //7.132948e-08
                 //1.121883e-07
                 //-0.01921162
@@ -97,6 +93,8 @@ using UnityEngine.Advertisements;
                 //0.6024002
                 //0.06418055
             }
+
+            
         }
 
         if (PlayerHealth.Lives <= 0)
@@ -162,7 +160,8 @@ using UnityEngine.Advertisements;
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
             {
-                winTrigger = true;
+                winCanvas.SetActive(true);
+                Time.timeScale = 0;
 
             }
         }
