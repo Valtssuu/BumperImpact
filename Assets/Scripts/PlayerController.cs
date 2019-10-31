@@ -349,7 +349,7 @@ public class PlayerController : MonoBehaviour
         {
             if (mineButton.activeInHierarchy == false && rocketButton.activeInHierarchy == false && shieldButton.activeInHierarchy == false)
             {
-                itemNumber = 0; //Random.Range(0, 3);
+                itemNumber = Random.Range(1, 3);
 
             //Debug.Log(itemNumber);
             if (itemNumber == 0)

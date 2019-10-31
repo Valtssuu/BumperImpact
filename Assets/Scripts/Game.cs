@@ -58,7 +58,7 @@ public class Game : MonoBehaviour
     }
     public void Level1()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("1st Level");
     }
 
     public void LevelSelection()
