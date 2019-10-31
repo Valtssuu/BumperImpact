@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
     public int score;
     public Button buyButton;
     public Text scoreText;
-    public GameObject TApanel, GoldPanel, NormalPanel;
+    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton;
     public int accept;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,8 @@ public class Game : MonoBehaviour
         if (PlayerPrefs.GetInt("skin") == 1)
         {
             buyButton.interactable = false;
-
+            activeButton.SetActive(false);
+            disabledButton.SetActive(true);
         }
 
     }
@@ -68,13 +69,17 @@ public class Game : MonoBehaviour
 
     public void Buy()
     {
-        if(score >= 2)
+        if(score >= 200)
         {
             score = score - 200;
             PlayerPrefs.SetInt("score", score);
             Debug.Log("terve");
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("skin", 1);
+
+            buyButton.interactable = false;
+            activeButton.SetActive(false);
+            disabledButton.SetActive(true);
         }
 
         

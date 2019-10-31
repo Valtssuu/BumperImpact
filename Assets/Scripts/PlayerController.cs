@@ -309,8 +309,9 @@ public class PlayerController : MonoBehaviour
     //delay before changing the drag
     private IEnumerator StopBoosting()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         myBody.velocity = Vector3.zero;
+        yield return new WaitForSeconds(0.1f);
         boostActivated = false;
     }
     
