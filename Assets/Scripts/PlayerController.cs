@@ -398,7 +398,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "PoisonArea")
         {
             poisonTime -= Time.deltaTime;
-            moveForce = 21;
+            moveForce = 18;
             if (poisonTime <= 0)
             {
                 PlayerHealth.Lives -= 5;
