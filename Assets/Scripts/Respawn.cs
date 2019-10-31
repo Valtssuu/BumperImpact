@@ -9,9 +9,11 @@ using UnityEngine.Advertisements;
      private int showAd;
      public GameObject loseCanvas;
     public GameObject gameManager;
+    bool winTrigger;
 
     [SerializeField] private Animator BridgeController;
     [SerializeField] private Animator Bridge2Controller;
+    [SerializeField] private Animator Bridge3Controller;
 
     Rigidbody myBody;
 
@@ -31,6 +33,8 @@ using UnityEngine.Advertisements;
 
     public GameObject hintCanvas;
 
+    public GameObject pausePanel;
+
     public string sceneName;
      void Start ()
      {
@@ -43,6 +47,7 @@ using UnityEngine.Advertisements;
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         showAd = PlayerPrefs.GetInt("showAd", 0);
+        winTrigger = false;
         
 
     }
@@ -71,8 +76,13 @@ using UnityEngine.Advertisements;
 
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
             {
-                winCanvas.SetActive(true);
-                Time.timeScale = 0;
+                Bridge3Controller.SetBool("BridgeUp", true);
+                if(winTrigger == true)
+                {
+                    winCanvas.SetActive(true);
+                    Time.timeScale = 0;
+                }
+               
 
             }
         }
@@ -129,12 +139,20 @@ using UnityEngine.Advertisements;
          }
          if(col.gameObject.tag == "SpawnPoint1")
          {
-            spawnPoint.transform.position = new Vector3(68, 1.5f, -143);
+            spawnPoint.transform.position = new Vector3(82.7f, 1.7f, -92.5f);
          }
          if(col.gameObject.tag == "SpawnPoint2")
         {
-            spawnPoint.transform.position = new Vector3(167, 1.5f, -143);
+            spawnPoint.transform.position = new Vector3(181, 1.8f, -94.3f);
 
+        }
+         if(col.gameObject.tag == "winTrigger")
+        {
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
+            {
+                winTrigger = true;
+
+            }
         }
     }
 
@@ -202,5 +220,22 @@ using UnityEngine.Advertisements;
     public void OnNextLevelClicked()
     {
         SceneManager.LoadScene("Level2");
+    }
+
+    public void Pause()
+    {
+
+        Time.timeScale = 0;
+        pausePanel.SetActive(true);
+    }
+
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(sceneName);
     }
  }

@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: black
-    second: {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
+    second: {fileID: 2100000, guid: 4847780185fdc5c48bc7980bc5249dec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: browns
-    second: {fileID: 2100000, guid: e2f491f28832ceb45a4f9b6d7ff726c8, type: 2}
+    second: {fileID: 2100000, guid: 55d6a2de302fc8a4a84dbda847d4837d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: greys.001
-    second: {fileID: 2100000, guid: 5748606620cb41547ba9e2f635e3d59e, type: 2}
+    second: {fileID: 2100000, guid: 8f04f8146cf97c141ba35b2fec8eac85, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: outer lines
-    second: {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
+    second: {fileID: 2100000, guid: 4847780185fdc5c48bc7980bc5249dec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pumpkin
-    second: {fileID: 2100000, guid: d0ca9fc8b2465814c84eb623b6db6874, type: 2}
+    second: {fileID: 2100000, guid: d6390bc5913e02e4ca7fa046dfba4f3e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
