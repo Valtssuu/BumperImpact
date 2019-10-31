@@ -1666,7 +1666,7 @@ GameObject:
   - component: {fileID: 128968551}
   - component: {fileID: 128968550}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: winTrigger
   m_TagString: winTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
