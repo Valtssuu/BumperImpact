@@ -22,6 +22,8 @@ public class WaveSpawnerState : MonoBehaviour
         {
             enemy = enemies[Random.Range(0, enemies.Count)];
         }*/
+        
+        
     }
 
     public Wave[] waves;
@@ -37,6 +39,8 @@ public class WaveSpawnerState : MonoBehaviour
     private SpawnState state = SpawnState.COUNTING;
 
     private bool looping = false;
+
+    private bool toomanySpecial = false;
     
     void Start()
     {
@@ -48,6 +52,7 @@ public class WaveSpawnerState : MonoBehaviour
         waveCountdown = timeBetweenWaves;
 
         looping = false;
+        toomanySpecial = false;
 
 
     }
@@ -55,6 +60,16 @@ public class WaveSpawnerState : MonoBehaviour
     
     void Update()
     {
+        if (GameObject.FindGameObjectsWithTag("Enemy2").Length > 2)
+        {
+            RemoveSpecialEnemy(waves[nextWave]);
+        }
+
+        if (GameObject.FindGameObjectsWithTag("Enemy2").Length <= 2 && toomanySpecial == true)
+        {
+            AddSpecialEnemy(waves[nextWave]);
+        }
+
         if (state == SpawnState.WAITING)
         {
             //check if enemy is alive
@@ -104,6 +119,18 @@ public class WaveSpawnerState : MonoBehaviour
         
 
 
+    }
+
+    void RemoveSpecialEnemy(Wave _wave)
+    {
+        toomanySpecial = true;
+        _wave.enemies.RemoveAt(1);
+    }
+
+    void AddSpecialEnemy(Wave _wave)
+    {
+        _wave.enemies.Add(GameObject.FindWithTag("Enemy2").transform);
+        toomanySpecial = false;
     }
 
     bool EnemyIsAlive()

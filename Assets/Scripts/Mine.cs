@@ -52,7 +52,7 @@ public class Mine : MonoBehaviour
 
     void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
             if (!hasExploded)
             {
@@ -87,6 +87,7 @@ public class Mine : MonoBehaviour
                 //enemyInRange.GetComponent<EnemyAI>().enemyLives -= 80;
                 //StartCoroutine(DelayDestroy(hit));
                 hit.GetComponent<EnemyAI>().enemyLives -= 80;
+                hit.GetComponent<NewEnemyAI>().enemyLives -= 80;
 
                 rb.drag = 5;
                 
