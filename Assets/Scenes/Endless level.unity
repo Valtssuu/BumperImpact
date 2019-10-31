@@ -4573,7 +4573,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e5c930c6e3b89744987f2be33afd2bc6, type: 2}
+  - {fileID: 2100000, guid: 33c54648c8a360b42b70cabb7eaa2a2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7344,6 +7344,7 @@ MonoBehaviour:
   cameraBridge1: {fileID: 340660998}
   cameraBridge2: {fileID: 597868564}
   hintCanvas: {fileID: 0}
+  pausePanel: {fileID: 0}
   sceneName: 
 --- !u!114 &681278565
 MonoBehaviour:
