@@ -159,8 +159,14 @@ public class EnemyAI : MonoBehaviour
 
             StartCoroutine(EneNavControl());
 
+            if(player.GetComponent<PlayerController>().boostActivated == true)
+            {
+                enemyLives = enemyLives - PlayerPrefs.GetInt("dashDmg", 0);
+
+            }
 
             enemyLives = enemyLives - 30;
+
         }
 
     }

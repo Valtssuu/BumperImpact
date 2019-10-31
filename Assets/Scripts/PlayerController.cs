@@ -272,7 +272,7 @@ public class PlayerController : MonoBehaviour
             {
                 
                     dashmeter += 10;
-                
+                    
             }
 
             else
@@ -398,7 +398,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "PoisonArea")
         {
             poisonTime -= Time.deltaTime;
-            moveForce = 11;
+            moveForce = 21;
             if (poisonTime <= 0)
             {
                 PlayerHealth.Lives -= 5;
@@ -411,7 +411,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "PoisonArea")
         {
-            moveForce = 20;
+            moveForce = 25;
         }
     }
 

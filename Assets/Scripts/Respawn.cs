@@ -225,7 +225,7 @@ using UnityEngine.Advertisements;
 
     public void OnNextLevelClicked()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("2nd Level");
     }
 
     public void Pause()

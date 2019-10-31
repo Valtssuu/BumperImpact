@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
     public int score;
     public Button buyButton;
     public Text scoreText;
+    public int dashDmg;
     public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton;
     public int accept;
     // Start is called before the first frame update
@@ -16,6 +17,8 @@ public class Game : MonoBehaviour
     {
         accept = PlayerPrefs.GetInt("AcceptTA", 0);
         score = PlayerPrefs.GetInt("score", 0);
+        dashDmg = PlayerPrefs.GetInt("dashDmg", 0);
+
         if(accept == 0)
         {
             TApanel.SetActive(true);
@@ -37,7 +40,7 @@ public class Game : MonoBehaviour
     }
     public void PlayGame () 
     {
-        SceneManager.LoadScene ("1st Level");
+        SceneManager.LoadScene ("Tutorial");
     }
  
     public void QuitGame ()
@@ -73,7 +76,6 @@ public class Game : MonoBehaviour
         {
             score = score - 200;
             PlayerPrefs.SetInt("score", score);
-            Debug.Log("terve");
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("skin", 1);
 
@@ -85,9 +87,23 @@ public class Game : MonoBehaviour
         
     }
 
+    public void UpgradeDash()
+    {
+        if(score >= 2)
+        {
+            score = score - 2;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+            dashDmg += 70;
+            PlayerPrefs.SetInt("dashDmg", dashDmg);
+        }
+        
+    }
+
     public void Reset()
     {
         PlayerPrefs.SetInt("skin", 0);
+        PlayerPrefs.SetInt("dashDmg", 0);
     }
 
     public void AdWasClicked()
