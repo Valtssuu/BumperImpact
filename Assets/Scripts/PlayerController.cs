@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
 
 
     public Transform target;
+
+    public float poisonTime;
     void Start()
     {
         myBody = this.GetComponent<Rigidbody>();
@@ -387,6 +389,30 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PoisonArea")
+        {
+            poisonTime -= Time.deltaTime;
+            moveForce = 11;
+            if (poisonTime <= 0)
+            {
+                PlayerHealth.Lives -= 5;
+                poisonTime = 1.0f;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "PoisonArea")
+        {
+            moveForce = 20;
+        }
     }
 
     public void OnSpecialButtonClicked()

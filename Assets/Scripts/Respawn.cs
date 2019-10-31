@@ -86,9 +86,23 @@ using UnityEngine.Advertisements;
 
             }
         }
-        
 
-     }
+        if (PlayerHealth.Lives <= 0)
+        {
+            loseCanvas.SetActive(true);
+            Time.timeScale = 0;
+            if (showAd % 2 == 0)
+            {
+                if (Advertisement.IsReady("video"))
+                {
+                    Advertisement.Show("video");
+                }
+            }
+
+        }
+
+
+    }
    
      void OnTriggerEnter (Collider col)
      {

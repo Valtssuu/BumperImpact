@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7067485108915692484}
   - component: {fileID: 9207856914350882735}
   - component: {fileID: 8944217751266967599}
+  - component: {fileID: 7225794746650781398}
   m_Layer: 0
   m_Name: Exploding Barrel
   m_TagString: Untagged
@@ -112,3 +113,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7225794746650781398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802309997466375960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95362dcc28f1aaf42b2627f70fe6e584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poisonGround: {fileID: 298669140914900631, guid: f371f15c3a7d2f648b653bd1888cc66f,
+    type: 3}
+  explosionEffect: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
+    type: 3}
