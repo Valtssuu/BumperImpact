@@ -79,10 +79,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlayerPrefs.SetInt("score", score);
-        scoreText.text = score.ToString(""); 
-        
 
+
+        PlayerPrefs.SetInt("score", score);
+        scoreText.text = score.ToString("");
+        KeepOnTheArena();
+
+
+
+        
         //check the position of the joystick and move the player accordingly
         Vector3 moveVec = new Vector3(CrossPlatformInputManager.GetAxis("Vertical"), 0, -CrossPlatformInputManager.GetAxis("Horizontal")) * moveForce;
 
@@ -150,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
 
         //dash
-        if (dashmeter > 5)
+        if (dashmeter > 9)
         {
             dashbarover50.SetActive(true);
             if (isBoosting == true)
@@ -249,13 +254,16 @@ public class PlayerController : MonoBehaviour
     }
     private void KeepOnTheArena()
     {
-        myBody.AddForce(myBody.transform.TransformDirection(-Vector3.up) * 50);
+        myBody.AddRelativeForce(myBody.transform.TransformDirection(-Vector3.up) * 10);
 
     }
 
     //add value to dashmeter upon collision
     private void OnCollisionEnter(Collision other)
     {
+
+        dashmeter = Mathf.Clamp(dashmeter, 0, 10);
+        Debug.Log(dashmeter);
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
             if(boostActivated == true)
@@ -267,6 +275,8 @@ public class PlayerController : MonoBehaviour
 
             else
             {
+                PlayerHealth.Lives = PlayerHealth.Lives - 5;
+
                 dashmeter += 2;
             }
             GameObject clone = (GameObject)Instantiate(hitParticle, other.contacts[0].point, Quaternion.identity);
@@ -274,16 +284,6 @@ public class PlayerController : MonoBehaviour
 
             Collider myCollider = other.contacts[0].thisCollider;
 
-            if (boostActivated)
-            {
-                PlayerHealth.Lives += 5;
-            }
-
-
-            if (myCollider.gameObject.name == "Butt")
-            {
-                PlayerHealth.Lives = PlayerHealth.Lives - 10;
-            }
 
 
             if (myCollider.gameObject.name == "PlayerShield")
