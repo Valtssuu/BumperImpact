@@ -5,13 +5,13 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
 
-    public float delay = 2f;
+    //public float delay = 2f;
     float countdown;
 
     bool hasExploded = false;
 
-    public float exRadius = 15f;
-    public float exPower = 2000f;
+    public float exRadius = 30f;
+    public float exPower = 3000f;
 
     //private Vector3 explosionPos;
 
@@ -92,10 +92,11 @@ public class Mine : MonoBehaviour
                 rb.drag = 5;
                 
                 
-                Destroy(gameObject);
+                
             }
         }
-        
+        Destroy(gameObject);
+
     }
 
     /*IEnumerator DelayDestroy(Collider hit)

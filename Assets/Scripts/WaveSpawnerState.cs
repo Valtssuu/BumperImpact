@@ -60,12 +60,12 @@ public class WaveSpawnerState : MonoBehaviour
     
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy2").Length > 2)
+        if (GameObject.FindGameObjectsWithTag("Enemy2").Length > 0)
         {
             RemoveSpecialEnemy(waves[nextWave]);
         }
 
-        if (GameObject.FindGameObjectsWithTag("Enemy2").Length <= 2 && toomanySpecial == true)
+        if (GameObject.FindGameObjectsWithTag("Enemy2").Length <= 0 && toomanySpecial == true)
         {
             AddSpecialEnemy(waves[nextWave]);
         }

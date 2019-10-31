@@ -45,7 +45,7 @@ public class HomingMissile : MonoBehaviour
 
     void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
             Instantiate(explosionEffect, transform.position, transform.rotation);
             if (!hasExploded)

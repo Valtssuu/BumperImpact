@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 2
-  exRadius: 15
-  exPower: 2000
+  exRadius: 30
+  exPower: 3000
   explosionEffect: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
     type: 3}
   playerBody: {fileID: 0}

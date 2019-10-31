@@ -42,13 +42,19 @@ using UnityEngine.Advertisements;
         winCanvas.SetActive(false);
         Time.timeScale = 1;
         myBody = this.GetComponent<Rigidbody>();
-        cameraBridge1.SetActive(false);
-        cameraBridge2.SetActive(false);
+        
+        
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         showAd = PlayerPrefs.GetInt("showAd", 0);
         winTrigger = false;
-        
+
+        if (sceneName != "Endless level")
+        {
+            cameraBridge1.SetActive(false);
+            cameraBridge2.SetActive(false);
+        }
+
 
     }
 

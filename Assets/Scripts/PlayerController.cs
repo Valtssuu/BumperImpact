@@ -349,9 +349,9 @@ public class PlayerController : MonoBehaviour
         {
             if (mineButton.activeInHierarchy == false && rocketButton.activeInHierarchy == false && shieldButton.activeInHierarchy == false)
             {
-                itemNumber = Random.Range(0, 3);
+                itemNumber = 0; //Random.Range(0, 3);
 
-            Debug.Log(itemNumber);
+            //Debug.Log(itemNumber);
             if (itemNumber == 0)
             {
                 mineButton.SetActive(true);
@@ -489,6 +489,7 @@ public class PlayerController : MonoBehaviour
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("Enemy2");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
@@ -499,6 +500,16 @@ public class PlayerController : MonoBehaviour
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
+            }
+        }
+
+        foreach (GameObject enemy2 in enemies2)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy2.transform.position);
+            if (distanceToEnemy < shortestDistance)
+            {
+                shortestDistance = distanceToEnemy;
+                nearestEnemy = enemy2;
             }
         }
 
