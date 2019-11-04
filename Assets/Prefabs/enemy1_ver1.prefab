@@ -184,6 +184,8 @@ MonoBehaviour:
     type: 3}
   direction: {fileID: 0}
   player: {fileID: 6670455420638857518, guid: 27531e62975c12e45a7e26013408c1b2, type: 3}
+  timeManager: {fileID: 0}
+  TM: {fileID: 0}
   playerBody: {fileID: 0}
 --- !u!1 &2466326518178759749
 GameObject:
