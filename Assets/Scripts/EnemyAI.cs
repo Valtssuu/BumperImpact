@@ -136,21 +136,21 @@ public class EnemyAI : MonoBehaviour
 
         //dirDown = Vector3(0, -1, 0);
 
-        /*RaycastHit hit;
-        if (Physics.Raycast(transform.position + new Vector3(0, 3, 0), transform.position + Vector3.down, out hit, 5f))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down, out hit, 10f))
         {
-            Debug.DrawLine(transform.position + new Vector3(0, 3, 0), transform.position + Vector3.down * 10f, Color.cyan);
-            Debug.DrawLine(transform.position, hit.point, Color.red);
+            Debug.DrawLine(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down * 10f, Color.cyan);
+            //Debug.DrawLine(transform.position, hit.point, Color.red);
             Debug.Log(hit.collider.gameObject.tag);
-            if (hit.collider.tag == "environment")
-            {
-                gameObject.GetComponent<NavMeshAgent>().enabled = true;
-            }
-            else
+            if (hit.collider.tag == "Killzone")
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = false;
             }
-        }*/
+            else
+            {
+                gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            }
+        }
 
     }
 
