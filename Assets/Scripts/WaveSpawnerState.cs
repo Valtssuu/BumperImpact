@@ -41,6 +41,8 @@ public class WaveSpawnerState : MonoBehaviour
     private bool looping = false;
 
     private bool toomanySpecial = false;
+
+    public GameObject bigEnemy;
     
     void Start()
     {
@@ -124,12 +126,12 @@ public class WaveSpawnerState : MonoBehaviour
     void RemoveSpecialEnemy(Wave _wave)
     {
         toomanySpecial = true;
-        _wave.enemies.RemoveAt(1);
+        _wave.enemies.Remove(bigEnemy.transform);
     }
 
     void AddSpecialEnemy(Wave _wave)
     {
-        _wave.enemies.Add(GameObject.FindWithTag("Enemy2").transform);
+        _wave.enemies.Add(bigEnemy.transform);
         toomanySpecial = false;
     }
 

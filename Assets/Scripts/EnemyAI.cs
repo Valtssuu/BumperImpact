@@ -29,6 +29,8 @@ public class EnemyAI : MonoBehaviour
 
     public Rigidbody playerBody;
 
+    //Vector3 dirDown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +127,24 @@ public class EnemyAI : MonoBehaviour
             this.GetComponent<Patrol>().enabled = true;
             
         }
+
+        //dirDown = Vector3(0, -1, 0);
+
+        /*RaycastHit hit;
+        if (Physics.Raycast(transform.position + new Vector3(0, 3, 0), transform.position + Vector3.down, out hit, 5f))
+        {
+            Debug.DrawLine(transform.position + new Vector3(0, 3, 0), transform.position + Vector3.down * 10f, Color.cyan);
+            Debug.DrawLine(transform.position, hit.point, Color.red);
+            Debug.Log(hit.collider.gameObject.tag);
+            if (hit.collider.tag == "environment")
+            {
+                gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            }
+            else
+            {
+                gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            }
+        }*/
 
     }
 

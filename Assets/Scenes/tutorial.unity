@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: f7965854fb298304b830274e9135e82f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: bbcc54dd909e5b24ea4d167488542c5d, type: 2}
 --- !u!1 &7945072
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 45153483}
   m_Layer: 0
   m_Name: Bridge3
-  m_TagString: Untagged
+  m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,11 +878,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1A2
-      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -903,6 +898,11 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 112070593}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1A2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!1 &48064084
@@ -1493,8 +1493,8 @@ GameObject:
   - component: {fileID: 111675325}
   - component: {fileID: 111675327}
   m_Layer: 0
-  m_Name: Cube.1384
-  m_TagString: Untagged
+  m_Name: Arena1
+  m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2037,8 +2037,8 @@ GameObject:
   - component: {fileID: 190880468}
   - component: {fileID: 190880470}
   m_Layer: 0
-  m_Name: Cube.1396
-  m_TagString: Untagged
+  m_Name: Arena2
+  m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4009,7 +4009,7 @@ PrefabInstance:
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.51
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
@@ -4511,7 +4511,7 @@ GameObject:
   - component: {fileID: 654797297}
   m_Layer: 0
   m_Name: Bridge2
-  m_TagString: Untagged
+  m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5232,8 +5232,8 @@ GameObject:
   - component: {fileID: 708722648}
   - component: {fileID: 708722647}
   m_Layer: 0
-  m_Name: Cube.1394
-  m_TagString: Untagged
+  m_Name: BridgeStart
+  m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5601,11 +5601,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1A3
-      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -5626,6 +5621,11 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 681943691}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1A3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!1001 &749977461
@@ -7490,11 +7490,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1A2
-      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -7515,6 +7510,11 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 112070593}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1A2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!4 &984733296 stripped
@@ -7823,7 +7823,7 @@ PrefabInstance:
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.2
+      value: -11.72
       objectReference: {fileID: 0}
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
@@ -8069,11 +8069,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1A3
-      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -8094,6 +8089,11 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 1172340927}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1A3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!4 &1057464882 stripped
@@ -8606,7 +8606,7 @@ PrefabInstance:
     - target: {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.226501
+      value: -19.8
       objectReference: {fileID: 0}
     - target: {fileID: 3042004704269226415, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
@@ -8648,11 +8648,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1
-      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -8673,6 +8668,11 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 1705294947}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!1 &1145923773
@@ -9085,7 +9085,7 @@ PrefabInstance:
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.51
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
@@ -9175,10 +9175,10 @@ GameObject:
   - component: {fileID: 1174737130}
   m_Layer: 0
   m_Name: Cube.1403
-  m_TagString: Untagged
+  m_TagString: environment
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1174737116
 Transform:
@@ -10399,7 +10399,7 @@ PrefabInstance:
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.2
+      value: -10.1
       objectReference: {fileID: 0}
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
@@ -13492,8 +13492,8 @@ GameObject:
   - component: {fileID: 1729257055}
   - component: {fileID: 1729257057}
   m_Layer: 0
-  m_Name: Cube.1396 (1)
-  m_TagString: Untagged
+  m_Name: Arena3
+  m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -15207,7 +15207,7 @@ PrefabInstance:
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.51
+      value: 5.14
       objectReference: {fileID: 0}
     - target: {fileID: 6951978089315036108, guid: 949ed7ff3c943eb48bda7b76aeb2870e,
         type: 3}
@@ -15516,7 +15516,7 @@ GameObject:
   - component: {fileID: 2080907926}
   m_Layer: 0
   m_Name: Bridge1
-  m_TagString: Untagged
+  m_TagString: environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

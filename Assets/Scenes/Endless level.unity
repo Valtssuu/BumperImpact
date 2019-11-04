@@ -2236,8 +2236,8 @@ GameObject:
   m_Name: Cube.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &462080733
 Transform:
@@ -4706,8 +4706,8 @@ GameObject:
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &958561449
 Transform:
@@ -6895,6 +6895,8 @@ MonoBehaviour:
   - {fileID: 1267855305}
   - {fileID: 1867354362}
   timeBetweenWaves: 5
+  bigEnemy: {fileID: 2581717480906652054, guid: 2f1f177ffb001c4418d45a57764e7aa5,
+    type: 3}
 --- !u!1 &1271389122
 GameObject:
   m_ObjectHideFlags: 0
@@ -7002,8 +7004,8 @@ GameObject:
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1284700949
 Transform:
@@ -10012,8 +10014,8 @@ GameObject:
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1933484071
 Transform:
