@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 4871533472595824921}
   m_Layer: 0
   m_Name: shield
-  m_TagString: Untagged
+  m_TagString: EnemyShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

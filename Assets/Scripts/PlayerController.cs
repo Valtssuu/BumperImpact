@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString("");
-        KeepOnTheArena();
+        //KeepOnTheArena();
 
 
 
@@ -194,29 +194,31 @@ public class PlayerController : MonoBehaviour
         myBody.AddForce(moveVec);
 
         //check HP to set bump force
-        if (PlayerHealth.Lives > 100)
+        /*if (PlayerHealth.Lives > 100)
         {
-            force = 200;
+            force = 800;
         }
         if (PlayerHealth.Lives <= 100 && PlayerHealth.Lives > 75)
         {
-            force = 200;
+            force = 800;
         }
 
         if (PlayerHealth.Lives <= 75 && PlayerHealth.Lives > 50)
         {
-            force = 300;
+            force = 1000;
         }
 
         if (PlayerHealth.Lives <= 50 && PlayerHealth.Lives > 25)
         {
-            force = 400;
+            force = 1200;
         }
 
         if (PlayerHealth.Lives <= 25 && PlayerHealth.Lives > 0)
         {
-            force = 500;
-        }
+            force = 1400;
+        }*/
+
+        force = 1000;
 
         //do nothing if no target is found
         if (target == null)
@@ -256,7 +258,7 @@ public class PlayerController : MonoBehaviour
     }
     private void KeepOnTheArena()
     {
-        myBody.AddRelativeForce(myBody.transform.TransformDirection(-Vector3.up) * 10);
+        myBody.AddRelativeForce(myBody.transform.TransformDirection(-Vector3.up) * 100);
 
     }
 
@@ -301,9 +303,18 @@ public class PlayerController : MonoBehaviour
 
             }
 
+            
+
         }
 
-        
+        /*if (other.gameObject.CompareTag("EnemyShield"))
+        {
+            Vector3 pDir = other.contacts[0].point - transform.position;
+            Vector3 playerDir = -pDir.normalized;
+            myBody.AddForce(playerDir * 10000);
+        }*/
+
+
 
 
 

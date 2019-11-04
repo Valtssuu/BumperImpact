@@ -34,6 +34,7 @@ TagManager:
   - PoisonArea
   - WaterLine
   - WaterButton
+  - EnemyShield
   layers:
   - Default
   - TransparentFX
