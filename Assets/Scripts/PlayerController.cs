@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveForce, dashmeter, playerShieldLives, dashspeed;
     public GameObject MainCamera, hitParticle, dashParticle, dashbarover50, shield, Bar, Dust, dash, dashbar, pumpkinSkin;
+    public TimeManager timeManager;
 
     public Rigidbody myBody;
     public Transform direction = null;
@@ -154,7 +155,7 @@ public class PlayerController : MonoBehaviour
             isShockwaving = false;
         }
 
-
+        
 
         //dash
         if (dashmeter > 9)
@@ -262,6 +263,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+
+
+    
     //add value to dashmeter upon collision
     private void OnCollisionEnter(Collision other)
     {
@@ -273,8 +278,8 @@ public class PlayerController : MonoBehaviour
             if(boostActivated == true)
             {
                 
-                    dashmeter += 10;
-                    
+                dashmeter += 10;
+                myBody.velocity = Vector3.zero;
             }
 
             else
@@ -319,6 +324,10 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+ 
+
+
     //delay before changing the drag
     private IEnumerator StopBoosting()
     {
@@ -326,6 +335,7 @@ public class PlayerController : MonoBehaviour
         myBody.velocity = Vector3.zero;
         yield return new WaitForSeconds(0.1f);
         boostActivated = false;
+        
     }
     
    

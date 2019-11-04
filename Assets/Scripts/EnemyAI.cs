@@ -13,7 +13,8 @@ public class EnemyAI : MonoBehaviour
     public GameObject explosion;
     public Transform direction = null;
     public GameObject player;
-
+    public TimeManager timeManager;
+    public GameObject TM;
     float eForce;
 
     //private GameObject updatePoint;
@@ -34,9 +35,12 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        TM = GameObject.FindWithTag("TimeManager");
+        timeManager = TM.GetComponent<TimeManager>();
         player = GameObject.FindWithTag("Player");
         enemyLives = enemyStartLives;
-
+        
         eBody = this.GetComponent<Rigidbody>();
 
         //find target according to PlayerManager script
@@ -68,6 +72,8 @@ public class EnemyAI : MonoBehaviour
         if (enemyLives <= 0)
         {
             Explode();
+            timeManager.DoSlowMotion();
+
         }
 
         //check HP to set bump force
@@ -154,6 +160,7 @@ public class EnemyAI : MonoBehaviour
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 1;
         Destroy(gameObject);
         Destroy(clone, 1f);
+
     }
     void OnCollisionEnter(Collision collision)
     {
