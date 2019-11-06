@@ -10,6 +10,7 @@ using UnityEngine.Advertisements;
      public GameObject loseCanvas;
     public GameObject gameManager;
     //bool winTrigger;
+    public int stars;
 
     [SerializeField] private Animator BridgeController;
     [SerializeField] private Animator Bridge2Controller;
@@ -54,6 +55,8 @@ using UnityEngine.Advertisements;
             cameraBridge1.SetActive(false);
             cameraBridge2.SetActive(false);
         }
+
+        stars = 3;
 
 
     }
@@ -119,11 +122,13 @@ using UnityEngine.Advertisements;
          if(col.transform.tag == "Killzone")
          {
             showAd++;
+            stars--;
+
 
             player.GetComponent<PlayerController>().camera.fieldOfView = 18;
             MainCamera.GetComponent<CameraController>().distance = 46;
             player.GetComponent<PlayerController>().myBody.velocity = Vector3.zero;
-            Debug.Log(showAd);
+
             if (PlayerHealth.Lives <= 30)
               {
                 if(showAd%2 == 0)

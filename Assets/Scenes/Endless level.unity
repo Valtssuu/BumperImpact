@@ -3242,6 +3242,7 @@ MonoBehaviour:
   dashbar: {fileID: 5620262653495829032}
   pumpkinSkin: {fileID: 882053647}
   timeManager: {fileID: 1762587497}
+  TM: {fileID: 0}
   myBody: {fileID: 681278562}
   direction: {fileID: 5006512735895361964}
   dragAmount: 5
@@ -10316,7 +10317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowdownFactor: 0.02
-  slowdownLength: 1
+  slowdownLength: 0.5
 --- !u!4 &1762587498
 Transform:
   m_ObjectHideFlags: 0

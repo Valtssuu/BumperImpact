@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject player;
     public TimeManager timeManager;
     public GameObject TM;
+
     float eForce;
 
     //private GameObject updatePoint;
@@ -72,7 +73,6 @@ public class EnemyAI : MonoBehaviour
         if (enemyLives <= 0)
         {
             Explode();
-            timeManager.DoSlowMotion();
 
         }
 
@@ -141,7 +141,6 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.DrawLine(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down * 10f, Color.cyan);
             //Debug.DrawLine(transform.position, hit.point, Color.red);
-            Debug.Log(hit.collider.gameObject.tag);
             if (hit.collider.tag == "Killzone")
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = false;
@@ -158,6 +157,8 @@ public class EnemyAI : MonoBehaviour
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 1;
+        timeManager.DoSlowMotion();
+
         Destroy(gameObject);
         Destroy(clone, 1f);
 

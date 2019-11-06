@@ -14,8 +14,6 @@ public class NewEnemyAI : MonoBehaviour
     public GameObject shield, player;
     public float shieldLives;
     private bool toohigh;
-    public TimeManager timeManager;
-    public GameObject TM;
 
 
 
@@ -41,8 +39,6 @@ public class NewEnemyAI : MonoBehaviour
     void Start()
     {
 
-        TM = GameObject.FindWithTag("TimeManager");
-        timeManager = TM.GetComponent<TimeManager>();
         enemyLives = enemyStartLives;
         shieldLives = 100;
 
@@ -86,7 +82,6 @@ public class NewEnemyAI : MonoBehaviour
         if (enemyLives <= 0)
         {
             Explode();
-            //timeManager.DoSlowMotion();
         }
 
         //check HP to set bump force
