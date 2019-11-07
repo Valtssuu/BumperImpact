@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float moveForce, dashmeter, playerShieldLives, dashspeed;
     public GameObject MainCamera, hitParticle, dashParticle, dashbarover50, shield, Bar, Dust, dash, dashbar, pumpkinSkin;
     public TimeManager timeManager;
-
+    public GameObject TM;
     public Rigidbody myBody;
     public Transform direction = null;
     public int dragAmount;
@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     public float poisonTime;
     void Start()
     {
+        TM = GameObject.FindWithTag("TimeManager");
+        timeManager = TM.GetComponent<TimeManager>();
         myBody = this.GetComponent<Rigidbody>();
         sprite = GetComponent<SpriteRenderer>();
         force = 200;
@@ -88,9 +90,10 @@ public class PlayerController : MonoBehaviour
         scoreText.text = score.ToString("");
         //KeepOnTheArena();
 
+        myBody.AddRelativeForce(myBody.transform.TransformDirection(-Vector3.up) * 5);
 
 
-        
+
         //check the position of the joystick and move the player accordingly
         Vector3 moveVec = new Vector3(CrossPlatformInputManager.GetAxis("Vertical"), 0, -CrossPlatformInputManager.GetAxis("Horizontal")) * moveForce;
 
@@ -272,7 +275,7 @@ public class PlayerController : MonoBehaviour
     {
 
         dashmeter = Mathf.Clamp(dashmeter, 0, 10);
-        Debug.Log(dashmeter);
+
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
             if(boostActivated == true)
@@ -280,6 +283,7 @@ public class PlayerController : MonoBehaviour
                 
                 dashmeter += 10;
                 myBody.velocity = Vector3.zero;
+
             }
 
             else
