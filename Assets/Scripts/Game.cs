@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class Game : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Game : MonoBehaviour
     public Button buyButton, buyDashButton;
     public Text scoreText;
     public int dashDmg;
-    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy;
+    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton;
     public int accept;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,12 @@ public class Game : MonoBehaviour
         score = PlayerPrefs.GetInt("score", 0);
         dashDmg = PlayerPrefs.GetInt("dashDmg", 0);
 
-        if(accept == 0)
+
+
+        InvokeRepeating("ShowAdAfter1min", 0, 20);
+
+
+        if (accept == 0)
         {
             TApanel.SetActive(true);
         }
@@ -69,6 +75,16 @@ public class Game : MonoBehaviour
     {
         SceneManager.LoadScene("1st Level");
     }
+    public void Level2()
+    {
+        SceneManager.LoadScene("2nd Level");
+    }
+
+    public void Level3()
+    {
+        SceneManager.LoadScene("3rd Level");
+    }
+
 
     public void LevelSelection()
     {
@@ -124,9 +140,21 @@ public class Game : MonoBehaviour
 
     public void AdWasClicked()
     {
-        score = score + 10;
+        score = score + 20;
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString();
+        adButton.SetActive(false);
+        
+        if (Advertisement.IsReady("rewardedVideo"))
+        {
+            Advertisement.Show("rewardedVideo");
+        }
+        
+    }
+    
+    void ShowAdAfter1min()
+    {
+        adButton.SetActive(true);
     }
 
     public void OpenTerms()

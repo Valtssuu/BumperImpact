@@ -100,19 +100,7 @@ using UnityEngine.Advertisements;
             
         }
 
-        if (PlayerHealth.Lives <= 0)
-        {
-            loseCanvas.SetActive(true);
-            Time.timeScale = 0;
-            if (showAd % 2 == 0)
-            {
-                if (Advertisement.IsReady("video"))
-                {
-                    Advertisement.Show("video");
-                }
-            }
-
-        }
+        
 
 
     }
@@ -131,13 +119,7 @@ using UnityEngine.Advertisements;
 
             if (PlayerHealth.Lives <= 30)
               {
-                if(showAd%2 == 0)
-                {
-                    if (Advertisement.IsReady("video"))
-                    {
-                        Advertisement.Show("video");
-                    }
-                }
+                
 
                 loseCanvas.SetActive(true);
                 Time.timeScale = 0;
@@ -198,13 +180,7 @@ using UnityEngine.Advertisements;
         {
           loseCanvas.SetActive(true);
           Time.timeScale = 0;
-            if (showAd % 2 == 0)
-            {
-                if (Advertisement.IsReady("video"))
-                {
-                    Advertisement.Show("video");
-                }
-            }
+            
             
         }
 
@@ -218,7 +194,15 @@ using UnityEngine.Advertisements;
 		//SceneManager.LoadScene("Game");
         SceneManager.LoadScene(sceneName);
 		Time.timeScale = 1;
-     }
+
+        if (showAd % 2 == 0)
+        {
+            if (Advertisement.IsReady("video"))
+            {
+                Advertisement.Show("video");
+            }
+        }
+    }
 
      public void OnQuitButtonClicked ()
      {
