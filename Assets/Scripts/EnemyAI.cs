@@ -237,6 +237,8 @@ public class EnemyAI : MonoBehaviour
     {
         playerBody.AddForce(pdir * PlayerController.force);
         yield return new WaitForSeconds(0.2f);
+        playerBody.drag = 1000;
+        yield return new WaitForSeconds(0.1f);
         playerBody.drag = 1;
 
     }
