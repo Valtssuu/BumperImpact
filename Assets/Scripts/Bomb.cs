@@ -9,7 +9,7 @@ public class Bomb : MonoBehaviour
 
     void Start()
     {
-        Invoke("SelfDestruct", 3f);
+        Invoke("SelfDestruct", 4f);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -28,7 +28,7 @@ public class Bomb : MonoBehaviour
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
-        Destroy(clone, 1f);
+        Destroy(clone, 1.5f);
     }
 
     

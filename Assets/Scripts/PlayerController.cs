@@ -222,7 +222,7 @@ public class PlayerController : MonoBehaviour
             force = 1400;
         }*/
 
-        force = 1000;
+        force = 800;
 
         //do nothing if no target is found
         if (target == null)

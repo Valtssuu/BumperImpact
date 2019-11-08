@@ -14,6 +14,8 @@ public class BossW1AI : MonoBehaviour
     public GameObject bomb;
     public GameObject player;
 
+    float boss1Speed = 8f;
+
     float eForce;
 
     private float eChaseSpeed = 6.0f;
@@ -30,9 +32,18 @@ public class BossW1AI : MonoBehaviour
 
     private ElectricState state = ElectricState.NORMAL;
 
+    public float timeBetweenState = 5f;
+    private float stateCountdown;
+
+    //public float boss1Dmg;
+
+    public GameObject electricGraphic;
+
     // Start is called before the first frame update
     void Start()
     {
+        stateCountdown = timeBetweenState;
+
         boss1Lives = boss1StartLives;
 
         eBody = this.GetComponent<Rigidbody>();
@@ -51,20 +62,24 @@ public class BossW1AI : MonoBehaviour
         //playerBody.GetComponent<PlayerController>().myBody;
 
         
-        InvokeRepeating("Stop", 1.0f, 4f);
-        InvokeRepeating("Continue", 3.0f, 4f);
+        //InvokeRepeating("Stop", 1.0f, 4f);
+        //InvokeRepeating("Continue", 3.0f, 4f);
         //InvokeRepeating("DestroyBombClones", 3.5f, 4f);
 
-        InvokeRepeating("InstantiateBombs", 2.0f, 1.5f);
+        InvokeRepeating("InstantiateBombs", 2.5f, 2.5f);
 
-        eForce = 100f;
+        eForce = 200f;
 
         lookRadius = 20;
+
+        agent.speed = boss1Speed;
+
+        electricGraphic.SetActive(false);
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (boss1Lives > boss1StartLives)
         {
@@ -78,24 +93,32 @@ public class BossW1AI : MonoBehaviour
         if (distance <= lookRadius)
         {
             //chase player
-            
-            //agent.SetDestination(target.position);
+            lookRadius = Mathf.Infinity;
+            agent.SetDestination(target.position);
 
-            
-
-
-
-            if (distance <= agent.stoppingDistance)
+            /*if (distance <= agent.stoppingDistance)
             {
                 //face the target
                 FaceTarget();
-            }
+            }*/
 
         }
 
         if (boss1Lives <= 0)
         {
             Explode();
+        }
+
+        if (stateCountdown <= 0)
+        {
+            if (state != ElectricState.ELECTRIC)
+            {
+                //Start electric state
+                StartCoroutine(ElectricityActive());
+            }
+        } else
+        {
+            stateCountdown -= Time.deltaTime;
         }
 
     }
@@ -114,7 +137,7 @@ public class BossW1AI : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            lookRadius = Mathf.Infinity;
+            
             // Calculate Angle Between the collision point and the player
             Vector3 dir = collision.contacts[0].point - transform.position;
             // We then get the opposite (-Vector3) and normalize it
@@ -138,6 +161,14 @@ public class BossW1AI : MonoBehaviour
             }
 
             boss1Lives = boss1Lives - 30;
+
+            if (state == ElectricState.ELECTRIC)
+            {
+                PlayerHealth.Lives -= 40;
+            } else
+            {
+                PlayerHealth.Lives -= 5;
+            }
         }
 
     }
@@ -155,7 +186,7 @@ public class BossW1AI : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
 
     //draw the look range (touch range) of the enemy in Red
@@ -180,9 +211,9 @@ public class BossW1AI : MonoBehaviour
     public IEnumerator PlayerDelayBump(Vector3 pdir)
     {
         playerBody.AddForce(pdir * PlayerController.force);
-        yield return new WaitForSeconds(0.2f);
-        playerBody.drag = 1000;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
+        //playerBody.drag = 1000;
+        //yield return new WaitForSeconds(0.1f);
         playerBody.drag = 1;
 
     }
@@ -210,23 +241,45 @@ public class BossW1AI : MonoBehaviour
     {
 
         GameObject clone = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation);
+        GameObject clone2 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation); //Quaternion.Euler(new Vector3(0, 90, 0))
+        //clone = Instantiate(bomb, transform.position + Vector3.left, transform.rotation);
+        GameObject clone3 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation);
         Rigidbody BombRb = clone.GetComponent<Rigidbody>();
-        Physics.IgnoreCollision(clone.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+        Rigidbody BombRb2 = clone2.GetComponent<Rigidbody>();
+        Rigidbody BombRb3 = clone3.GetComponent<Rigidbody>();
+        //Physics.IgnoreCollision(clone.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         BombRb.AddForce(transform.forward * 800);
+        BombRb2.AddForce((transform.position + new Vector3(-90, 0, 0)) * 3);
+        BombRb3.AddForce((transform.position + new Vector3(-270, 0, 0)) * 3);
 
     }
 
     void Stop()
     {
-        eBody.drag = 1000;
+        //eBody.drag = 1000;
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
 
     }
     void Continue()
     {
-        eBody.drag = 1;
-
+        //eBody.drag = 1;
+        gameObject.GetComponent<NavMeshAgent>().enabled = true;
     }
 
+    IEnumerator ElectricityActive()
+    {
+        state = ElectricState.ELECTRIC;
+        gameObject.GetComponent<NavMeshAgent>().enabled = true;
 
+        electricGraphic.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        electricGraphic.SetActive(false);
+
+        state = ElectricState.NORMAL;
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        stateCountdown = timeBetweenState;
+    }
 
 }

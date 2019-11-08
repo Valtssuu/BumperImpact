@@ -174,7 +174,7 @@ using UnityEngine.Advertisements;
         }
         if(collision.gameObject.tag == "bomb")
         {
-            PlayerHealth.Lives = PlayerHealth.Lives - 50;
+            PlayerHealth.Lives = PlayerHealth.Lives - 30;
         }
         if (PlayerHealth.Lives <= 0)
         {

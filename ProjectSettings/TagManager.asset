@@ -36,6 +36,7 @@ TagManager:
   - WaterButton
   - TimeManager
   - EnemyShield
+  - Boss1
   layers:
   - Default
   - TransparentFX
@@ -45,8 +46,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bomb
+  - Boss1
   - 
   - 
   - 
