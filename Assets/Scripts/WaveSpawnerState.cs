@@ -41,6 +41,8 @@ public class WaveSpawnerState : MonoBehaviour
     public Text waveCountdownText;
 
     public GameObject waveCompletedText;
+
+    public int waveNumber;
     
     void Start()
     {
@@ -116,12 +118,16 @@ public class WaveSpawnerState : MonoBehaviour
         if (nextWave + 1 > waves.Length - 1)
         {
             //looping back last wave
+            waveNumber += 1;
             nextWave = waves.Length - 1;
             looping = true;
         }
         else
         {
+            
             nextWave++;
+            waveNumber = nextWave;
+
         }
 
         
@@ -201,8 +207,9 @@ public class WaveSpawnerState : MonoBehaviour
     IEnumerator WaveNumberText()
     {
         waveNumberText.gameObject.SetActive(true);
-        waveNumberText.text = "Wave " + Mathf.Round(nextWave + 1).ToString();
+        waveNumberText.text = "Wave " + (waveNumber + 1).ToString();
         yield return new WaitForSeconds(2f);
         waveNumberText.gameObject.SetActive(false);
+
     }
 }
