@@ -14,7 +14,7 @@ public class BossW1AI : MonoBehaviour
     public GameObject bomb;
     public GameObject player;
 
-    float boss1Speed = 8f;
+    public float boss1Speed = 25f;
 
     float eForce;
 
@@ -39,6 +39,8 @@ public class BossW1AI : MonoBehaviour
 
     public GameObject electricGraphic;
 
+    public GameObject laser;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,20 +55,24 @@ public class BossW1AI : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
 
-        //enemy will find updatePoint at start
-        //updatePoint = GameObject.Find("updatePoint");
+        agent.enabled = false;
+
 
         player = GameObject.FindWithTag("Player");
         playerBody = target.GetComponent<Rigidbody>();
-
-        //playerBody.GetComponent<PlayerController>().myBody;
 
         
         //InvokeRepeating("Stop", 1.0f, 4f);
         //InvokeRepeating("Continue", 3.0f, 4f);
         //InvokeRepeating("DestroyBombClones", 3.5f, 4f);
+        if (state != ElectricState.ELECTRIC)
+        {
+            InvokeRepeating("InstantiateBombs", 2.5f, 2.5f);
 
-        InvokeRepeating("InstantiateBombs", 2.5f, 2.5f);
+
+            
+        }
+        
 
         eForce = 200f;
 
@@ -81,6 +87,14 @@ public class BossW1AI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (state == ElectricState.ELECTRIC)
+        {
+            laser.SetActive(false);
+        } else
+        {
+            laser.SetActive(true);
+        }
+
         if (boss1Lives > boss1StartLives)
         {
             boss1Lives = boss1StartLives;
@@ -133,8 +147,6 @@ public class BossW1AI : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        
-
         if (collision.gameObject.tag == "Player")
         {
             
@@ -160,7 +172,7 @@ public class BossW1AI : MonoBehaviour
 
             }
 
-            boss1Lives = boss1Lives - 30;
+            boss1Lives -= - 30;
 
             if (state == ElectricState.ELECTRIC)
             {
@@ -218,16 +230,6 @@ public class BossW1AI : MonoBehaviour
 
     }
 
-    /*private IEnumerator EneNavControl()
-    {
-        gameObject.GetComponent<NavMeshAgent>().enabled = false;
-
-
-        yield return new WaitForSeconds(1.3f);
-        gameObject.GetComponent<NavMeshAgent>().enabled = true;
-
-
-    }*/
 
     private IEnumerator EneDelayDown()
     {
@@ -254,22 +256,16 @@ public class BossW1AI : MonoBehaviour
 
     }
 
-    void Stop()
-    {
-        //eBody.drag = 1000;
-        gameObject.GetComponent<NavMeshAgent>().enabled = false;
-
-    }
-    void Continue()
-    {
-        //eBody.drag = 1;
-        gameObject.GetComponent<NavMeshAgent>().enabled = true;
-    }
-
     IEnumerator ElectricityActive()
     {
+        //do some blinking
+
+        yield return new WaitForSeconds(2f);
+
+        //stop blinking
+
         state = ElectricState.ELECTRIC;
-        gameObject.GetComponent<NavMeshAgent>().enabled = true;
+        agent.enabled = true;
 
         electricGraphic.SetActive(true);
 
@@ -278,7 +274,7 @@ public class BossW1AI : MonoBehaviour
         electricGraphic.SetActive(false);
 
         state = ElectricState.NORMAL;
-        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        agent.enabled = false;
         stateCountdown = timeBetweenState;
     }
 

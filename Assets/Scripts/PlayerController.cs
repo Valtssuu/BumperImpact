@@ -224,7 +224,7 @@ public class PlayerController : MonoBehaviour
 
         force = 800;
 
-        //do nothing if no target is found
+        //do nothing if no target is found for missile
         if (target == null)
         {
             return;
@@ -374,7 +374,7 @@ public class PlayerController : MonoBehaviour
         {
             if (mineButton.activeInHierarchy == false && rocketButton.activeInHierarchy == false && shieldButton.activeInHierarchy == false)
             {
-                itemNumber = Random.Range(1, 3);
+                itemNumber = Random.Range(0, 3);
 
             //Debug.Log(itemNumber);
             if (itemNumber == 0)
@@ -452,15 +452,13 @@ public class PlayerController : MonoBehaviour
         {
             
            
-                Instantiate(mine, transform.position + new Vector3 ( 0,-0.6f, 0), transform.rotation);
+                Instantiate(mine, transform.position, transform.rotation);
                 mineButtonClicks++;
                 mineButton.SetActive(false);
 
 
             
         }
-
-
 
 
 
@@ -515,8 +513,10 @@ public class PlayerController : MonoBehaviour
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("Enemy2");
+        GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss1");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
+
 
         foreach (GameObject enemy in enemies)
         {
@@ -535,6 +535,16 @@ public class PlayerController : MonoBehaviour
             {
                 shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy2;
+            }
+        }
+
+        foreach (GameObject boss in bosses)
+        {
+            float distanceToBoss = Vector3.Distance(transform.position, boss.transform.position);
+            if (distanceToBoss < shortestDistance)
+            {
+                shortestDistance = distanceToBoss;
+                nearestEnemy = boss;
             }
         }
 

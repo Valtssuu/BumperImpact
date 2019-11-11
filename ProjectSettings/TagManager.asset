@@ -37,6 +37,7 @@ TagManager:
   - TimeManager
   - EnemyShield
   - Boss1
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -48,8 +49,8 @@ TagManager:
   - 
   - Bomb
   - Boss1
-  - 
-  - 
+  - Player
+  - Mine
   - 
   - 
   - 
