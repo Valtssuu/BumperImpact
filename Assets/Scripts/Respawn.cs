@@ -50,7 +50,7 @@ using UnityEngine.Advertisements;
         showAd = PlayerPrefs.GetInt("showAd", 0);
         //winTrigger = false;
 
-        if (sceneName != "Endless level")
+        if (sceneName != "Endless level" && sceneName != "BossW1 Level")
         {
             cameraBridge1.SetActive(false);
             cameraBridge2.SetActive(false);
@@ -66,7 +66,7 @@ using UnityEngine.Advertisements;
         PlayerPrefs.SetInt("showAd", showAd);
        
 
-       if (sceneName != "Endless level")
+       if (sceneName != "Endless level" && sceneName != "BossW1 Level")
         {
             if (GameObject.FindGameObjectsWithTag("Enemy1").Length == 0)
             {
@@ -92,7 +92,13 @@ using UnityEngine.Advertisements;
             
         }
 
-        
+        if (PlayerHealth.Lives <= 0)
+        {
+            loseCanvas.SetActive(true);
+            Time.timeScale = 0;
+            showAd--;
+
+        }
 
 
     }
@@ -197,14 +203,14 @@ using UnityEngine.Advertisements;
         }
         if(collision.gameObject.tag == "bomb")
         {
-            PlayerHealth.Lives = PlayerHealth.Lives - 50;
+            PlayerHealth.Lives = PlayerHealth.Lives - 30;
         }
         if (PlayerHealth.Lives <= 0)
         {
           loseCanvas.SetActive(true);
           Time.timeScale = 0;
-            
-            
+          showAd--;
+
         }
 
     }

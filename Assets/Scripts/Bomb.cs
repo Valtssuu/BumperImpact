@@ -6,7 +6,12 @@ public class Bomb : MonoBehaviour
 {
 
     public GameObject explosion;
-    
+
+    void Start()
+    {
+        Invoke("SelfDestruct", 4f);
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag == "Player")
@@ -17,6 +22,13 @@ public class Bomb : MonoBehaviour
             Destroy(clone, 1f);
 
         }
+    }
+
+    void SelfDestruct()
+    {
+        GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(gameObject);
+        Destroy(clone, 1.5f);
     }
 
     

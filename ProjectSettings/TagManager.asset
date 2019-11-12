@@ -36,7 +36,12 @@ TagManager:
   - WaterButton
   - TimeManager
   - EnemyShield
+<<<<<<< HEAD
   - cameraDefaultPlace
+=======
+  - Boss1
+  - Laser
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
@@ -46,10 +51,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Bomb
+  - Boss1
+  - Player
+  - Mine
   - 
   - 
   - 

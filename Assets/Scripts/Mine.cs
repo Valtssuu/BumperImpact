@@ -6,12 +6,12 @@ public class Mine : MonoBehaviour
 {
 
     //public float delay = 2f;
-    float countdown;
+    //float countdown;
 
     bool hasExploded = false;
 
-    public float exRadius = 30f;
-    public float exPower = 3000f;
+    public float exRadius = 20f;
+    public float exPower = 50f;
 
     //private Vector3 explosionPos;
 
@@ -20,6 +20,12 @@ public class Mine : MonoBehaviour
     //GameObject enemyLivesRef;
 
     public Rigidbody playerBody;
+
+    public GameObject mine;
+
+    public float enemy1Live;
+
+    public float bigEnemyLive;
     
     void Start()
     {
@@ -32,13 +38,14 @@ public class Mine : MonoBehaviour
         //get player's rigidbody
         playerBody = PlayerManager.instance.player.transform.GetComponent<Rigidbody>();
         
+        
 
         hasExploded = false;
         
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         /*countdown -= Time.deltaTime;
         if (countdown <= 0f && !hasExploded)
@@ -50,52 +57,63 @@ public class Mine : MonoBehaviour
         
     }
 
-    void OnTriggerEnter (Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy2"))
         {
             if (!hasExploded)
             {
                 //Call AddExploForce function
                 MineExplosion();
                 hasExploded = true;
-            }
-            
 
-            
+            }
+
         }
     }
 
     void MineExplosion()
     {
         //Instantiate the explosion prefab
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        GameObject exClone = Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(exClone, 1f);
 
-        Collider[] exColliers = Physics.OverlapSphere(transform.position, exRadius);
+        Vector3 explosionPos = mine.transform.position;
+
+        Collider[] exColliers = Physics.OverlapSphere(explosionPos, exRadius);
+        
         
         foreach (Collider hit in exColliers)
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
-            
+            Rigidbody mineRb = gameObject.GetComponent<Rigidbody>();
 
-            if (rb != null && rb != playerBody)
+            //enemy1Live = hit.gameObject.GetComponent<EnemyAI>().enemyLives;
+            //bigEnemyLive = hit.GetComponent<NewEnemyAI>().enemyLives;
+
+            if (rb != null && rb != playerBody && rb != mineRb)
             {
-                rb.AddExplosionForce(exPower, transform.position, exRadius);
+                rb.AddExplosionForce(exPower, explosionPos, exRadius, 1f, ForceMode.Impulse);
 
+                //enemy1Live -= 80;
+                //bigEnemyLive -= 80;
                 
-                //enemyInRange.GetComponent<EnemyAI>().enemyLives -= 80;
                 //StartCoroutine(DelayDestroy(hit));
-                hit.GetComponent<EnemyAI>().enemyLives -= 80;
-                hit.GetComponent<NewEnemyAI>().enemyLives -= 80;
+                //hit.GetComponent<EnemyAI>().enemyLives -= 80;
+                //hit.GetComponent<NewEnemyAI>().enemyLives -= 80;
 
-                rb.drag = 5;
-                
-                
-                
+                rb.drag = 1;
+
+                Destroy(rb.gameObject);
+
             }
+
+            
         }
+
         Destroy(gameObject);
+
 
     }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5585249101548271947}
   - component: {fileID: 1103050771164108210}
   - component: {fileID: 3463773573831104727}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Circle.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 5380716784951243043}
   - component: {fileID: 7323089468766762511}
   - component: {fileID: 2904674841616237159}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 5449814390094193108}
   - component: {fileID: 6577123508628631706}
   - component: {fileID: 2396942077139295523}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mine
   m_TagString: Mine
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7136854991909951091}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.7404397, y: 1.4326532, z: 2.7332997}
@@ -218,11 +218,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2396942077139295523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,9 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b680b8d4c5f964eb8b7d6a08b15f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 2
-  exRadius: 30
-  exPower: 3000
+  exRadius: 20
+  exPower: 50
   explosionEffect: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
     type: 3}
   playerBody: {fileID: 0}
+  mine: {fileID: 7136854991909951091}

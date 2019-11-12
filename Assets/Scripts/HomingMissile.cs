@@ -60,6 +60,17 @@ public class HomingMissile : MonoBehaviour
 
             
         }
+
+        if (other.gameObject.CompareTag("Boss1"))
+        {
+            Instantiate(explosionEffect, transform.position, transform.rotation);
+            if (!hasExploded)
+            {
+                other.gameObject.GetComponent<BossW1AI>().boss1Lives -= 100;
+
+                hasExploded = true;
+            }
+        }
     }
 
     void SelfDestruct ()
