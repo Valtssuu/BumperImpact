@@ -4974,6 +4974,7 @@ MonoBehaviour:
   loseCanvas: {fileID: 1378025870}
   gameManager: {fileID: 1268734089}
   stars: 0
+  changeCamera: 0
   BridgeController: {fileID: 2080907925}
   Bridge2Controller: {fileID: 654797296}
   Bridge3Controller: {fileID: 45153482}
@@ -16280,13 +16281,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8155547554257170324}
-  m_LocalRotation: {x: -0.18197703, y: -0.6936154, z: 0.18350893, w: -0.6723888}
-  m_LocalPosition: {x: -124.299995, y: 72.9, z: -97.9}
+  m_LocalRotation: {x: -0.19992723, y: -0.6884495, z: 0.20202734, w: -0.66727155}
+  m_LocalPosition: {x: -125.77, y: 40.34, z: -89.65}
   m_LocalScale: {x: 1.1511266, y: 13.634321, z: 4.8555555}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 29.953001, y: 91.881004, z: 0.37500003}
+  m_LocalEulerAnglesHint: {x: 33.024002, y: 91.90501, z: 0.38700002}
 --- !u!1 &8155547554257170324
 GameObject:
   m_ObjectHideFlags: 0
@@ -16326,7 +16327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9caa6c37c112b13468a1ebe45c767e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 5006512735895361964}
+  target: {fileID: 0}
   distance: 46
   tilt: 43
   talt: 0

@@ -1850,8 +1850,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128968549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 265, y: 4.4, z: -91.447136}
-  m_LocalScale: {x: 1, y: 78.892, z: 43.284}
+  m_LocalPosition: {x: 271.1, y: 4.4, z: -91.447136}
+  m_LocalScale: {x: 15.343, y: 78.892, z: 43.284}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
@@ -7691,6 +7691,7 @@ MonoBehaviour:
   loseCanvas: {fileID: 1378025870}
   gameManager: {fileID: 1268734089}
   stars: 0
+  changeCamera: 0
   BridgeController: {fileID: 1434386029}
   Bridge2Controller: {fileID: 1683101527}
   Bridge3Controller: {fileID: 447958537}
@@ -8650,7 +8651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &795549584
 Transform:
   m_ObjectHideFlags: 0

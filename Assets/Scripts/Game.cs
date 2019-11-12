@@ -85,6 +85,11 @@ public class Game : MonoBehaviour
         SceneManager.LoadScene("3rd Level");
     }
 
+    public void Level4()
+    {
+        SceneManager.LoadScene("4th Level");
+    }
+
 
     public void LevelSelection()
     {
