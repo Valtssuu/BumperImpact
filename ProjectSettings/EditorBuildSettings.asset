@@ -24,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/2nd Level.unity
     guid: 548624035dfc63b4e97bb87ca5caa498
   - enabled: 1
-    path: Assets/Scenes/Endless level.unity
-    guid: acd51fa9a94f8724c858d23a09898dbd
-  - enabled: 1
     path: Assets/Scenes/3rd Level.unity
     guid: 46a8211d4b3cbe34788cd5c561a16f5c
   - enabled: 1
@@ -38,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/6th Level.unity
     guid: a2034115d52a40642aafcd2b06e95a34
+  - enabled: 1
+    path: Assets/Scenes/Endless level.unity
+    guid: acd51fa9a94f8724c858d23a09898dbd
   m_configObjects: {}
