@@ -22,7 +22,6 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 updatePointPos;
 
-    private float eChaseSpeed = 6.0f;
     Rigidbody eBody;
 
     NavMeshAgent agent;
@@ -60,10 +59,11 @@ public class EnemyAI : MonoBehaviour
         enemyLives = enemyStartLives;
         lookRadius = 15f;
 
+
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (enemyLives > enemyStartLives)
         {
@@ -77,12 +77,8 @@ public class EnemyAI : MonoBehaviour
         }
 
         //check HP to set bump force
-        if (enemyLives > 100)
-        {
-            eForce = 400;
-        }
 
-        if (enemyLives <= 100 && enemyLives > 75)
+        if (enemyLives > 75)
         {
             eForce = 400;
         }
@@ -102,7 +98,7 @@ public class EnemyAI : MonoBehaviour
             eForce = 1000;
         }
 
-
+        
 
         //distance from enemy to player
         float distance = Vector3.Distance(target.position, transform.position);
@@ -170,7 +166,7 @@ public class EnemyAI : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            //lookRadius = Mathf.Infinity;
+            lookRadius = Mathf.Infinity;
             // Calculate Angle Between the collision point and the player
             Vector3 dir = collision.contacts[0].point - transform.position;
             // We then get the opposite (-Vector3) and normalize it
@@ -246,22 +242,14 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator EneNavControl()
     {
-        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        agent.enabled = false;
 
 
         yield return new WaitForSeconds(1.3f);
-        gameObject.GetComponent<NavMeshAgent>().enabled = true;
+
+        agent.enabled = true;
 
 
     }
-
-    private IEnumerator EneDelayDown()
-    {
-        eBody.AddForce(-direction.up * 15);
-        yield return new WaitForSeconds(1f);
-        eBody.drag = 1;
-
-    }
-
 
 }
