@@ -171,6 +171,21 @@ using UnityEngine.Advertisements;
             }
         }
 
+
+
+        if (sceneName == "6th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(153.6f, 2.7999999f, -93.4f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(299.5f, 1.8f, -137f);
+
+            }
+        }
+
         if (col.gameObject.tag == "winTrigger")
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)

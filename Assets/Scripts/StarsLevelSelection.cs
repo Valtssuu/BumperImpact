@@ -11,6 +11,8 @@ public class StarsLevelSelection : MonoBehaviour
     public GameObject star1Level3, star2Level3, star3Level3;
     public GameObject star1Level4, star2Level4, star3Level4;
     public GameObject star1Level5, star2Level5, star3Level5;
+    public GameObject star1Level6, star2Level6, star3Level6;
+
 
 
 
@@ -21,6 +23,8 @@ public class StarsLevelSelection : MonoBehaviour
     int stars3rdLevel;
     int stars4thLevel;
     int stars5thLevel;
+    int stars6thLevel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +35,9 @@ public class StarsLevelSelection : MonoBehaviour
         stars2ndLevel = PlayerPrefs.GetInt("Stars2ndLevel", 0);
         stars3rdLevel = PlayerPrefs.GetInt("Stars3rdLevel", 0);
         stars4thLevel = PlayerPrefs.GetInt("Stars4thLevel", 0);
-        stars4thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
+        stars5thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
+        stars6thLevel = PlayerPrefs.GetInt("Stars6thLevel", 0);
+
 
         //TUTORIAL
 
@@ -159,6 +165,27 @@ public class StarsLevelSelection : MonoBehaviour
         if (stars5thLevel == 1)
         {
             star1Level5.SetActive(true);
+        }
+
+        //LEVEL 6
+
+
+        if (stars6thLevel == 3)
+        {
+            star1Level6.SetActive(true);
+            star2Level6.SetActive(true);
+            star3Level6.SetActive(true);
+        }
+
+        if (stars6thLevel == 2)
+        {
+            star1Level6.SetActive(true);
+            star2Level6.SetActive(true);
+        }
+
+        if (stars6thLevel == 1)
+        {
+            star1Level6.SetActive(true);
         }
     }
 
