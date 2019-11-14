@@ -13,6 +13,9 @@ public class Game : MonoBehaviour
     public int dashDmg;
     public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton;
     public int accept;
+    public bool tutorial, level1, level2, level3, level4, level5, level6;
+    public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button;
+    public GameObject car;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,11 +56,8 @@ public class Game : MonoBehaviour
     {
         
     }
-    public void PlayGame () 
-    {
-        SceneManager.LoadScene ("Tutorial");
-    }
- 
+   
+
     public void QuitGame ()
     {
         Debug.Log ("QUIT!");
@@ -71,37 +71,134 @@ public class Game : MonoBehaviour
     {
         SceneManager.LoadScene("Store");
     }
+
+    public void Tutorial()
+    {
+        //SceneManager.LoadScene ("Tutorial");
+        car.transform.position = tutorialButton.transform.position;
+        tutorial = true;
+        level1 = false;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        level6 = false;
+
+
+    }
     public void Level1()
     {
-        SceneManager.LoadScene("1st Level");
+        //SceneManager.LoadScene("1st Level");
+        car.transform.position = level1Button.transform.position;
+        tutorial = false;
+        level1 = true;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        level6 = false;
     }
     public void Level2()
     {
-        SceneManager.LoadScene("2nd Level");
+        //SceneManager.LoadScene("2nd Level");
+        car.transform.position = level2Button.transform.position;
+        
+        tutorial = false;
+        level1 = false;
+        level2 = true;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        level6 = false;
     }
 
     public void Level3()
     {
-        SceneManager.LoadScene("3rd Level");
+        //SceneManager.LoadScene("3rd Level");
+        car.transform.position = level3Button.transform.position;
+        tutorial = false;
+        level1 = false;
+        level2 = false;
+        level3 = true;
+        level4 = false;
+        level5 = false;
+        level6 = false;
     }
 
     public void Level4()
     {
-        SceneManager.LoadScene("4th Level");
+        //SceneManager.LoadScene("4th Level");
+        car.transform.position = level4Button.transform.position;
+        tutorial = false;
+        level1 = false;
+        level2 = false;
+        level3 = false;
+        level4 = true;
+        level5 = false;
+        level6 = false;
     }
     public void Level5()
     {
-        SceneManager.LoadScene("5th Level");
+        //SceneManager.LoadScene("5th Level");
+        car.transform.position = level5Button.transform.position;
+        tutorial = false;
+        level1 = false;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = true;
+        level6 = false;
     }
     public void Level6()
     {
-        SceneManager.LoadScene("6th Level");
+        //SceneManager.LoadScene("6th Level");
+        car.transform.position = level6Button.transform.position;
+        tutorial = false;
+        level1 = false;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        level6 = true;
     }
 
+    public void PlayGame()
+    {
+        if(tutorial == true)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+
+        if(level1 == true)
+        {
+            SceneManager.LoadScene("1st Level");
+        }
+        if (level2 == true)
+        {
+            SceneManager.LoadScene("2nd Level");
+        }
+        if (level3 == true)
+        {
+            SceneManager.LoadScene("3rd Level");
+        }
+        if (level4 == true)
+        {
+            SceneManager.LoadScene("4th Level");
+        }
+        if (level5 == true)
+        {
+            SceneManager.LoadScene("5th Level");
+        }
+        if (level6 == true)
+        {
+            SceneManager.LoadScene("6th Level");
+        }
+
+    }
 
     public void LevelSelection()
     {
-        SceneManager.LoadScene("LevelSelection");
+        SceneManager.LoadScene("WorldMap");
     }
     public void Endless()
     {
