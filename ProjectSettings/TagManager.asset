@@ -4,40 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Killzone
-  - Special Item
-  - Enemy1
-  - Enemy1A2
-  - Enemy1A3
-  - 50Fov
-  - BackToNormal
-  - environment
-  - hit
-  - Enemy2
-  - shield
-  - PlayerShield
   - Mine
-  - Rocket
-  - RealItems
   - Enemy
-  - game
-  - MoreDash
-  - SpawnPoint1
-  - SpawnPoint2
-  - bomb
-  - Candy
-  - candy
-  - WhereToLook
-  - PlayerChild
-  - PlayerSkin
-  - winTrigger
-  - PoisonArea
-  - WaterLine
-  - WaterButton
-  - TimeManager
-  - EnemyShield
-  - Boss1
+  - PlayerShield
   - Laser
+  - bomb
   layers:
   - Default
   - TransparentFX
@@ -47,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
-  - Bomb
-  - Boss1
-  - Player
-  - Mine
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

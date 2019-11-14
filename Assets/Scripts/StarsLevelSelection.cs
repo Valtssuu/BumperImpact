@@ -9,6 +9,11 @@ public class StarsLevelSelection : MonoBehaviour
     public GameObject star1Level1, star2Level1, star3Level1;
     public GameObject star1Level2, star2Level2, star3Level2;
     public GameObject star1Level3, star2Level3, star3Level3;
+    public GameObject star1Level4, star2Level4, star3Level4;
+    public GameObject star1Level5, star2Level5, star3Level5;
+    public GameObject star1Level6, star2Level6, star3Level6;
+
+
 
 
 
@@ -16,6 +21,11 @@ public class StarsLevelSelection : MonoBehaviour
     int stars1stLevel;
     int stars2ndLevel;
     int stars3rdLevel;
+    int stars4thLevel;
+    int stars5thLevel;
+    int stars6thLevel;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +34,14 @@ public class StarsLevelSelection : MonoBehaviour
         stars1stLevel = PlayerPrefs.GetInt("Stars1stLevel", 0);
         stars2ndLevel = PlayerPrefs.GetInt("Stars2ndLevel", 0);
         stars3rdLevel = PlayerPrefs.GetInt("Stars3rdLevel", 0);
+        stars4thLevel = PlayerPrefs.GetInt("Stars4thLevel", 0);
+        stars5thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
+        stars6thLevel = PlayerPrefs.GetInt("Stars6thLevel", 0);
+
+
         //TUTORIAL
 
-        if(starsTutorial == 3)
+        if (starsTutorial == 3)
         {
             star1Tutorial.SetActive(true);
             star2Tutorial.SetActive(true);
@@ -106,6 +121,71 @@ public class StarsLevelSelection : MonoBehaviour
         if (stars3rdLevel == 1)
         {
             star1Level3.SetActive(true);
+        }
+
+
+        //LEVEL 4
+
+
+        if (stars4thLevel == 3)
+        {
+            star1Level4.SetActive(true);
+            star2Level4.SetActive(true);
+            star3Level4.SetActive(true);
+        }
+
+        if (stars4thLevel == 2)
+        {
+            star1Level4.SetActive(true);
+            star2Level4.SetActive(true);
+        }
+
+        if (stars4thLevel == 1)
+        {
+            star1Level4.SetActive(true);
+        }
+
+
+        //LEVEL 5
+
+
+        if (stars5thLevel == 3)
+        {
+            star1Level5.SetActive(true);
+            star2Level5.SetActive(true);
+            star3Level5.SetActive(true);
+        }
+
+        if (stars5thLevel == 2)
+        {
+            star1Level5.SetActive(true);
+            star2Level5.SetActive(true);
+        }
+
+        if (stars5thLevel == 1)
+        {
+            star1Level5.SetActive(true);
+        }
+
+        //LEVEL 6
+
+
+        if (stars6thLevel == 3)
+        {
+            star1Level6.SetActive(true);
+            star2Level6.SetActive(true);
+            star3Level6.SetActive(true);
+        }
+
+        if (stars6thLevel == 2)
+        {
+            star1Level6.SetActive(true);
+            star2Level6.SetActive(true);
+        }
+
+        if (stars6thLevel == 1)
+        {
+            star1Level6.SetActive(true);
         }
     }
 

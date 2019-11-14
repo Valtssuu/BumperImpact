@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.13
+  bundleVersion: 0.14
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -165,7 +165,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier: {}
   buildNumber: {}
-  AndroidBundleVersionCode: 13
+  AndroidBundleVersionCode: 14
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -258,7 +258,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/n6niva00/Downloads/Bumber_Impact.keystore
+  AndroidKeystoreName: C:/Users/OMISTAJA/Downloads/Bumber_Impact.keystore
   AndroidKeyaliasName: key001
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0

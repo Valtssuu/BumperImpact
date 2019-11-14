@@ -11,7 +11,7 @@ using UnityEngine.Advertisements;
     public GameObject gameManager;
     //bool winTrigger;
     public int stars;
-
+    public bool changeCamera;
     [SerializeField] private Animator BridgeController;
     [SerializeField] private Animator Bridge2Controller;
     [SerializeField] private Animator Bridge3Controller;
@@ -87,14 +87,6 @@ using UnityEngine.Advertisements;
             {
                 Bridge3Controller.SetBool("BridgeUp", true);
                 
-                //7.132948e-08
-                //1.121883e-07
-                //-0.01921162
-
-
-                //0.2106163
-                //0.6024002
-                //0.06418055
             }
 
             
@@ -111,6 +103,7 @@ using UnityEngine.Advertisements;
 
     }
    
+
      void OnTriggerEnter (Collider col)
      {
          if(col.transform.tag == "Killzone")
@@ -118,15 +111,13 @@ using UnityEngine.Advertisements;
             showAd++;
             stars--;
 
-
+            changeCamera = true;
             player.GetComponent<PlayerController>().camera.fieldOfView = 18;
             MainCamera.GetComponent<CameraController>().distance = 46;
             player.GetComponent<PlayerController>().myBody.velocity = Vector3.zero;
 
             if (PlayerHealth.Lives <= 30)
               {
-                
-
                 loseCanvas.SetActive(true);
                 Time.timeScale = 0;
                 showAd--;
@@ -140,16 +131,62 @@ using UnityEngine.Advertisements;
               }
               
          }
-         if(col.gameObject.tag == "SpawnPoint1")
-         {
-            spawnPoint.transform.position = new Vector3(82.7f, 1.7f, -92.5f);
-         }
-         if(col.gameObject.tag == "SpawnPoint2")
+         
+        if(sceneName == "1st Level" || sceneName == "2nd Level" || sceneName == "3rd Level")
         {
-            spawnPoint.transform.position = new Vector3(181, 1.8f, -94.3f);
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(82.7f, 1.7f, -92.5f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(181, 1.8f, -94.3f);
 
+            }
         }
-         if(col.gameObject.tag == "winTrigger")
+
+        if(sceneName == "4th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(130f, 2.7999999f, -93.4f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(270f, 1.8f, -94.3f);
+
+            }
+        }
+
+        if (sceneName == "5th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(90f, 2.7999999f, -93.4f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(153f, 1.8f, -94.3f);
+
+            }
+        }
+
+
+
+        if (sceneName == "6th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(153.6f, 2.7999999f, -93.4f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(299.5f, 1.8f, -137f);
+
+            }
+        }
+
+        if (col.gameObject.tag == "winTrigger")
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
             {
@@ -160,7 +197,8 @@ using UnityEngine.Advertisements;
         }
     }
 
-     void OnCollisionEnter(Collision collision)
+   
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "shield" || collision.gameObject.tag == "Enemy2")
         {

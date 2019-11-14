@@ -10,7 +10,7 @@ public class PlatformAttach : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == player)
+        if(other.gameObject == player || other.gameObject.tag == "Enemy1")
         {
             
             player.transform.SetParent(this.transform, true);
@@ -22,10 +22,12 @@ public class PlatformAttach : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player || other.gameObject.tag == "Enemy1")
         {
             player.transform.parent = null;
             //PlatformController.SetBool("playPlatform", false);
         }
+
+
     }
 }
