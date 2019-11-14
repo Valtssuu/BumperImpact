@@ -9,6 +9,28 @@ TagManager:
   - PlayerShield
   - Laser
   - bomb
+  - Killzone
+  - environment
+  - Boss1
+  - WhereToLook
+  - TimeManager
+  - WaterButton
+  - RealItems
+  - WaterLine
+  - PlayerChild
+  - PlayerSkin
+  - Enemy2
+  - EnemyShield
+  - BackToNormal
+  - winTrigger
+  - MoreDash
+  - 50Fov
+  - SpawnPoint1
+  - SpawnPoint2
+  - Enemy1A2
+  - Enemy1A3
+  - Enemy1
+  - PoisonArea
   layers:
   - Default
   - TransparentFX
@@ -18,9 +40,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Mine
+  - Boss1
+  - Player
   - 
   - 
   - 

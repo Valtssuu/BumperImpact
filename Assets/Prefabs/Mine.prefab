@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5585249101548271947}
   - component: {fileID: 1103050771164108210}
   - component: {fileID: 3463773573831104727}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Circle.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 5380716784951243043}
   - component: {fileID: 7323089468766762511}
   - component: {fileID: 2904674841616237159}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 5449814390094193108}
   - component: {fileID: 6577123508628631706}
   - component: {fileID: 2396942077139295523}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Mine
   m_TagString: Mine
   m_Icon: {fileID: 0}
@@ -241,3 +241,5 @@ MonoBehaviour:
     type: 3}
   playerBody: {fileID: 0}
   mine: {fileID: 7136854991909951091}
+  enemy1Live: 0
+  bigEnemyLive: 0

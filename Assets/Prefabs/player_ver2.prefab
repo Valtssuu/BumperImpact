@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3390595375393933014}
   - component: {fileID: 7238942493477134311}
   - component: {fileID: 4385773917088443411}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e2f491f28832ceb45a4f9b6d7ff726c8, type: 2}
-  - {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4273827067814922665}
   - component: {fileID: 8822798999391794688}
   - component: {fileID: 1454677279452554219}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,9 +136,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f10bed88e8c5584cb5074d3ece660f1, type: 2}
-  - {fileID: 2100000, guid: 5748606620cb41547ba9e2f635e3d59e, type: 2}
-  - {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 3437331506282691842}
   - component: {fileID: 3437331506282691843}
   - component: {fileID: 3437331506282691840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerShield
   m_TagString: PlayerShield
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 2056025229351946682}
   - component: {fileID: 1590846073107604841}
   - component: {fileID: 4193759665704669875}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,9 +308,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5748606620cb41547ba9e2f635e3d59e, type: 2}
-  - {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
-  - {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 6673211304993046911}
   - component: {fileID: 3651333084698627229}
   - component: {fileID: 1756902216953512687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 3437331506174664434}
   - component: {fileID: 3437331506174664437}
   - component: {fileID: 3437331506174664436}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: player_ver2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -567,6 +567,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
   loseCanvas: {fileID: 0}
+  gameManager: {fileID: 0}
+  stars: 0
+  changeCamera: 0
+  BridgeController: {fileID: 0}
+  Bridge2Controller: {fileID: 0}
+  Bridge3Controller: {fileID: 0}
   winCanvas: {fileID: 0}
   Bridge: {fileID: 0}
   Bridge2: {fileID: 0}
@@ -575,6 +581,9 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   cameraBridge1: {fileID: 0}
   cameraBridge2: {fileID: 0}
+  hintCanvas: {fileID: 0}
+  pausePanel: {fileID: 0}
+  sceneName: 
 --- !u!114 &3437331506174664436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,11 +611,31 @@ MonoBehaviour:
   Dust: {fileID: 8601577390132812799}
   dash: {fileID: 8334427861879046514}
   dashbar: {fileID: 0}
+  pumpkinSkin: {fileID: 0}
+  timeManager: {fileID: 0}
+  TM: {fileID: 0}
   myBody: {fileID: 3437331506174664435}
   direction: {fileID: 7694802409898703677}
   dragAmount: 5
   image: {fileID: 21300000, guid: cf7da1a28462cfd429947f624d8a3cbd, type: 3}
   camera: {fileID: 0}
+  score: 0
+  radius: 5
+  ShockwaveForce: 700
+  boostActivated: 0
+  mine: {fileID: 0}
+  playerMeshChildren: []
+  rocket: {fileID: 0}
+  skin: 0
+  scoreText: {fileID: 0}
+  shieldButton: {fileID: 0}
+  mineButton: {fileID: 0}
+  PlayerChildren: []
+  rocketButton: {fileID: 0}
+  sceneName: 
+  range: 30
+  target: {fileID: 0}
+  poisonTime: 0
 --- !u!1 &8711929700937511270
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +647,7 @@ GameObject:
   - component: {fileID: 8760088975418460390}
   - component: {fileID: 3854230391674595075}
   - component: {fileID: 4906562202409875354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +694,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e2f491f28832ceb45a4f9b6d7ff726c8, type: 2}
-  - {fileID: 2100000, guid: 97506d58deb8086408cdec32e3bf3055, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -702,6 +731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407826065401363316, guid: dafe293bc39f2c14bbc148d17d784e97,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6407826065401363317, guid: dafe293bc39f2c14bbc148d17d784e97,
         type: 3}
@@ -884,6 +918,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6636633702775307142, guid: 45e25f79b6464ff4bbc210c4a56552af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4223220884583475535, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -938,6 +977,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223220884720548116, guid: 45e25f79b6464ff4bbc210c4a56552af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223220883693664779, guid: 45e25f79b6464ff4bbc210c4a56552af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45e25f79b6464ff4bbc210c4a56552af, type: 3}
