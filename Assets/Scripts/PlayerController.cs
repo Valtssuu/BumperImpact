@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 
 public class PlayerController : MonoBehaviour
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private int rocketButtonClicks;
     public GameObject rocketButton;
     private int itemNumber;
+    public string sceneName;
 
     public float range = 30;
     private string enemyTag = "Enemy";
@@ -48,6 +51,8 @@ public class PlayerController : MonoBehaviour
     public float poisonTime;
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         TM = GameObject.FindWithTag("TimeManager");
         timeManager = TM.GetComponent<TimeManager>();
         myBody = this.GetComponent<Rigidbody>();
