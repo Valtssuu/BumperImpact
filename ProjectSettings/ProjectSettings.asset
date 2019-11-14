@@ -258,7 +258,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/OMISTAJA/Downloads/Bumber_Impact.keystore
+  AndroidKeystoreName: C:/Users/n6niva00/Downloads/Bumber_Impact (1).keystore
   AndroidKeyaliasName: key001
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
