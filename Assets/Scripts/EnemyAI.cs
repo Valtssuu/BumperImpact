@@ -136,7 +136,7 @@ public class EnemyAI : MonoBehaviour
 
         //dirDown = Vector3(0, -1, 0);
 
-        /*RaycastHit hit;
+        RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down, out hit, 10f))
         {
             Debug.DrawLine(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down * 10f, Color.cyan);
@@ -149,7 +149,7 @@ public class EnemyAI : MonoBehaviour
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = true;
             }
-        }*/
+        }
 
     }
 
@@ -170,7 +170,7 @@ public class EnemyAI : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            lookRadius = Mathf.Infinity;
+            //lookRadius = Mathf.Infinity;
             // Calculate Angle Between the collision point and the player
             Vector3 dir = collision.contacts[0].point - transform.position;
             // We then get the opposite (-Vector3) and normalize it
