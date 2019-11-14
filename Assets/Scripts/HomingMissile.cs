@@ -66,7 +66,7 @@ public class HomingMissile : MonoBehaviour
             Instantiate(explosionEffect, transform.position, transform.rotation);
             if (!hasExploded)
             {
-                other.gameObject.GetComponent<BossW1AI>().boss1Lives -= 100;
+                other.gameObject.GetComponent<BossW1AI>().boss1Lives -= 50;
 
                 hasExploded = true;
             }

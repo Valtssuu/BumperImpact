@@ -32,7 +32,7 @@ public class ExplodingBarrel : MonoBehaviour
     {
         Instantiate(explosionEffect, transform.position, transform.rotation);
         GameObject clone = Instantiate(poisonGround, transform.position, transform.rotation);
-        Destroy(clone, 10f);
+        Destroy(clone, 14f);
         Destroy(gameObject);
     }
 }

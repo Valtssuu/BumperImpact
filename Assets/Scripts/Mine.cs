@@ -70,6 +70,17 @@ public class Mine : MonoBehaviour
             }
 
         }
+
+        if (collision.gameObject.CompareTag("Boss1"))
+        {
+            if (!hasExploded)
+            {
+                GameObject exClone = Instantiate(explosionEffect, transform.position, transform.rotation);
+                Destroy(exClone, 1f);
+                collision.gameObject.GetComponent<BossW1AI>().boss1Lives -= 70f;
+                Destroy(gameObject);
+            }
+        }
     }
 
     void MineExplosion()

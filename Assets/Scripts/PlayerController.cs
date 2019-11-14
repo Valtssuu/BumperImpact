@@ -276,7 +276,7 @@ public class PlayerController : MonoBehaviour
 
         dashmeter = Mathf.Clamp(dashmeter, 0, 10);
 
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2") || other.gameObject.CompareTag("Boss1"))
         {
             if(boostActivated == true)
             {

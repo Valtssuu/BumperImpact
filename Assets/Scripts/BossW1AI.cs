@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 public class BossW1AI : MonoBehaviour
 {
-    public int boss1Lives;
+    public float boss1Lives;
 
-    public int boss1StartLives = 1000;
+    public float boss1StartLives = 1000f;
+    public float boss1PercentLive = 100f;
+
     public float lookRadius;
     public GameObject explosion;
     public Transform direction = null;
@@ -18,7 +20,7 @@ public class BossW1AI : MonoBehaviour
 
     float eForce;
 
-    private float eChaseSpeed = 6.0f;
+    //private float eChaseSpeed = 6.0f;
 
     Rigidbody eBody;
 
@@ -40,6 +42,10 @@ public class BossW1AI : MonoBehaviour
     public GameObject electricGraphic;
 
     public GameObject laser;
+
+    public float angle = 0f;
+
+    public bool bossMad = false;
 
     // Start is called before the first frame update
     void Start()
@@ -81,23 +87,36 @@ public class BossW1AI : MonoBehaviour
         agent.speed = boss1Speed;
 
         electricGraphic.SetActive(false);
-
+        laser.SetActive(false);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        boss1PercentLive = (100 / boss1StartLives) * boss1Lives;
+
         if (state == ElectricState.ELECTRIC)
         {
             laser.SetActive(false);
         } else
         {
-            laser.SetActive(true);
+            if (boss1PercentLive <= 50)
+            {
+                laser.SetActive(true);
+            }
+            
         }
 
         if (boss1Lives > boss1StartLives)
         {
             boss1Lives = boss1StartLives;
+        }
+
+        if (boss1PercentLive <= 50f && bossMad == false)
+        {
+            agent.speed = boss1Speed + 15;
+            timeBetweenState -= 4f;
+            bossMad = true;
         }
 
         FaceTarget();
@@ -172,14 +191,18 @@ public class BossW1AI : MonoBehaviour
 
             }
 
-            boss1Lives -= - 30;
+            boss1Lives -= - 30f;
 
             if (state == ElectricState.ELECTRIC)
             {
-                PlayerHealth.Lives -= 40;
-            } else
-            {
-                PlayerHealth.Lives -= 5;
+                if (boss1PercentLive <= 50)
+                {
+                    PlayerHealth.Lives -= 40;
+                } else
+                {
+                    PlayerHealth.Lives -= 30;
+                }
+                
             }
         }
 
@@ -243,16 +266,25 @@ public class BossW1AI : MonoBehaviour
     {
 
         GameObject clone = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation);
-        GameObject clone2 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation); //Quaternion.Euler(new Vector3(0, 90, 0))
-        //clone = Instantiate(bomb, transform.position + Vector3.left, transform.rotation);
-        GameObject clone3 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation);
         Rigidbody BombRb = clone.GetComponent<Rigidbody>();
-        Rigidbody BombRb2 = clone2.GetComponent<Rigidbody>();
-        Rigidbody BombRb3 = clone3.GetComponent<Rigidbody>();
-        //Physics.IgnoreCollision(clone.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         BombRb.AddForce(transform.forward * 800);
-        BombRb2.AddForce((transform.position + new Vector3(-90, 0, 0)) * 3);
-        BombRb3.AddForce((transform.position + new Vector3(-270, 0, 0)) * 3);
+
+        if (boss1PercentLive <= 50f)
+        {
+            GameObject clone2 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation); //Quaternion.Euler(new Vector3(0, 90, 0))
+            //clone = Instantiate(bomb, transform.position + Vector3.left, transform.rotation);
+            GameObject clone3 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation);
+        
+            Rigidbody BombRb2 = clone2.GetComponent<Rigidbody>();
+            Rigidbody BombRb3 = clone3.GetComponent<Rigidbody>();
+            //clone2.transform.rotation = Quaternion.AngleAxis(-45, Vector3.right);
+            //Physics.IgnoreCollision(clone.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+        
+            BombRb2.AddForce((transform.right + new Vector3(angle, 1, angle)) * 3);
+            BombRb3.AddForce((transform.position + new Vector3(-270, 0, 0)) * 3);
+        }
+
+        
 
     }
 
