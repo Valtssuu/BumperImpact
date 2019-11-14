@@ -280,7 +280,7 @@ public class BossW1AI : MonoBehaviour
             //clone2.transform.rotation = Quaternion.AngleAxis(-45, Vector3.right);
             //Physics.IgnoreCollision(clone.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         
-            BombRb2.AddForce((transform.right + new Vector3(angle, 1, angle)) * 3);
+            BombRb2.AddForce((transform.right + new Vector3(0, angle, angle)) * 3);
             BombRb3.AddForce((transform.position + new Vector3(-270, 0, 0)) * 3);
         }
 
