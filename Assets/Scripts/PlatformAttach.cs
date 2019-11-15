@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlatformAttach : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject player;
-    [SerializeField] private Animator PlatformController;
-    
+    GameObject player;
+
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == player || other.gameObject.tag == "Enemy1")
@@ -15,7 +19,6 @@ public class PlatformAttach : MonoBehaviour
             
             player.transform.SetParent(this.transform, true);
 
-            //PlatformController.SetBool("playPlatform", true);
 
         }
     }
@@ -25,7 +28,6 @@ public class PlatformAttach : MonoBehaviour
         if (other.gameObject == player || other.gameObject.tag == "Enemy1")
         {
             player.transform.parent = null;
-            //PlatformController.SetBool("playPlatform", false);
         }
 
 

@@ -185,6 +185,18 @@ using UnityEngine.Advertisements;
 
             }
         }
+        if (sceneName == "7th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(113.7f, 2.7999999f, -130f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(275.2f, 1.8f, -130f);
+
+            }
+        }
 
         if (col.gameObject.tag == "winTrigger")
         {
