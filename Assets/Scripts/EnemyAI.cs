@@ -229,7 +229,7 @@ public class EnemyAI : MonoBehaviour
         eBody.drag = 1;
 
     }
-
+    
     public IEnumerator PlayerDelayBump(Vector3 pdir)
     {
         playerBody.AddForce(pdir * PlayerController.force);

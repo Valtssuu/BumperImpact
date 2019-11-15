@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     public float poisonTime;
     void Start()
     {
+        InvokeRepeating("addDash", 1.0f, 1f);
+
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         TM = GameObject.FindWithTag("TimeManager");
@@ -202,30 +204,7 @@ public class PlayerController : MonoBehaviour
         //adding force to the player based on the position of the joystick
         myBody.AddForce(moveVec);
 
-        //check HP to set bump force
-        /*if (PlayerHealth.Lives > 100)
-        {
-            force = 800;
-        }
-        if (PlayerHealth.Lives <= 100 && PlayerHealth.Lives > 75)
-        {
-            force = 800;
-        }
-
-        if (PlayerHealth.Lives <= 75 && PlayerHealth.Lives > 50)
-        {
-            force = 1000;
-        }
-
-        if (PlayerHealth.Lives <= 50 && PlayerHealth.Lives > 25)
-        {
-            force = 1200;
-        }
-
-        if (PlayerHealth.Lives <= 25 && PlayerHealth.Lives > 0)
-        {
-            force = 1400;
-        }*/
+        
 
         force = 800;
 
@@ -273,7 +252,10 @@ public class PlayerController : MonoBehaviour
 
 
 
-
+    void addDash()
+    {
+        dashmeter += 1;
+    }
     
     //add value to dashmeter upon collision
     private void OnCollisionEnter(Collision other)
