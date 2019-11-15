@@ -7,7 +7,7 @@ public class BossW1AI : MonoBehaviour
 {
     public float boss1Lives;
 
-    public float boss1StartLives = 1000f;
+    public float boss1StartLives = 500f;
     public float boss1PercentLive = 100f;
 
     public float lookRadius;

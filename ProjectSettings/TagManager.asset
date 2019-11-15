@@ -31,6 +31,8 @@ TagManager:
   - Enemy1A3
   - Enemy1
   - PoisonArea
+  - LaserEnd
+  - LaserBeam
   layers:
   - Default
   - TransparentFX
