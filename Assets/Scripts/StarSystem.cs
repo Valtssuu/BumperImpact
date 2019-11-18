@@ -17,6 +17,8 @@ public class StarSystem : MonoBehaviour
     int stars4thLevel;
     int stars5thLevel;
     int stars6thLevel;
+    int stars7thLevel;
+
     int score;
     public GameObject star1;
     public GameObject star2;
@@ -33,6 +35,7 @@ public class StarSystem : MonoBehaviour
         stars4thLevel = PlayerPrefs.GetInt("Stars4thLevel", 0);
         stars5thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
         stars6thLevel = PlayerPrefs.GetInt("Stars6thLevel", 0);
+        stars7thLevel = PlayerPrefs.GetInt("Stars7thLevel", 0);
 
 
         score = PlayerPrefs.GetInt("score", 0);
@@ -451,6 +454,62 @@ public class StarSystem : MonoBehaviour
                     if (stars6thLevel < 1)
                     {
                         PlayerPrefs.SetInt("Stars6thLevel", 1);
+                    }
+
+                }
+
+
+
+
+            }
+            //LEVEL 7
+            if (sceneName == "7th Level")
+            {
+                if (stars == 3)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+                    star3.SetActive(true);
+
+                    score += 15;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars7thLevel < 3)
+                    {
+                        PlayerPrefs.SetInt("Stars7thLevel", 3);
+                    }
+
+
+                }
+
+                if (stars == 2)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+
+                    score += 10;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars7thLevel < 2)
+                    {
+                        PlayerPrefs.SetInt("Stars7thLevel", 2);
+                    }
+
+                }
+
+                if (stars == 1)
+                {
+                    star1.SetActive(true);
+
+                    score += 5;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars7thLevel < 1)
+                    {
+                        PlayerPrefs.SetInt("Stars7thLevel", 1);
                     }
 
                 }

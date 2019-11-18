@@ -13,8 +13,8 @@ public class Game : MonoBehaviour
     public int dashDmg;
     public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton;
     public int accept;
-    public bool tutorial, level1, level2, level3, level4, level5, level6;
-    public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button;
+    public bool tutorial, level1, level2, level3, level4, level5, level6, level7;
+    public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button, level7Button;
     public GameObject car;
 
     public int timesBuyDash;
@@ -104,6 +104,8 @@ public class Game : MonoBehaviour
         level4 = false;
         level5 = false;
         level6 = false;
+        level7 = false;
+
 
 
     }
@@ -118,6 +120,8 @@ public class Game : MonoBehaviour
         level4 = false;
         level5 = false;
         level6 = false;
+        level7 = false;
+
     }
     public void Level2()
     {
@@ -131,6 +135,8 @@ public class Game : MonoBehaviour
         level4 = false;
         level5 = false;
         level6 = false;
+        level7 = false;
+
     }
 
     public void Level3()
@@ -144,6 +150,8 @@ public class Game : MonoBehaviour
         level4 = false;
         level5 = false;
         level6 = false;
+        level7 = false;
+
     }
 
     public void Level4()
@@ -157,6 +165,8 @@ public class Game : MonoBehaviour
         level4 = true;
         level5 = false;
         level6 = false;
+        level7 = false;
+
     }
     public void Level5()
     {
@@ -169,6 +179,8 @@ public class Game : MonoBehaviour
         level4 = false;
         level5 = true;
         level6 = false;
+        level7 = false;
+
     }
     public void Level6()
     {
@@ -181,6 +193,22 @@ public class Game : MonoBehaviour
         level4 = false;
         level5 = false;
         level6 = true;
+        level7 = false;
+
+    }
+
+    public void Level7()
+    {
+        //SceneManager.LoadScene("6th Level");
+        car.transform.position = level7Button.transform.position;
+        tutorial = false;
+        level1 = false;
+        level2 = false;
+        level3 = false;
+        level4 = false;
+        level5 = false;
+        level6 = false;
+        level7 = true;
     }
 
     public void PlayGame()
@@ -213,6 +241,11 @@ public class Game : MonoBehaviour
         if (level6 == true)
         {
             SceneManager.LoadScene("6th Level");
+        }
+
+        if (level7 == true)
+        {
+            SceneManager.LoadScene("7th Level");
         }
 
     }
