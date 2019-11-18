@@ -9,17 +9,26 @@ public class TeamLogo : MonoBehaviour
     private bool mFaded = false;
 
     public float Duration = 0.4f;
+    int logoPlayedInt;
 
 
     void Start()
     {
-        logoPanel.SetActive(true);
-        var canvGroup = GetComponent<CanvasGroup>();
 
-        //logoPanel.SetActive(true);
-        StartCoroutine(teamLogo(canvGroup,canvGroup.alpha, mFaded ? 1 : 0));
+        logoPlayedInt = PlayerPrefs.GetInt("logoPlayed", 0);
 
-        mFaded = !mFaded;
+        if(logoPlayedInt == 0)
+        {
+            logoPanel.SetActive(true);
+            var canvGroup = GetComponent<CanvasGroup>();
+
+            StartCoroutine(teamLogo(canvGroup, canvGroup.alpha, mFaded ? 1 : 0));
+
+            mFaded = !mFaded;
+            PlayerPrefs.SetInt("logoPlayed", 1);
+        }
+        
+        
 
     }
 
@@ -36,9 +45,11 @@ public class TeamLogo : MonoBehaviour
 
             yield return null;
         }
-        yield return new WaitForSeconds(1.8f);
         logoPanel.SetActive(false);
-        //yield return new WaitForSeconds(3f);
-        //logoPanel.SetActive(false);
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("logoPlayed", 0);
     }
 }
