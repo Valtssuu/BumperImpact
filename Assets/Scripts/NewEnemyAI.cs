@@ -209,6 +209,11 @@ public class NewEnemyAI : MonoBehaviour
             else
             {
                 enemyLives -= 30;
+                if (player.GetComponent<PlayerController>().boostActivated == true)
+                {
+                    enemyLives = enemyLives - PlayerPrefs.GetInt("dashDmg", 0);
+
+                }
             }
 
             if (enemyLives <= 0)

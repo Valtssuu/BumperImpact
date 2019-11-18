@@ -781,8 +781,8 @@ GameObject:
   m_Name: Cube.952
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &35162764
 Transform:
@@ -1044,8 +1044,8 @@ GameObject:
   m_Name: Cube.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &40930077
 Transform:
@@ -1477,6 +1477,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1
+      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -1497,11 +1502,6 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 1705294947}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!1001 &70398721
@@ -2605,8 +2605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1227c42a05c13114e911defc912e3e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8296172668094639039}
-  PlatformController: {fileID: 184725819}
 --- !u!65 &184725821
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3337,8 +3335,8 @@ GameObject:
   m_Name: Cube.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &224626300
 Transform:
@@ -3525,8 +3523,8 @@ GameObject:
   m_Name: Cube.1519
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &236530236
 Transform:
@@ -4339,8 +4337,8 @@ GameObject:
   m_Name: Cube.1520
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &352603783
 Transform:
@@ -4613,8 +4611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1227c42a05c13114e911defc912e3e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8296172668094639039}
-  PlatformController: {fileID: 383103866}
 --- !u!65 &383103868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4830,8 +4826,8 @@ GameObject:
   m_Name: Cube.1534
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &418824950
 Transform:
@@ -5241,8 +5237,8 @@ GameObject:
   m_Name: Cube.1521
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &430567146
 Transform:
@@ -5656,8 +5652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1227c42a05c13114e911defc912e3e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8296172668094639039}
-  PlatformController: {fileID: 462936650}
 --- !u!65 &462936653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6249,8 +6243,8 @@ GameObject:
   m_Name: Cube.1535
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &580983045
 Transform:
@@ -7727,8 +7721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1227c42a05c13114e911defc912e3e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8296172668094639039}
-  PlatformController: {fileID: 698495385}
 --- !u!65 &698495387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8066,6 +8058,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1
+      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -8086,11 +8083,6 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 112070593}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!1 &716349015
@@ -9855,8 +9847,8 @@ GameObject:
   m_Name: Cube.951
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &892613490
 Transform:
@@ -10050,8 +10042,8 @@ GameObject:
   m_Name: Cube.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &920698558
 Transform:
@@ -10621,8 +10613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1227c42a05c13114e911defc912e3e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8296172668094639039}
-  PlatformController: {fileID: 948799591}
 --- !u!65 &948799596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11236,8 +11226,8 @@ GameObject:
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1021656842
 Transform:
@@ -13226,8 +13216,8 @@ GameObject:
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1218416611
 Transform:
@@ -13744,8 +13734,8 @@ GameObject:
   m_Name: Cube.1532
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1260017586
 Transform:
@@ -16693,8 +16683,8 @@ GameObject:
   m_Name: Cube.1522
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1549737850
 Transform:
@@ -16846,6 +16836,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy1
+      objectReference: {fileID: 0}
     - target: {fileID: 8020325891802662929, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
         type: 3}
       propertyPath: points.Array.size
@@ -16866,11 +16861,6 @@ PrefabInstance:
       propertyPath: points.Array.data[2]
       value: 
       objectReference: {fileID: 1172340927}
-    - target: {fileID: 7601176023238387771, guid: 7e606e99f021ebb4bb2ba340b06f39b7,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e606e99f021ebb4bb2ba340b06f39b7, type: 3}
 --- !u!4 &1563776005 stripped
@@ -18255,8 +18245,8 @@ GameObject:
   m_Name: Cube.060
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1745048526
 Transform:
@@ -21304,8 +21294,8 @@ GameObject:
   m_Name: Cube.1531
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2075267486
 Transform:

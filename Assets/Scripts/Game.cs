@@ -8,7 +8,7 @@ using UnityEngine.Advertisements;
 public class Game : MonoBehaviour
 {
     public int score;
-    public Button buyButton, buyDashButton;
+    public Button buyButton, buyDashButton, buySmallDashButton;
     public Text scoreText;
     public int dashDmg;
     public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton;
@@ -16,13 +16,18 @@ public class Game : MonoBehaviour
     public bool tutorial, level1, level2, level3, level4, level5, level6;
     public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button;
     public GameObject car;
+
+    public int timesBuyDash;
+    public int boughtAll;
+    private bool smallDashDone = false;
     // Start is called before the first frame update
     void Start()
     {
         accept = PlayerPrefs.GetInt("AcceptTA", 0);
         score = PlayerPrefs.GetInt("score", 0);
         dashDmg = PlayerPrefs.GetInt("dashDmg", 0);
-
+        timesBuyDash = PlayerPrefs.GetInt("timesBuyDash", 0);
+        boughtAll = PlayerPrefs.GetInt("boughtAll", 0);
 
 
         InvokeRepeating("ShowAdAfter1min", 0, 20);
@@ -41,7 +46,7 @@ public class Game : MonoBehaviour
             
         }
 
-        if (PlayerPrefs.GetInt("hasDash") == 1)
+        if (PlayerPrefs.GetInt("hasDash") == 1 || PlayerPrefs.GetInt("boughtAll") == 0)
         {
 
             activeDashBuy.SetActive(false);
@@ -49,12 +54,28 @@ public class Game : MonoBehaviour
             buyDashButton.interactable = false;
         }
 
+        if (PlayerPrefs.GetInt("boughtAll") == 1)
+        {
+            buySmallDashButton.interactable = false;
+            activeDashBuy.SetActive(true);
+            disabledDashBuy.SetActive(false);
+            buyDashButton.interactable = true;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (timesBuyDash == 2 && smallDashDone == false)
+        {
+            buySmallDashButton.interactable = false;
+            activeDashBuy.SetActive(true);
+            disabledDashBuy.SetActive(false);
+            buyDashButton.interactable = true;
+            PlayerPrefs.SetInt("boughtAll", 1);
+            smallDashDone = true;
+        }
     }
    
 
@@ -224,12 +245,12 @@ public class Game : MonoBehaviour
 
     public void UpgradeDash()
     {
-        if(score >= 500)
+        if(score >= 5)
         {
-            score = score - 500;
+            score = score - 5;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
-            dashDmg += 70;
+            dashDmg += 50;
             PlayerPrefs.SetInt("dashDmg", dashDmg);
             PlayerPrefs.SetInt("hasDash", 1);
             activeDashBuy.SetActive(false);
@@ -239,13 +260,39 @@ public class Game : MonoBehaviour
         }
 
     }
+     public void UpgradeSmallDash()
+    {
+        if (score >= 2)
+        {
+            
+            if (timesBuyDash <= 1)
+            {
+                timesBuyDash++;
+                PlayerPrefs.SetInt("timesBuyDash", timesBuyDash);
+                score = score - 2;
+                PlayerPrefs.SetInt("score", score);
+                scoreText.text = score.ToString();
+                dashDmg += 20;
+                PlayerPrefs.SetInt("dashDmg", dashDmg);
+            }
+
+            
+            
+            
+        }
+    }
 
     public void Reset()
     {
         PlayerPrefs.SetInt("skin", 0);
         PlayerPrefs.SetInt("dashDmg", 0);
         PlayerPrefs.SetInt("hasDash", 0);
-
+        PlayerPrefs.SetInt("timesBuyDash", 0);
+        PlayerPrefs.SetInt("boughtAll", 0);
+        activeDashBuy.SetActive(false);
+        disabledDashBuy.SetActive(true);
+        buyDashButton.interactable = false;
+        buySmallDashButton.interactable = true;
     }
 
     public void AdWasClicked()
