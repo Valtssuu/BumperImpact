@@ -17,6 +17,10 @@ public class TeamLogo : MonoBehaviour
 
         logoPlayedInt = PlayerPrefs.GetInt("logoPlayed", 0);
 
+        if(logoPlayedInt == 1)
+        {
+            logoPanel.SetActive(false);
+        }
         if(logoPlayedInt == 0)
         {
             logoPanel.SetActive(true);
