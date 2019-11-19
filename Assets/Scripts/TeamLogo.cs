@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeamLogo : MonoBehaviour
 {
@@ -15,23 +16,12 @@ public class TeamLogo : MonoBehaviour
     void Start()
     {
 
-        logoPlayedInt = PlayerPrefs.GetInt("logoPlayed", 0);
-
-        if(logoPlayedInt == 1)
-        {
-            logoPanel.SetActive(false);
-        }
-        if(logoPlayedInt == 0)
-        {
             logoPanel.SetActive(true);
             var canvGroup = GetComponent<CanvasGroup>();
 
             StartCoroutine(teamLogo(canvGroup, canvGroup.alpha, mFaded ? 1 : 0));
 
             mFaded = !mFaded;
-            PlayerPrefs.SetInt("logoPlayed", 1);
-        }
-        
         
 
     }
@@ -49,11 +39,9 @@ public class TeamLogo : MonoBehaviour
 
             yield return null;
         }
-        logoPanel.SetActive(false);
+
+        SceneManager.LoadScene("Menu");
     }
 
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("logoPlayed", 0);
-    }
+  
 }
