@@ -236,7 +236,7 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         playerBody.drag = 1000;
         yield return new WaitForSeconds(0.1f);
-        playerBody.drag = 2.57f;
+        playerBody.drag = 1;
 
     }
 
