@@ -392,9 +392,9 @@ public class Game : MonoBehaviour
 
     public void UpgradeRocket()
     {
-        if (score >= 200)
+        if (score >= 1)
         {
-            score = score - 200;
+            score = score - 1;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("hasRocket", 1);
