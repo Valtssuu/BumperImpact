@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2504,10 +2504,10 @@ RectTransform:
   m_Father: {fileID: 414309900}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000091553, y: 0}
-  m_SizeDelta: {x: 2400, y: 1350}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
+  m_SizeDelta: {x: 0, y: 182}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738775048
 MonoBehaviour:
@@ -2935,8 +2935,22 @@ MonoBehaviour:
   level6Button: {fileID: 0}
   level7Button: {fileID: 0}
   car: {fileID: 0}
+  isLevel1Open: 0
+  isLevel2Open: 0
+  isLevel3Open: 0
+  isLevel4Open: 0
+  isLevel5Open: 0
+  isLevel6Open: 0
+  isLevel7Open: 0
   timesBuyDash: 0
   boughtAll: 0
+  lock1: {fileID: 0}
+  lock2: {fileID: 0}
+  lock3: {fileID: 0}
+  lock4: {fileID: 0}
+  lock5: {fileID: 0}
+  lock6: {fileID: 0}
+  lock7: {fileID: 0}
 --- !u!1 &2055755089
 GameObject:
   m_ObjectHideFlags: 0

@@ -1841,7 +1841,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: BACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2073,7 +2073,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: VOLUME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   m_Content: {fileID: 550666101}
   m_Horizontal: 1
   m_Vertical: 0
-  m_MovementType: 0
+  m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.01
@@ -2951,7 +2951,7 @@ MonoBehaviour:
   m_Content: {fileID: 47919668}
   m_Horizontal: 1
   m_Vertical: 0
-  m_MovementType: 0
+  m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.01
@@ -4105,6 +4105,7 @@ MonoBehaviour:
   level4: 0
   level5: 0
   level6: 0
+  level7: 0
   tutorialButton: {fileID: 0}
   level1Button: {fileID: 0}
   level2Button: {fileID: 0}
@@ -4112,9 +4113,24 @@ MonoBehaviour:
   level4Button: {fileID: 0}
   level5Button: {fileID: 0}
   level6Button: {fileID: 0}
+  level7Button: {fileID: 0}
   car: {fileID: 0}
+  isLevel1Open: 0
+  isLevel2Open: 0
+  isLevel3Open: 0
+  isLevel4Open: 0
+  isLevel5Open: 0
+  isLevel6Open: 0
+  isLevel7Open: 0
   timesBuyDash: 0
   boughtAll: 0
+  lock1: {fileID: 0}
+  lock2: {fileID: 0}
+  lock3: {fileID: 0}
+  lock4: {fileID: 0}
+  lock5: {fileID: 0}
+  lock6: {fileID: 0}
+  lock7: {fileID: 0}
 --- !u!114 &1840163547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4664,7 +4680,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: OPTION
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
