@@ -410,7 +410,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "PoisonArea")
         {
             poisonTime -= Time.deltaTime;
-            moveForce = 18;
+            moveForce = 15;
             if (poisonTime <= 0)
             {
                 PlayerHealth.Lives -= 5;
@@ -423,7 +423,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "PoisonArea")
         {
-            moveForce = 25;
+            moveForce = 30;
         }
     }
 
@@ -445,24 +445,42 @@ public class PlayerController : MonoBehaviour
 
         if (rocketButton.activeSelf)
         {
+            //if bought the upgrade
+            //Instantiate(rocket, transform.position, transform.rotation * Quaternion.Euler(new Vector3(0, 180, 0)));
             //You picked the rockets
-            if (target != null)
+            if (PlayerPrefs.GetInt("hasRocket", 0) == 1)
             {
-                if(rocketButtonClicks <= 3)
+                if (target != null)
                 {
-                    Instantiate(rocket, transform.position, Quaternion.Inverse(transform.rotation));
+                    if (rocketButtonClicks <= 3)
+                    {
+                        Instantiate(rocket, transform.position, transform.rotation * Quaternion.Euler(new Vector3(0, 180, 0)));
+                        rocketButtonClicks++;
+                    }
+                    if (rocketButtonClicks == 3)
+                    {
+                        rocketButton.SetActive(false);
+                        rocketButtonClicks = 0;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            } else
+            {
+                if (rocketButtonClicks <= 3)
+                {
+                    Instantiate(rocket, transform.position, transform.rotation * Quaternion.Euler(new Vector3(0, 180, 0)));
                     rocketButtonClicks++;
                 }
-                if(rocketButtonClicks == 3)
+                if (rocketButtonClicks == 3)
                 {
                     rocketButton.SetActive(false);
                     rocketButtonClicks = 0;
                 }
             }
-            else
-            {
-                return;
-            }
+            
 
         }
 

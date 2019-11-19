@@ -8,10 +8,10 @@ using UnityEngine.Advertisements;
 public class Game : MonoBehaviour
 {
     public int score;
-    public Button buyButton, buyDashButton, buySmallDashButton;
+    public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText;
     public int dashDmg;
-    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton;
+    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy;
     public int accept;
     public bool tutorial, level1, level2, level3, level4, level5, level6, level7;
     public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button, level7Button;
@@ -48,18 +48,27 @@ public class Game : MonoBehaviour
 
         if (PlayerPrefs.GetInt("hasDash") == 1 || PlayerPrefs.GetInt("boughtAll") == 0)
         {
-
+            //disable Dash buy
             activeDashBuy.SetActive(false);
             disabledDashBuy.SetActive(true);
             buyDashButton.interactable = false;
         }
 
-        if (PlayerPrefs.GetInt("boughtAll") == 1 && PlayerPrefs.GetInt("hasDash") != 1)
+        /*if (PlayerPrefs.GetInt("boughtAll") == 1 && PlayerPrefs.GetInt("hasDash") != 1)
         {
+            //disable small dash
             buySmallDashButton.interactable = false;
+            //enable Dash buy
             activeDashBuy.SetActive(true);
             disabledDashBuy.SetActive(false);
             buyDashButton.interactable = true;
+        }*/
+
+        if (PlayerPrefs.GetInt("hasRocket") == 1)
+        {
+            activeRocketBuy.SetActive(false);
+            disabledRocketBuy.SetActive(true);
+            buyRocketButton.interactable = false;
         }
 
     }
@@ -69,7 +78,7 @@ public class Game : MonoBehaviour
     {
         if (timesBuyDash == 2 && smallDashDone == false)
         {
-            buySmallDashButton.interactable = false;
+            //buySmallDashButton.interactable = false;
             activeDashBuy.SetActive(true);
             disabledDashBuy.SetActive(false);
             buyDashButton.interactable = true;
@@ -283,7 +292,7 @@ public class Game : MonoBehaviour
             score = score - 5;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
-            dashDmg += 50;
+            dashDmg += 30;
             PlayerPrefs.SetInt("dashDmg", dashDmg);
             PlayerPrefs.SetInt("hasDash", 1);
             activeDashBuy.SetActive(false);
@@ -293,6 +302,21 @@ public class Game : MonoBehaviour
         }
 
     }
+
+    public void UpgradeRocket()
+    {
+        if (score >= 200)
+        {
+            score = score - 200;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+            PlayerPrefs.SetInt("hasRocket", 1);
+            activeRocketBuy.SetActive(false);
+            disabledRocketBuy.SetActive(true);
+            buyRocketButton.interactable = false;
+        }
+    }
+
      public void UpgradeSmallDash()
     {
         if (score >= 2)
@@ -322,10 +346,10 @@ public class Game : MonoBehaviour
         PlayerPrefs.SetInt("hasDash", 0);
         PlayerPrefs.SetInt("timesBuyDash", 0);
         PlayerPrefs.SetInt("boughtAll", 0);
+        PlayerPrefs.SetInt("hasRocket", 0);
         activeDashBuy.SetActive(false);
         disabledDashBuy.SetActive(true);
         buyDashButton.interactable = false;
-        buySmallDashButton.interactable = true;
         smallDashDone = false;
     }
 

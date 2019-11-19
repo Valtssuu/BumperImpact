@@ -21,11 +21,11 @@ public class Mine : MonoBehaviour
 
     public Rigidbody playerBody;
 
-    public GameObject mine;
+    //public GameObject mine;
 
-    public float enemy1Live;
+    //public float enemy1Live;
 
-    public float bigEnemyLive;
+    //public float bigEnemyLive;
     
     void Start()
     {
@@ -59,17 +59,32 @@ public class Mine : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy2"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy2") || collision.gameObject.CompareTag("EnemyShield"))
         {
             if (!hasExploded)
             {
                 //Call AddExploForce function
                 MineExplosion();
+                
+                
                 hasExploded = true;
-
+                Destroy(gameObject);
             }
 
         }
+
+        /*if (collision.gameObject.CompareTag("Enemy2") || collision.gameObject.CompareTag("EnemyShield"))
+        {
+            if (!hasExploded)
+            {
+                MineExplosion();
+                
+                
+                hasExploded = true;
+                Destroy(gameObject);
+            }
+            
+        }*/
 
         if (collision.gameObject.CompareTag("Boss1"))
         {
@@ -89,49 +104,47 @@ public class Mine : MonoBehaviour
         GameObject exClone = Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(exClone, 1f);
 
-        Vector3 explosionPos = mine.transform.position;
+        //Vector3 explosionPos = transform.position;
 
-        Collider[] exColliers = Physics.OverlapSphere(explosionPos, exRadius);
+        Collider[] exColliers = Physics.OverlapSphere(transform.position, exRadius);
         
         
         foreach (Collider hit in exColliers)
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
-            Rigidbody mineRb = gameObject.GetComponent<Rigidbody>();
+            //Rigidbody mineRb = gameObject.GetComponent<Rigidbody>();
 
-            //enemy1Live = hit.gameObject.GetComponent<EnemyAI>().enemyLives;
-            //bigEnemyLive = hit.GetComponent<NewEnemyAI>().enemyLives;
-
-            if (rb != null && rb != playerBody && rb != mineRb)
+            if (rb != null && rb != playerBody)
             {
-                rb.AddExplosionForce(exPower, explosionPos, exRadius, 1f, ForceMode.Impulse);
-
-                //enemy1Live -= 80;
-                //bigEnemyLive -= 80;
-                
-                //StartCoroutine(DelayDestroy(hit));
-                //hit.GetComponent<EnemyAI>().enemyLives -= 80;
-                //hit.GetComponent<NewEnemyAI>().enemyLives -= 80;
-
+                rb.AddExplosionForce(exPower, transform.position, exRadius, 1f, ForceMode.Impulse);
                 rb.drag = 1;
+                if (rb.gameObject.CompareTag("Enemy"))
+                {
+                    hit.gameObject.GetComponent<EnemyAI>().enemyLives -= 80;
 
-                Destroy(rb.gameObject);
-
+                }
+                if (rb.gameObject.CompareTag("Enemy2"))
+                {
+                    rb.AddForce(transform.position * 200);
+                    rb.drag = 1;
+                    hit.gameObject.GetComponent<NewEnemyAI>().enemyLives -= 80;
+                }
             }
+            
 
             
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
 
 
     }
 
-    /*IEnumerator DelayDestroy(Collider hit)
+    IEnumerator DelayDestroy(Collider hit)
     {
         yield return new WaitForSeconds(0.2f);
         Destroy(hit.gameObject);
-    }*/
+    }
     
 }

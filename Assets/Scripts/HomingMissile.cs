@@ -32,13 +32,20 @@ public class HomingMissile : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*Vector3 direction = target.position - rb.position;
-        direction.Normalize();
+        if (PlayerPrefs.GetInt("hasRocket", 0) == 1)
+        {
+            Vector3 direction = target.position - rb.position;
+            direction.Normalize();
 
-        Vector3 rotationAmount = Vector3.Cross(transform.forward, direction);
+            Vector3 rotationAmount = Vector3.Cross(transform.forward, direction);
+
+            rb.angularVelocity = rotationAmount * rotationForce;
+            rb.velocity = transform.forward * force;
+        } else
+        {
+            rb.velocity = transform.forward * force;
+        }
         
-        rb.angularVelocity = rotationAmount * rotationForce;*/
-        rb.velocity = transform.forward * force;
         
         
     }
@@ -75,6 +82,7 @@ public class HomingMissile : MonoBehaviour
 
     void SelfDestruct ()
     {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 

@@ -236,10 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exRadius: 20
-  exPower: 50
-  explosionEffect: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
+  exPower: 40
+  explosionEffect: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
     type: 3}
   playerBody: {fileID: 0}
-  mine: {fileID: 7136854991909951091}
-  enemy1Live: 0
-  bigEnemyLive: 0
