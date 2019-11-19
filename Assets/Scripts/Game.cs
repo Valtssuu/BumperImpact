@@ -54,7 +54,7 @@ public class Game : MonoBehaviour
             buyDashButton.interactable = false;
         }
 
-        if (PlayerPrefs.GetInt("boughtAll") == 1)
+        if (PlayerPrefs.GetInt("boughtAll") == 1 && PlayerPrefs.GetInt("hasDash") != 1)
         {
             buySmallDashButton.interactable = false;
             activeDashBuy.SetActive(true);
@@ -326,6 +326,7 @@ public class Game : MonoBehaviour
         disabledDashBuy.SetActive(true);
         buyDashButton.interactable = false;
         buySmallDashButton.interactable = true;
+        smallDashDone = false;
     }
 
     public void AdWasClicked()

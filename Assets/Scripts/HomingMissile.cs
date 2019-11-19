@@ -26,20 +26,20 @@ public class HomingMissile : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         target = player.GetComponent<PlayerController>().target;
         hasExploded = false;
-        Invoke("SelfDestruct", 2);
+        Invoke("SelfDestruct", 3);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 direction = target.position - rb.position;
+        /*Vector3 direction = target.position - rb.position;
         direction.Normalize();
 
         Vector3 rotationAmount = Vector3.Cross(transform.forward, direction);
         
-        rb.angularVelocity = rotationAmount * rotationForce;
+        rb.angularVelocity = rotationAmount * rotationForce;*/
         rb.velocity = transform.forward * force;
-
+        
         
     }
 

@@ -450,7 +450,7 @@ public class PlayerController : MonoBehaviour
             {
                 if(rocketButtonClicks <= 3)
                 {
-                    Instantiate(rocket, transform.position, transform.rotation);
+                    Instantiate(rocket, transform.position, Quaternion.Inverse(transform.rotation));
                     rocketButtonClicks++;
                 }
                 if(rocketButtonClicks == 3)
