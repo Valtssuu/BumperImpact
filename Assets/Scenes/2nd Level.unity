@@ -6655,6 +6655,7 @@ MonoBehaviour:
   BridgeController: {fileID: 134556076}
   Bridge2Controller: {fileID: 472505297}
   Bridge3Controller: {fileID: 1731203653}
+  carLeft: {fileID: 0}
   winCanvas: {fileID: 46876445}
   Bridge: {fileID: 0}
   Bridge2: {fileID: 0}

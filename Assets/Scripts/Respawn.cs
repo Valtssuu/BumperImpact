@@ -16,6 +16,9 @@ using UnityEngine.Advertisements;
     [SerializeField] private Animator Bridge2Controller;
     [SerializeField] private Animator Bridge3Controller;
 
+    [SerializeField] private Animator carLeft;
+
+
     Rigidbody myBody;
 
     public GameObject winCanvas;
@@ -95,6 +98,7 @@ using UnityEngine.Advertisements;
         if (PlayerHealth.Lives <= 0)
         {
             loseCanvas.SetActive(true);
+            carLeft.SetBool("hasLost", true);
             Time.timeScale = 0;
             showAd--;
 

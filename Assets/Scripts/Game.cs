@@ -29,7 +29,7 @@ public class Game : MonoBehaviour
         timesBuyDash = PlayerPrefs.GetInt("timesBuyDash", 0);
         boughtAll = PlayerPrefs.GetInt("boughtAll", 0);
 
-
+        tutorial = true;
         InvokeRepeating("ShowAdAfter1min", 0, 20);
 
 
