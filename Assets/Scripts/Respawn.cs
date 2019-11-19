@@ -15,6 +15,9 @@ using UnityEngine.Advertisements;
     [SerializeField] private Animator BridgeController;
     [SerializeField] private Animator Bridge2Controller;
     [SerializeField] private Animator Bridge3Controller;
+    [SerializeField] private Animator BridgeBoss1Controller;
+    [SerializeField] private Animator BridgeBoss2Controller;
+
 
 
     Rigidbody myBody;
@@ -94,6 +97,14 @@ using UnityEngine.Advertisements;
             
         }
 
+       if(sceneName == "BossW1 Level")
+        {
+            if(GameObject.FindGameObjectsWithTag("Boss1").Length == 0)
+            {
+                BridgeBoss2Controller.SetBool("BridgeUp", true);
+            }
+        }
+
         if (PlayerHealth.Lives <= 0)
         {
             loseCanvas.SetActive(true);
@@ -110,6 +121,13 @@ using UnityEngine.Advertisements;
 
      void OnTriggerEnter (Collider col)
      {
+
+        if(col.transform.tag == "bridgeDownBoss")
+        {
+            BridgeBoss1Controller.SetBool("BridgeDown", true);
+        }
+
+
          if(col.transform.tag == "Killzone")
          {
             showAd++;
