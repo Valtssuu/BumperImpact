@@ -36,6 +36,7 @@ TagManager:
   - hit
   - Rocket
   - loseCanvas
+  - bridgeDownBoss
   layers:
   - Default
   - TransparentFX
