@@ -33,6 +33,9 @@ TagManager:
   - PoisonArea
   - LaserEnd
   - LaserBeam
+  - hit
+  - Rocket
+  - loseCanvas
   layers:
   - Default
   - TransparentFX

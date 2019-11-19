@@ -16,8 +16,6 @@ using UnityEngine.Advertisements;
     [SerializeField] private Animator Bridge2Controller;
     [SerializeField] private Animator Bridge3Controller;
 
-    [SerializeField] private Animator carLeft;
-
 
     Rigidbody myBody;
 
@@ -42,6 +40,7 @@ using UnityEngine.Advertisements;
     public string sceneName;
      void Start ()
      {
+        
         loseCanvas.SetActive(false);
         winCanvas.SetActive(false);
         Time.timeScale = 1;
@@ -98,8 +97,9 @@ using UnityEngine.Advertisements;
         if (PlayerHealth.Lives <= 0)
         {
             loseCanvas.SetActive(true);
-            carLeft.SetBool("hasLost", true);
-            Time.timeScale = 0;
+
+            myBody.velocity = Vector3.zero;
+            myBody.constraints = RigidbodyConstraints.FreezeAll;
             showAd--;
 
         }
@@ -123,7 +123,9 @@ using UnityEngine.Advertisements;
             if (PlayerHealth.Lives <= 30)
               {
                 loseCanvas.SetActive(true);
-                Time.timeScale = 0;
+                myBody.velocity = Vector3.zero;
+                myBody.constraints = RigidbodyConstraints.FreezeAll;
+
                 showAd--;
               }
               else
@@ -207,7 +209,8 @@ using UnityEngine.Advertisements;
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
             {
                 winCanvas.SetActive(true);
-                Time.timeScale = 0;
+                myBody.velocity = Vector3.zero;
+                myBody.constraints = RigidbodyConstraints.FreezeAll;
 
             }
         }
@@ -238,9 +241,10 @@ using UnityEngine.Advertisements;
         }
         if (PlayerHealth.Lives <= 0)
         {
-          loseCanvas.SetActive(true);
-          Time.timeScale = 0;
-          showAd--;
+        loseCanvas.SetActive(true);
+        myBody.velocity = Vector3.zero;
+        myBody.constraints = RigidbodyConstraints.FreezeAll;
+        showAd--;
 
         }
 
