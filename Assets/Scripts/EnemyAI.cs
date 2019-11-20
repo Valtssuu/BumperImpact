@@ -81,22 +81,22 @@ public class EnemyAI : MonoBehaviour
 
         if (enemyLives > 75)
         {
-            eForce = 400;
+            eForce = 200;
         }
 
         if (enemyLives <= 75 && enemyLives > 50)
         {
-            eForce = 600;
+            eForce = 300;
         }
 
         if (enemyLives <= 50 && enemyLives > 25)
         {
-            eForce = 800;
+            eForce = 400;
         }
 
         if (enemyLives <= 25 && enemyLives > 0)
         {
-            eForce = 1000;
+            eForce = 500;
         }
 
         

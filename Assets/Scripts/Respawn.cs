@@ -156,7 +156,7 @@ using UnityEngine.Advertisements;
               
          }
          
-        if(sceneName == "1st Level"  || sceneName == "3rd Level")
+        if(sceneName == "1st Level"  )
         {
             if (col.gameObject.tag == "SpawnPoint1")
             {
@@ -169,7 +169,7 @@ using UnityEngine.Advertisements;
             }
         }
 
-        if(sceneName == "2nd Level")
+        if(sceneName == "2nd Level" || sceneName == "3rd Level")
         {
             if (col.gameObject.tag == "SpawnPoint1")
             {

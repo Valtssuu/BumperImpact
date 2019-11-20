@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2723,7 +2723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.064117, y: 0.00018311}
+  m_AnchoredPosition: {x: 2, y: 0.00018311}
   m_SizeDelta: {x: 315.01, y: 177.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606223994
@@ -7502,6 +7502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfc699b6b066cc4992e54cfa198d3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scroll: {fileID: 756491469}
   score: 0
   buyButton: {fileID: 0}
   buyDashButton: {fileID: 0}
@@ -7544,7 +7545,6 @@ MonoBehaviour:
   isLevel6Open: 0
   isLevel7Open: 0
   timesBuyDash: 0
-  boughtAll: 0
   lock1: {fileID: 437664268}
   lock2: {fileID: 1235150007}
   lock3: {fileID: 959386967}
