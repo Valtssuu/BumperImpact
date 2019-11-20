@@ -13,7 +13,6 @@ public class BossW1AI : MonoBehaviour
     public float lookRadius;
     public GameObject explosion;
     public Transform direction = null;
-    public GameObject bomb;
     public GameObject player;
 
     public float boss1Speed = 25f;
@@ -41,16 +40,20 @@ public class BossW1AI : MonoBehaviour
 
     public GameObject electricGraphic;
 
-    public GameObject laser;
-
-    public float angle = 0f;
-
     public bool bossMad = false;
+
+    public GameObject canonPoint1, canonPoint2, canonPoint3;
+
+    public Animator bossAnim;
+    private float shootCountdown;
 
     // Start is called before the first frame update
     void Start()
     {
+        shootCountdown = 2.2f;
         stateCountdown = timeBetweenState;
+
+        bossAnim = GetComponent<Animator>();
 
         boss1Lives = boss1StartLives;
 
@@ -62,23 +65,11 @@ public class BossW1AI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         agent.enabled = false;
-
+        canonPoint2.SetActive(false);
+        canonPoint3.SetActive(false);
 
         player = GameObject.FindWithTag("Player");
         playerBody = target.GetComponent<Rigidbody>();
-
-        
-        //InvokeRepeating("Stop", 1.0f, 4f);
-        //InvokeRepeating("Continue", 3.0f, 4f);
-        //InvokeRepeating("DestroyBombClones", 3.5f, 4f);
-        if (state != ElectricState.ELECTRIC)
-        {
-            InvokeRepeating("InstantiateBombs", 2.5f, 2.5f);
-
-
-            
-        }
-        
 
         eForce = 200f;
 
@@ -87,25 +78,13 @@ public class BossW1AI : MonoBehaviour
         agent.speed = boss1Speed;
 
         electricGraphic.SetActive(false);
-        laser.SetActive(false);
+        //laser.SetActive(false);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         boss1PercentLive = (100 / boss1StartLives) * boss1Lives;
-
-        if (state == ElectricState.ELECTRIC)
-        {
-            laser.SetActive(false);
-        } else
-        {
-            if (boss1PercentLive <= 50)
-            {
-                laser.SetActive(true);
-            }
-            
-        }
 
         if (boss1Lives > boss1StartLives)
         {
@@ -115,7 +94,8 @@ public class BossW1AI : MonoBehaviour
         if (boss1PercentLive <= 50f && bossMad == false)
         {
             agent.speed = boss1Speed + 15;
-            timeBetweenState -= 4f;
+            canonPoint2.SetActive(true);
+            canonPoint3.SetActive(true);
             bossMad = true;
         }
 
@@ -152,6 +132,15 @@ public class BossW1AI : MonoBehaviour
         } else
         {
             stateCountdown -= Time.deltaTime;
+        }
+
+        if (shootCountdown <= 0)
+        {
+            StartCoroutine(ShootingAnim());
+            shootCountdown = 2.5f;
+        } else
+        {
+            shootCountdown -= Time.deltaTime;
         }
 
     }
@@ -221,7 +210,7 @@ public class BossW1AI : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, Time.deltaTime * 10f);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, Time.deltaTime * 15f);
     }
 
     //draw the look range (touch range) of the enemy in Red
@@ -262,32 +251,6 @@ public class BossW1AI : MonoBehaviour
 
     }
 
-    void InstantiateBombs()
-    {
-
-        GameObject clone = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation);
-        Rigidbody BombRb = clone.GetComponent<Rigidbody>();
-        BombRb.AddForce(transform.forward * 800);
-
-        if (boss1PercentLive <= 50f)
-        {
-            GameObject clone2 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation); //Quaternion.Euler(new Vector3(0, 90, 0))
-            //clone = Instantiate(bomb, transform.position + Vector3.left, transform.rotation);
-            GameObject clone3 = (GameObject)Instantiate(bomb, transform.position + new Vector3(0, 1, 0), transform.rotation);
-        
-            Rigidbody BombRb2 = clone2.GetComponent<Rigidbody>();
-            Rigidbody BombRb3 = clone3.GetComponent<Rigidbody>();
-            //clone2.transform.rotation = Quaternion.AngleAxis(-45, Vector3.right);
-            //Physics.IgnoreCollision(clone.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
-        
-            BombRb2.AddForce((transform.right + new Vector3(0, angle, angle)) * 3);
-            BombRb3.AddForce((transform.position + new Vector3(-270, 0, 0)) * 3);
-        }
-
-        
-
-    }
-
     IEnumerator ElectricityActive()
     {
         //do some blinking
@@ -310,4 +273,10 @@ public class BossW1AI : MonoBehaviour
         stateCountdown = timeBetweenState;
     }
 
+    IEnumerator ShootingAnim()
+    {
+        bossAnim.SetBool("isShooting", true);
+        yield return new WaitForSeconds(1f);
+        bossAnim.SetBool("isShooting", false);
+    }
 }

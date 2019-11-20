@@ -74,7 +74,7 @@ public class HomingMissile : MonoBehaviour
             if (!hasExploded)
             {
                 other.gameObject.GetComponent<BossW1AI>().boss1Lives -= 50;
-
+                Destroy(gameObject);
                 hasExploded = true;
             }
         }
