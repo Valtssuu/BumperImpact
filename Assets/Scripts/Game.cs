@@ -185,17 +185,7 @@ public class Game : MonoBehaviour
             buyDashButton.interactable = false;
         }
 
-        /*if (PlayerPrefs.GetInt("boughtAll") == 1 && PlayerPrefs.GetInt("hasDash") != 1)
-        {
-            //disable small dash
-            buySmallDashButton.interactable = false;
-            //enable Dash buy
-            activeDashBuy.SetActive(true);
-            disabledDashBuy.SetActive(false);
-            buyDashButton.interactable = true;
-        }*/
-
-        if (PlayerPrefs.GetInt("hasRocket") == 1)
+        if (PlayerPrefs.GetInt("hasRocket", 0) == 1)
         {
             activeRocketBuy.SetActive(false);
             disabledRocketBuy.SetActive(true);
@@ -213,6 +203,13 @@ public class Game : MonoBehaviour
             disabledDashBuy.SetActive(true);
             buyDashButton.interactable = false;
             PlayerPrefs.SetInt("hasDash", 1);
+        }
+
+        if (PlayerPrefs.GetInt("hasRocket", 0) == 1)
+        {
+            activeRocketBuy.SetActive(false);
+            disabledRocketBuy.SetActive(true);
+            buyRocketButton.interactable = false;
         }
 
         Debug.Log(PlayerPrefs.GetInt("Level1Open", 0));
