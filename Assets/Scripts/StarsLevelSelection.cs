@@ -13,6 +13,7 @@ public class StarsLevelSelection : MonoBehaviour
     public GameObject star1Level5, star2Level5, star3Level5;
     public GameObject star1Level6, star2Level6, star3Level6;
     public GameObject star1Level7, star2Level7, star3Level7;
+    public GameObject star1LevelBoss, star2LevelBoss, star3LevelBoss;
 
 
 
@@ -26,6 +27,7 @@ public class StarsLevelSelection : MonoBehaviour
     int stars5thLevel;
     int stars6thLevel;
     int stars7thLevel;
+    int starsBossLevel;
 
 
     // Start is called before the first frame update
@@ -40,6 +42,8 @@ public class StarsLevelSelection : MonoBehaviour
         stars5thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
         stars6thLevel = PlayerPrefs.GetInt("Stars6thLevel", 0);
         stars7thLevel = PlayerPrefs.GetInt("Stars7thLevel", 0);
+        starsBossLevel = PlayerPrefs.GetInt("StarsBossLevel", 0);
+
 
 
         //TUTORIAL
@@ -209,6 +213,27 @@ public class StarsLevelSelection : MonoBehaviour
         if (stars7thLevel == 1)
         {
             star1Level7.SetActive(true);
+        }
+
+        //Boss Level
+
+
+        if (starsBossLevel == 3)
+        {
+            star1LevelBoss.SetActive(true);
+            star2LevelBoss.SetActive(true);
+            star3LevelBoss.SetActive(true);
+        }
+
+        if (starsBossLevel == 2)
+        {
+            star1LevelBoss.SetActive(true);
+            star2LevelBoss.SetActive(true);
+        }
+
+        if (starsBossLevel == 1)
+        {
+            star1LevelBoss.SetActive(true);
         }
     }
 

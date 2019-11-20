@@ -156,7 +156,7 @@ using UnityEngine.Advertisements;
               
          }
          
-        if(sceneName == "1st Level" || sceneName == "2nd Level" || sceneName == "3rd Level")
+        if(sceneName == "1st Level"  )
         {
             if (col.gameObject.tag == "SpawnPoint1")
             {
@@ -169,6 +169,18 @@ using UnityEngine.Advertisements;
             }
         }
 
+        if(sceneName == "2nd Level" || sceneName == "3rd Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(82.7f, 1.7f, -92.5f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(193, 1.8f, -94.3f);
+
+            }
+        }
         if(sceneName == "4th Level")
         {
             if (col.gameObject.tag == "SpawnPoint1")
@@ -224,7 +236,7 @@ using UnityEngine.Advertisements;
 
         if (col.gameObject.tag == "winTrigger")
         {
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0 && GameObject.FindGameObjectsWithTag("Boss1").Length == 0)
             {
                 winCanvas.SetActive(true);
                 myBody.velocity = Vector3.zero;
@@ -259,6 +271,10 @@ using UnityEngine.Advertisements;
             if (sceneName == "6th Level")
             {
                 PlayerPrefs.SetInt("Level7Open", 1);
+            }
+            if (sceneName == "7th Level")
+            {
+                PlayerPrefs.SetInt("LevelBossOpen", 1);
             }
 
         }
@@ -331,7 +347,8 @@ using UnityEngine.Advertisements;
 
     public void OnNextLevelClicked()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("WorldMap");
     }
 
     public void Pause()

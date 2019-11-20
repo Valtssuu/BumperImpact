@@ -18,6 +18,7 @@ public class StarSystem : MonoBehaviour
     int stars5thLevel;
     int stars6thLevel;
     int stars7thLevel;
+    int starsBossLevel;
 
     int score;
     public GameObject star1;
@@ -36,6 +37,7 @@ public class StarSystem : MonoBehaviour
         stars5thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
         stars6thLevel = PlayerPrefs.GetInt("Stars6thLevel", 0);
         stars7thLevel = PlayerPrefs.GetInt("Stars7thLevel", 0);
+        starsBossLevel = PlayerPrefs.GetInt("StarsBossLevel", 0);
 
 
         score = PlayerPrefs.GetInt("score", 0);
@@ -518,6 +520,64 @@ public class StarSystem : MonoBehaviour
 
 
             }
+
+
+
+            //Boss LEVEL
+            if (sceneName == "BossW1 Level")
+            {
+                if (stars == 3)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+                    star3.SetActive(true);
+
+                    score += 15;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (starsBossLevel < 3)
+                    {
+                        PlayerPrefs.SetInt("StarsBossLevel", 3);
+                    }
+
+
+                }
+
+                if (stars == 2)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+
+                    score += 10;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (starsBossLevel < 2)
+                    {
+                        PlayerPrefs.SetInt("StarsBossLevel", 2);
+                    }
+
+                }
+
+                if (stars == 1)
+                {
+                    star1.SetActive(true);
+
+                    score += 5;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (starsBossLevel < 1)
+                    {
+                        PlayerPrefs.SetInt("StarsBossLevel", 1);
+                    }
+
+                }
+
+            }
+
+
         }
     }
 }
