@@ -42,36 +42,125 @@ public class Game : MonoBehaviour
         {
             isLevel1Open = true;
             lock1.SetActive(false);
+
+            if(isLevel2Open == false || isLevel3Open == false || isLevel4Open == false|| isLevel5Open == false|| isLevel6Open == false || isLevel7Open == false)
+            {
+                car.transform.position = level1Button.transform.position;
+                tutorial = false;
+                level1 = true;
+                level2 = false;
+                level3 = false;
+                level4 = false;
+                level5 = false;
+                level6 = false;
+                level7 = false;
+            }
         }
         if (PlayerPrefs.GetInt("Level2Open", 0) == 1)
         {
             isLevel2Open = true;
             lock2.SetActive(false);
+
+            if (isLevel3Open == false || isLevel4Open == false || isLevel5Open == false || isLevel6Open == false || isLevel7Open == false)
+            {
+                car.transform.position = level2Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = true;
+                level3 = false;
+                level4 = false;
+                level5 = false;
+                level6 = false;
+                level7 = false;
+            }
         }
         if (PlayerPrefs.GetInt("Level3Open", 0) == 1)
         {
             isLevel3Open = true;
             lock3.SetActive(false);
+
+            if ( isLevel4Open == false || isLevel5Open == false || isLevel6Open == false || isLevel7Open == false)
+            {
+                car.transform.position = level3Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = true;
+                level4 = false;
+                level5 = false;
+                level6 = false;
+                level7 = false;
+            }
         }
+
+        
         if (PlayerPrefs.GetInt("Level4Open", 0) == 1)
         {
             isLevel4Open = true;
             lock4.SetActive(false);
+
+            if ( isLevel5Open == false || isLevel6Open == false || isLevel7Open == false)
+            {
+                car.transform.position = level4Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+                level4 = true;
+                level5 = false;
+                level6 = false;
+                level7 = false;
+            }
         }
         if (PlayerPrefs.GetInt("Level5Open", 0) == 1)
         {
             isLevel5Open = true;
             lock5.SetActive(false);
+
+            if (isLevel6Open == false || isLevel7Open == false)
+            {
+                car.transform.position = level5Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+                level4 = false;
+                level5 = true;
+                level6 = false;
+                level7 = false;
+            }
         }
         if (PlayerPrefs.GetInt("Level6Open", 0) == 1)
         {
             isLevel6Open = true;
             lock6.SetActive(false);
+
+            if (isLevel7Open == false)
+            {
+                car.transform.position = level6Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+                level4 = false;
+                level5 = false;
+                level6 = true;
+                level7 = false;
+            }
         }
         if (PlayerPrefs.GetInt("Level7Open", 0) == 1)
         {
             isLevel7Open = true;
             lock7.SetActive(false);
+            car.transform.position = level7Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = true;
         }
 
 

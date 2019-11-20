@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject player;
     public TimeManager timeManager;
     public GameObject TM;
+    float poisonTimeE;
 
     float eForce;
 
@@ -194,8 +195,19 @@ public class EnemyAI : MonoBehaviour
         }
 
     }
-    
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PoisonArea")
+        {
+            poisonTimeE -= Time.deltaTime;
+            if (poisonTimeE <= 0)
+            {
+                enemyLives -= 5;
+                poisonTimeE = 1.0f;
+            }
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Killzone")

@@ -14,6 +14,7 @@ public class NewEnemyAI : MonoBehaviour
     public GameObject shield, player;
     public float shieldLives;
     private bool toohigh;
+    float poisonTimeE;
 
 
 
@@ -158,7 +159,18 @@ public class NewEnemyAI : MonoBehaviour
 
     }
 
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PoisonArea")
+        {
+            poisonTimeE -= Time.deltaTime;
+            if (poisonTimeE <= 0)
+            {
+                enemyLives -= 5;
+                poisonTimeE = 1.0f;
+            }
+        }
+    }
 
     private void KeepOnTheArena()
     {

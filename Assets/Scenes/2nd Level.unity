@@ -6523,6 +6523,8 @@ MonoBehaviour:
   BridgeController: {fileID: 134556076}
   Bridge2Controller: {fileID: 472505297}
   Bridge3Controller: {fileID: 1731203653}
+  BridgeBoss1Controller: {fileID: 0}
+  BridgeBoss2Controller: {fileID: 0}
   winCanvas: {fileID: 46876445}
   Bridge: {fileID: 0}
   Bridge2: {fileID: 0}
@@ -9994,7 +9996,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.66
+      value: -32.6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
@@ -10004,7 +10006,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -94.68
+      value: -91.9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
