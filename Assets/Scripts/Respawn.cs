@@ -236,7 +236,7 @@ using UnityEngine.Advertisements;
 
         if (col.gameObject.tag == "winTrigger")
         {
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0)
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Enemy2").Length == 0 && GameObject.FindGameObjectsWithTag("Boss1").Length == 0)
             {
                 winCanvas.SetActive(true);
                 myBody.velocity = Vector3.zero;
@@ -271,6 +271,10 @@ using UnityEngine.Advertisements;
             if (sceneName == "6th Level")
             {
                 PlayerPrefs.SetInt("Level7Open", 1);
+            }
+            if (sceneName == "7th Level")
+            {
+                PlayerPrefs.SetInt("LevelBossOpen", 1);
             }
 
         }
