@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3758576543226346452}
   - component: {fileID: 3758576543226346453}
   - component: {fileID: 3758576543226346450}
+  - component: {fileID: -16940375642921174}
   m_Layer: 0
   m_Name: Poison_smoke
   m_TagString: Untagged
@@ -4772,6 +4773,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-16940375642921174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3758576543226346451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b826768d0e263c24e9daa0556c9f8830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6204018068805783780
 GameObject:
   m_ObjectHideFlags: 0

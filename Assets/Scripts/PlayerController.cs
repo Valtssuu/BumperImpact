@@ -213,6 +213,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
     }
 
     private void Shockwave()
@@ -275,7 +276,6 @@ public class PlayerController : MonoBehaviour
 
             else
             {
-                PlayerHealth.Lives = PlayerHealth.Lives - 5;
 
                 dashmeter += 2;
             }
@@ -297,6 +297,9 @@ public class PlayerController : MonoBehaviour
                     playerShieldLives = 0;
                 }
 
+            } else
+            {
+                PlayerHealth.Lives = PlayerHealth.Lives - 5;
             }
 
             
@@ -416,6 +419,9 @@ public class PlayerController : MonoBehaviour
                 PlayerHealth.Lives -= 5;
                 poisonTime = 1.0f;
             }
+        } else
+        {
+            moveForce = 30;
         }
     }
 
