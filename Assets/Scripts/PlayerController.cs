@@ -267,10 +267,12 @@ public class PlayerController : MonoBehaviour
         {
             if(boostActivated == true)
             {
+                if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
+                {
+                    dashmeter += 10;
+                    myBody.velocity = Vector3.zero;
+                }
                 
-                dashmeter += 10;
-                myBody.velocity = Vector3.zero;
-
             }
 
             else
