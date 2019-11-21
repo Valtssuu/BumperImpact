@@ -180,7 +180,7 @@ public class BossW1AI : MonoBehaviour
 
             }
 
-            boss1Lives -= - 30f;
+            boss1Lives -= 30f;
 
             if (state == ElectricState.ELECTRIC)
             {

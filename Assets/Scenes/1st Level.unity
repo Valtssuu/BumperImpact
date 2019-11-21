@@ -14302,7 +14302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Trigger:
     m_IsTriggerExpanded: 1
-    m_Type: 0
+    m_Type: 1
     m_LifecycleEvent: 0
     m_ApplyRules: 0
     m_Rules:
