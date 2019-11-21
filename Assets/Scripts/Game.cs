@@ -10,7 +10,7 @@ public class Game : MonoBehaviour
     public GameObject scroll;
     public int score;
     public Button buyButton, buyDashButton, buyRocketButton;
-    public Text scoreText;
+    public Text scoreText, dashText, rocketText;
     public int dashDmg;
     public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy;
     public int accept;
@@ -247,9 +247,20 @@ public class Game : MonoBehaviour
             disabledRocketBuy.SetActive(true);
             buyRocketButton.interactable = false;
         }
+        if (PlayerPrefs.GetInt("hasRocket", 0) == 0)
+        {
+            rocketText.text = "ROCKET: 0";
+            
+        }
+        else
+        {
+            rocketText.text = "ROCKET: 1";
+        }
+
+        dashText.text = "DASH: " + PlayerPrefs.GetInt("timesBuyDash", 0);
 
     }
-   
+
 
     public void QuitGame ()
     {
@@ -532,18 +543,15 @@ public class Game : MonoBehaviour
 
     public void UpgradeDash()
     {
-        if(score >= 1)
+        if(score >= 200)
         {
             timesBuyDash++;
             PlayerPrefs.SetInt("timesBuyDash", timesBuyDash);
-            score = score - 1;
+            score = score - 200;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
             dashDmg += 30;
             PlayerPrefs.SetInt("dashDmg", dashDmg);
-            //activeDashBuy.SetActive(false);
-            //disabledDashBuy.SetActive(true);
-            //buyDashButton.interactable = false;
 
         }
 
@@ -551,15 +559,17 @@ public class Game : MonoBehaviour
 
     public void UpgradeRocket()
     {
-        if (score >= 1)
+        if (score >= 200)
         {
-            score = score - 1;
+            score = score - 200;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("hasRocket", 1);
             activeRocketBuy.SetActive(false);
             disabledRocketBuy.SetActive(true);
             buyRocketButton.interactable = false;
+
+            
         }
     }
 
