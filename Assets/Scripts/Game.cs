@@ -56,6 +56,7 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                levelBoss = false;
             }
         }
         if (PlayerPrefs.GetInt("Level2Open", 0) == 1)
@@ -74,6 +75,8 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                levelBoss = false;
+
             }
         }
         if (PlayerPrefs.GetInt("Level3Open", 0) == 1)
@@ -92,6 +95,8 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                levelBoss = false;
+
             }
         }
 
@@ -112,6 +117,8 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                levelBoss = false;
+
             }
         }
         if (PlayerPrefs.GetInt("Level5Open", 0) == 1)
@@ -130,7 +137,9 @@ public class Game : MonoBehaviour
                 level5 = true;
                 level6 = false;
                 level7 = false;
-                
+                levelBoss = false;
+
+
             }
 
             scroll.transform.position = scroll.transform.position + new Vector3(-1745, 0, 0);
@@ -153,6 +162,8 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = true;
                 level7 = false;
+                levelBoss = false;
+
             }
         }
         if (PlayerPrefs.GetInt("Level7Open", 0) == 1)
@@ -168,6 +179,8 @@ public class Game : MonoBehaviour
             level5 = false;
             level6 = false;
             level7 = true;
+            levelBoss = false;
+
         }
 
         if (PlayerPrefs.GetInt("LevelBossOpen", 0) == 1)
@@ -260,6 +273,8 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = false;
         level7 = false;
+        levelBoss = false;
+
 
 
 
@@ -279,6 +294,8 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = false;
         level7 = false;
+        levelBoss = false;
+
 
     }
     public void Level2()
@@ -298,6 +315,8 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = false;
         level7 = false;
+        levelBoss = false;
+
 
     }
 
@@ -316,6 +335,7 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = false;
         level7 = false;
+        levelBoss = false;
 
     }
 
@@ -334,6 +354,8 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = false;
         level7 = false;
+        levelBoss = false;
+
 
     }
     public void Level5()
@@ -351,6 +373,8 @@ public class Game : MonoBehaviour
         level5 = true;
         level6 = false;
         level7 = false;
+        levelBoss = false;
+
 
     }
     public void Level6()
@@ -368,6 +392,8 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = true;
         level7 = false;
+        levelBoss = false;
+
 
     }
 
@@ -386,6 +412,8 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = false;
         level7 = true;
+        levelBoss = false;
+
     }
 
 

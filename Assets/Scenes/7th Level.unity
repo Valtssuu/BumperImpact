@@ -11101,7 +11101,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
@@ -13129,7 +13129,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270114402
 GameObject:
@@ -14086,7 +14086,7 @@ PrefabInstance:
     - target: {fileID: 18452398474829065, guid: 4403c3cea02079441aa8651c0b0d5f30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 18452398474829065, guid: 4403c3cea02079441aa8651c0b0d5f30,
         type: 3}
@@ -14155,6 +14155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 18452397209951155, guid: 4403c3cea02079441aa8651c0b0d5f30,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 18452397209951155, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 681278564}
@@ -14162,6 +14167,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnNextLevelClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 18452397209951155, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 18452397209951155, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 18452397209951155, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1355405208}
+    - target: {fileID: 18452397209951155, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TriggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 18452397209951155, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 18452398862945768, guid: 4403c3cea02079441aa8651c0b0d5f30,
         type: 3}
@@ -14209,6 +14239,42 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1355405202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1355405207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 18452397209951153, guid: 4403c3cea02079441aa8651c0b0d5f30,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355405202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1355405208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355405207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters: []
+    m_Name: Level7
 --- !u!1 &1366224069
 GameObject:
   m_ObjectHideFlags: 0

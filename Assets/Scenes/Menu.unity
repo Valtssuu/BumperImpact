@@ -1800,6 +1800,7 @@ GameObject:
   - component: {fileID: 1038114038}
   - component: {fileID: 1038114037}
   - component: {fileID: 1038114036}
+  - component: {fileID: 1038114039}
   m_Layer: 5
   m_Name: EndlessButton
   m_TagString: Untagged
@@ -1880,6 +1881,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1038114039}
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1038114037
@@ -1920,6 +1932,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038114034}
   m_CullTransparentMesh: 0
+--- !u!114 &1038114039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038114034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters: []
+    m_Name: Endless Level
 --- !u!1 &1204925562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,10 +2945,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfc699b6b066cc4992e54cfa198d3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scroll: {fileID: 0}
   score: 0
   buyButton: {fileID: 0}
   buyDashButton: {fileID: 0}
-  buySmallDashButton: {fileID: 0}
+  buyRocketButton: {fileID: 0}
   scoreText: {fileID: 0}
   dashDmg: 0
   TApanel: {fileID: 301126613}
@@ -2917,6 +2960,8 @@ MonoBehaviour:
   activeDashBuy: {fileID: 0}
   disabledDashBuy: {fileID: 0}
   adButton: {fileID: 0}
+  activeRocketBuy: {fileID: 0}
+  disabledRocketBuy: {fileID: 0}
   accept: 0
   tutorial: 0
   level1: 0
@@ -2926,6 +2971,7 @@ MonoBehaviour:
   level5: 0
   level6: 0
   level7: 0
+  levelBoss: 0
   tutorialButton: {fileID: 0}
   level1Button: {fileID: 0}
   level2Button: {fileID: 0}
@@ -2934,6 +2980,7 @@ MonoBehaviour:
   level5Button: {fileID: 0}
   level6Button: {fileID: 0}
   level7Button: {fileID: 0}
+  levelBossButton: {fileID: 0}
   car: {fileID: 0}
   isLevel1Open: 0
   isLevel2Open: 0
@@ -2942,8 +2989,8 @@ MonoBehaviour:
   isLevel5Open: 0
   isLevel6Open: 0
   isLevel7Open: 0
+  isLevelBossOpen: 0
   timesBuyDash: 0
-  boughtAll: 0
   lock1: {fileID: 0}
   lock2: {fileID: 0}
   lock3: {fileID: 0}
@@ -2951,6 +2998,7 @@ MonoBehaviour:
   lock5: {fileID: 0}
   lock6: {fileID: 0}
   lock7: {fileID: 0}
+  lockBoss: {fileID: 0}
 --- !u!1 &2055755089
 GameObject:
   m_ObjectHideFlags: 0
