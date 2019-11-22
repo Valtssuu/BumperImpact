@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveForce, dashmeter, playerShieldLives, dashspeed;
     public GameObject MainCamera, hitParticle, dashParticle, dashbarover50, shield, Bar, Dust, dash, dashbar, pumpkinSkin;
+    [SerializeField] private Animator HPBarController;
+
     public TimeManager timeManager;
     public GameObject TM;
     public Rigidbody myBody;
@@ -52,7 +54,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         InvokeRepeating("addDash", 1.0f, 1f);
-
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         TM = GameObject.FindWithTag("TimeManager");
@@ -299,12 +300,19 @@ public class PlayerController : MonoBehaviour
                     playerShieldLives = 0;
                 }
 
-            } else
+            }
+            else
             {
-                PlayerHealth.Lives = PlayerHealth.Lives - 5;
+                if(boostActivated == false)
+                {
+                    PlayerHealth.Lives = PlayerHealth.Lives - 5;
+                    StartCoroutine("hpBar");
+                    
+                }
+
             }
 
-            
+
 
         }
 
@@ -321,7 +329,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
- 
+     private IEnumerator hpBar()
+     {
+        HPBarController.SetBool("HpAnim", true);
+        yield return new WaitForSeconds(0.26f);
+        HPBarController.SetBool("HpAnim", false);
+
+    }
 
 
     //delay before changing the drag
@@ -419,6 +433,7 @@ public class PlayerController : MonoBehaviour
             if (poisonTime <= 0)
             {
                 PlayerHealth.Lives -= 5;
+                StartCoroutine("hpBar");
                 poisonTime = 1.0f;
             }
         } else

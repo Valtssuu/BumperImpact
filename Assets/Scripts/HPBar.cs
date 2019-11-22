@@ -5,19 +5,24 @@ using UnityEngine.UI;
 
 public class HPBar : MonoBehaviour
 {
-    public Image imgHPBar;
-
+    Image imgHPBar;
+    GameObject HPBarPlayer;
     public float Minh;
 
     public float Maxh;
 
-    public GameObject player;
+    GameObject player;
 
     private float mCurrentValue;
 
     private float mCurrentPercent;
 
-
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+        HPBarPlayer = GameObject.FindWithTag("HPBarPlayer");
+        imgHPBar = HPBarPlayer.GetComponent<Image>();
+    }
 
     public void SetHealth(float health)
     {
