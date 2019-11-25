@@ -16,6 +16,8 @@ public class Game : MonoBehaviour
     public int accept;
     public bool tutorial, level1, level2, level3, level4, level5, level6, level7, levelBoss;
     public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button, level7Button, levelBossButton;
+    public Button tutorialButtonT, level1Button1, level2Button2, level3Button3, level4Button4, level5Button5, level6Button6, level7Button7, levelBossButtonB;
+
     public GameObject car;
     public bool isLevel1Open, isLevel2Open, isLevel3Open, isLevel4Open, isLevel5Open, isLevel6Open, isLevel7Open, isLevelBossOpen;
     public int timesBuyDash;
@@ -59,6 +61,12 @@ public class Game : MonoBehaviour
                 levelBoss = false;
             }
         }
+        else
+        {
+            level1Button1.interactable = false;
+        }
+
+        
         if (PlayerPrefs.GetInt("Level2Open", 0) == 1)
         {
             isLevel2Open = true;
@@ -78,6 +86,10 @@ public class Game : MonoBehaviour
                 levelBoss = false;
 
             }
+        }
+        else
+        {
+            level2Button2.interactable = false;
         }
         if (PlayerPrefs.GetInt("Level3Open", 0) == 1)
         {
@@ -99,8 +111,12 @@ public class Game : MonoBehaviour
 
             }
         }
+        else
+        {
+            level3Button3.interactable = false;
+        }
 
-        
+
         if (PlayerPrefs.GetInt("Level4Open", 0) == 1)
         {
             isLevel4Open = true;
@@ -120,6 +136,10 @@ public class Game : MonoBehaviour
                 levelBoss = false;
 
             }
+        }
+        else
+        {
+            level4Button4.interactable = false;
         }
         if (PlayerPrefs.GetInt("Level5Open", 0) == 1)
         {
@@ -144,6 +164,10 @@ public class Game : MonoBehaviour
 
             scroll.transform.position = scroll.transform.position + new Vector3(-1745, 0, 0);
         }
+        else
+        {
+            level5Button5.interactable = false;
+        }
 
 
         if (PlayerPrefs.GetInt("Level6Open", 0) == 1)
@@ -166,6 +190,10 @@ public class Game : MonoBehaviour
 
             }
         }
+        else
+        {
+            level6Button6.interactable = false;
+        }
         if (PlayerPrefs.GetInt("Level7Open", 0) == 1)
         {
             isLevel7Open = true;
@@ -182,6 +210,10 @@ public class Game : MonoBehaviour
             levelBoss = false;
 
         }
+        else
+        {
+            level7Button7.interactable = false;
+        }
 
         if (PlayerPrefs.GetInt("LevelBossOpen", 0) == 1)
         {
@@ -197,6 +229,10 @@ public class Game : MonoBehaviour
             level6 = false;
             level7 = false;
             levelBoss = true;
+        }
+        else
+        {
+            levelBossButtonB.interactable = false;
         }
 
 

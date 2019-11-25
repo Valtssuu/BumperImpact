@@ -37,6 +37,8 @@ TagManager:
   - Rocket
   - loseCanvas
   - bridgeDownBoss
+  - HPBarPlayer
+  - HPBarBG
   - BeamCollider
   layers:
   - Default

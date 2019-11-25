@@ -17,7 +17,8 @@ using UnityEngine.Advertisements;
     [SerializeField] private Animator Bridge3Controller;
     [SerializeField] private Animator BridgeBoss1Controller;
     [SerializeField] private Animator BridgeBoss2Controller;
-
+    [SerializeField] private Animator HPBarController;
+    
 
 
     Rigidbody myBody;
@@ -134,8 +135,15 @@ using UnityEngine.Advertisements;
             stars--;
 
             changeCamera = true;
-            player.GetComponent<PlayerController>().camera.fieldOfView = 18;
-            MainCamera.GetComponent<CameraController>().distance = 46;
+            if(sceneName != "BossW1 Level")
+            {
+                player.GetComponent<PlayerController>().camera.fieldOfView = 18;
+                MainCamera.GetComponent<CameraController>().distance = 46;
+                
+
+            }
+           
+
             player.GetComponent<PlayerController>().myBody.velocity = Vector3.zero;
 
             if (PlayerHealth.Lives <= 30)
@@ -149,6 +157,8 @@ using UnityEngine.Advertisements;
               else
               {
                 PlayerHealth.Lives = PlayerHealth.Lives - 30;
+                StartCoroutine("hpBar");
+
                 //respawn player to Spawnpoint on Object
                 this.transform.position = spawnPoint.transform.position;
                 this.transform.rotation = Quaternion.identity;
@@ -276,6 +286,12 @@ using UnityEngine.Advertisements;
             {
                 PlayerPrefs.SetInt("LevelBossOpen", 1);
             }
+            if(sceneName == "BossW1 Level")
+            {
+                player.GetComponent<PlayerController>().score += 50;
+                PlayerPrefs.SetInt("score", player.GetComponent<PlayerController>().score);
+                player.GetComponent<PlayerController>().scoreText.text = player.GetComponent<PlayerController>().score.ToString("");
+            }
 
         }
     }
@@ -289,19 +305,12 @@ using UnityEngine.Advertisements;
 
             Collider myCollider = collision.contacts[0].thisCollider;
 
-            /*if (myCollider.gameObject.name != "PlayerShield")
-            {
-                PlayerHealth.Lives = PlayerHealth.Lives - 5;
-
-            }
-            */
-
-
-
         }
         if(collision.gameObject.tag == "bomb")
         {
             PlayerHealth.Lives = PlayerHealth.Lives - 30;
+            StartCoroutine("hpBar");
+
         }
         if (PlayerHealth.Lives <= 0)
         {
@@ -313,8 +322,14 @@ using UnityEngine.Advertisements;
         }
 
     }
+    private IEnumerator hpBar()
+    {
+        HPBarController.SetBool("HpAnim", true);
+        yield return new WaitForSeconds(0.1f);
+        HPBarController.SetBool("HpAnim", false);
 
-     public void OnReplayButtonClicked() 
+    }
+    public void OnReplayButtonClicked() 
      {
 		//activate movement of the player
 		//hide replay button
