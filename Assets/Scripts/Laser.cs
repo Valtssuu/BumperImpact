@@ -8,18 +8,19 @@ public class Laser : MonoBehaviour
 
     public int laserDamage = 30;
     public float laserRange = 50f;
-    public float laserCountdown = 3.6f;
-    private bool playerGotHit = false;
+    public float laserCountdown = 5f;
+    public bool playerGotHit = false;
     private bool laserHit = false;
-    
+    public GameObject beamCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         laserLr = GetComponent<LineRenderer>();
         //laserBeam.SetActive(false);
-        
-        
+        beamCollider.SetActive(false);
+
+
     }
 
     // Update is called once per frame
@@ -30,15 +31,21 @@ public class Laser : MonoBehaviour
         //laserLr.SetPosition(0, transform.position);
         laserCountdown -= Time.deltaTime;
         
-        if (laserCountdown <= 1f && laserHit == false)
+        if (laserCountdown <= 2f && laserHit == false)
         {
-            ShootLaser();
+            StartCoroutine(ActiveBeam());
+            //ShootLaser();
             laserHit = true;
         }
         if (laserCountdown <= 0)
         {
-            laserCountdown = 3.6f;
+            laserCountdown = 5f;
             laserHit = false;
+        }
+
+        if (!beamCollider.activeSelf)
+        {
+            playerGotHit = false;
         }
     }
 
@@ -62,6 +69,16 @@ public class Laser : MonoBehaviour
         }
         //StartCoroutine(LineShow());
         
+    }
+
+    
+
+    IEnumerator ActiveBeam()
+    {
+        
+        beamCollider.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        beamCollider.SetActive(false);
     }
 
     IEnumerator LineShow()

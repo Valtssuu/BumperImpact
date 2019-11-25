@@ -37,6 +37,7 @@ TagManager:
   - Rocket
   - loseCanvas
   - bridgeDownBoss
+  - BeamCollider
   layers:
   - Default
   - TransparentFX

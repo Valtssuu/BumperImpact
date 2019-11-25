@@ -6,7 +6,7 @@ public class LaserBeam : MonoBehaviour
 {
 
     public GameObject endPoint;
-    public float laserCountdown = 3.6f;
+    public float laserCountdown = 5f;
     public ParticleSystem laserBeam;
 
     //public GameObject laserBeam;
@@ -16,7 +16,7 @@ public class LaserBeam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        laserCountdown = 3.6f;
+        laserCountdown = 5f;
         laserShown = false;
         laserAnimator = GetComponent<Animator>();
         //laserAnimator.StopPlayback();
@@ -29,7 +29,7 @@ public class LaserBeam : MonoBehaviour
         laserCountdown -= Time.deltaTime;
         endPoint = GameObject.FindWithTag("LaserEnd");
 
-        if (laserCountdown <= 3.6f && laserShown == false)
+        if (laserCountdown <= 4.6f && laserShown == false)
         {
             laserShown = true;
             StartCoroutine(LaserShow());
@@ -39,7 +39,7 @@ public class LaserBeam : MonoBehaviour
 
         if (laserCountdown <=0)
         {
-            laserCountdown = 3.6f;
+            laserCountdown = 5f;
             laserShown = false;
         }
     }
@@ -49,7 +49,7 @@ public class LaserBeam : MonoBehaviour
         laserAnimator.Play("laser_ON");
         yield return new WaitForSeconds(2.6f);
         laserBeam.Play();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(2f);
         laserBeam.Stop();
         laserAnimator.StopPlayback();
     }

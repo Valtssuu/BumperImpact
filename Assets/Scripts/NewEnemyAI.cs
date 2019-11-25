@@ -287,15 +287,8 @@ public class NewEnemyAI : MonoBehaviour
 
         yield return new WaitForSeconds(1.2f);
         gameObject.GetComponent<NavMeshAgent>().enabled = true;
-
-
-    }
-
-    private IEnumerator EneDelayDown()
-    {
-        eBody.AddForce(-direction.up * 15);
-        yield return new WaitForSeconds(1f);
         eBody.drag = 1;
+
     }
 
 

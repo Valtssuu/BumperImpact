@@ -59,8 +59,6 @@ public class EnemyAI : MonoBehaviour
         //playerBody.GetComponent<PlayerController>().myBody;
         enemyLives = enemyStartLives;
         lookRadius = 15f;
-
-
     }
 
     // Update is called once per frame
@@ -134,9 +132,9 @@ public class EnemyAI : MonoBehaviour
         //dirDown = Vector3(0, -1, 0);
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down, out hit, 10f))
+        if (Physics.Raycast(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down, out hit, 20f))
         {
-            Debug.DrawLine(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down * 10f, Color.cyan);
+            Debug.DrawLine(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down * 20f, Color.cyan);
             //Debug.DrawLine(transform.position, hit.point, Color.red);
             if (hit.collider.tag == "Killzone")
             {
@@ -260,6 +258,7 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
 
         agent.enabled = true;
+        eBody.drag = 1;
 
 
     }
