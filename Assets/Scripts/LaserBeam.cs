@@ -20,7 +20,7 @@ public class LaserBeam : MonoBehaviour
         laserShown = false;
         laserAnimator = GetComponent<Animator>();
         //laserAnimator.StopPlayback();
-        //laserBeam.Stop();
+        laserBeam.Stop();
     }
 
     // Update is called once per frame
