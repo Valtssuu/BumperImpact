@@ -7,7 +7,7 @@ using UnityEngine.Advertisements;
 
 public class Game : MonoBehaviour
 {
-    public GameObject scroll;
+    public GameObject scroll, skinContainer, faceContainer;
     public int score;
     public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText, dashText, rocketText;
@@ -482,6 +482,18 @@ public class Game : MonoBehaviour
         levelBoss = true;
     }
 
+
+    public void faceButton()
+    {
+        skinContainer.SetActive(false);
+        faceContainer.SetActive(true);
+    }
+
+    public void skinButton()
+    {
+        skinContainer.SetActive(true);
+        faceContainer.SetActive(false);
+    }
     public void PlayGame()
     {
         if(tutorial == true)
