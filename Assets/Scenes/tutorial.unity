@@ -9409,7 +9409,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Use         \nto avoid \ntaking dmg"
+  m_Text: "Use         \nto avoid \ntaking damage"
 --- !u!222 &1127025243
 CanvasRenderer:
   m_ObjectHideFlags: 0
