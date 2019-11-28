@@ -710,7 +710,7 @@ RectTransform:
   m_GameObject: {fileID: 301126613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.92301255, y: 0.92301255, z: 0.92301255}
+  m_LocalScale: {x: 1.2441287, y: 1.2441287, z: 1.2441287}
   m_Children:
   - {fileID: 177975337}
   - {fileID: 22883520}
@@ -720,10 +720,10 @@ RectTransform:
   m_Father: {fileID: 414309900}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.7245, y: 0}
-  m_SizeDelta: {x: 708.80005, y: 1080}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -6.3591, y: 0}
+  m_SizeDelta: {x: 708.80005, y: -270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301126615
 MonoBehaviour:
@@ -821,7 +821,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    m_Font: {fileID: 12800000, guid: 12bfb58ec77f69c4685909022e5f13e6, type: 3}
     m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
@@ -2946,11 +2946,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scroll: {fileID: 0}
+  skinContainer: {fileID: 0}
+  faceContainer: {fileID: 0}
   score: 0
   buyButton: {fileID: 0}
   buyDashButton: {fileID: 0}
   buyRocketButton: {fileID: 0}
   scoreText: {fileID: 0}
+  dashText: {fileID: 0}
+  rocketText: {fileID: 0}
   dashDmg: 0
   TApanel: {fileID: 301126613}
   GoldPanel: {fileID: 0}
@@ -2981,6 +2985,15 @@ MonoBehaviour:
   level6Button: {fileID: 0}
   level7Button: {fileID: 0}
   levelBossButton: {fileID: 0}
+  tutorialButtonT: {fileID: 0}
+  level1Button1: {fileID: 0}
+  level2Button2: {fileID: 0}
+  level3Button3: {fileID: 0}
+  level4Button4: {fileID: 0}
+  level5Button5: {fileID: 0}
+  level6Button6: {fileID: 0}
+  level7Button7: {fileID: 0}
+  levelBossButtonB: {fileID: 0}
   car: {fileID: 0}
   isLevel1Open: 0
   isLevel2Open: 0
