@@ -289,9 +289,21 @@ using UnityEngine.Advertisements;
             }
             if (sceneName == "7th Level")
             {
+                PlayerPrefs.SetInt("Level8Open", 1);
+            }
+            if (sceneName == "8th Level")
+            {
+                PlayerPrefs.SetInt("Level9Open", 1);
+            }
+            if (sceneName == "9th Level")
+            {
+                PlayerPrefs.SetInt("Level10Open", 1);
+            }
+            if (sceneName == "10th Level")
+            {
                 PlayerPrefs.SetInt("LevelBossOpen", 1);
             }
-            if(sceneName == "BossW1 Level")
+            if (sceneName == "BossW1 Level")
             {
                 player.GetComponent<PlayerController>().score += 50;
                 PlayerPrefs.SetInt("score", player.GetComponent<PlayerController>().score);
