@@ -7,21 +7,21 @@ using UnityEngine.Advertisements;
 
 public class Game : MonoBehaviour
 {
-    public GameObject scroll;
+    public GameObject scroll, skinContainer, faceContainer;
     public int score;
     public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText, dashText, rocketText;
     public int dashDmg;
     public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy;
     public int accept;
-    public bool tutorial, level1, level2, level3, level4, level5, level6, level7, levelBoss;
-    public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button, level7Button, levelBossButton;
-    public Button tutorialButtonT, level1Button1, level2Button2, level3Button3, level4Button4, level5Button5, level6Button6, level7Button7, levelBossButtonB;
+    public bool tutorial, level1, level2, level3, level4, level5, level6, level7, level8, level9, level10, levelBoss;
+    public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button, level7Button, level8Button, level9Button, level10Button, levelBossButton;
+    public Button tutorialButtonT, level1Button1, level2Button2, level3Button3, level4Button4, level5Button5, level6Button6, level7Button7, level8Button8, level9Button9, level10Button10, levelBossButtonB;
 
     public GameObject car;
-    public bool isLevel1Open, isLevel2Open, isLevel3Open, isLevel4Open, isLevel5Open, isLevel6Open, isLevel7Open, isLevelBossOpen;
+    public bool isLevel1Open, isLevel2Open, isLevel3Open, isLevel4Open, isLevel5Open, isLevel6Open, isLevel7Open, isLevel8Open, isLevel9Open, isLevel10Open, isLevelBossOpen;
     public int timesBuyDash;
-    public GameObject lock1, lock2, lock3, lock4, lock5, lock6, lock7, lockBoss;
+    public GameObject lock1, lock2, lock3, lock4, lock5, lock6, lock7, lock8, lock9, lock10, lockBoss;
 
     // Start is called before the first frame update
     void Start()
@@ -39,15 +39,21 @@ public class Game : MonoBehaviour
         lock5.SetActive(true);
         lock6.SetActive(true);
         lock7.SetActive(true);
+        lock8.SetActive(true);
+        lock9.SetActive(true);
+        lock10.SetActive(true);
         lockBoss.SetActive(true);
 
         tutorial = true;
+
+
+
         if(PlayerPrefs.GetInt("Level1Open", 0) == 1)
         {
             isLevel1Open = true;
             lock1.SetActive(false);
 
-            if(isLevel2Open == false || isLevel3Open == false || isLevel4Open == false|| isLevel5Open == false|| isLevel6Open == false || isLevel7Open == false)
+            if(isLevel2Open == false || isLevel3Open == false || isLevel4Open == false|| isLevel5Open == false|| isLevel6Open == false || isLevel7Open == false || isLevel8Open == false || isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
             {
                 car.transform.position = level1Button.transform.position;
                 tutorial = false;
@@ -58,6 +64,9 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                level8 = false;
+                level9 = false;
+                level10 = false;
                 levelBoss = false;
             }
         }
@@ -72,7 +81,7 @@ public class Game : MonoBehaviour
             isLevel2Open = true;
             lock2.SetActive(false);
 
-            if (isLevel3Open == false || isLevel4Open == false || isLevel5Open == false || isLevel6Open == false || isLevel7Open == false)
+            if (isLevel3Open == false || isLevel4Open == false || isLevel5Open == false || isLevel6Open == false || isLevel7Open == false || isLevel8Open == false || isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
             {
                 car.transform.position = level2Button.transform.position;
                 tutorial = false;
@@ -83,6 +92,9 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                level8 = false;
+                level9 = false;
+                level10 = false;
                 levelBoss = false;
 
             }
@@ -96,7 +108,7 @@ public class Game : MonoBehaviour
             isLevel3Open = true;
             lock3.SetActive(false);
 
-            if ( isLevel4Open == false || isLevel5Open == false || isLevel6Open == false || isLevel7Open == false)
+            if ( isLevel4Open == false || isLevel5Open == false || isLevel6Open == false || isLevel7Open == false || isLevel8Open == false || isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
             {
                 car.transform.position = level3Button.transform.position;
                 tutorial = false;
@@ -107,6 +119,9 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                level8 = false;
+                level9 = false;
+                level10 = false;
                 levelBoss = false;
 
             }
@@ -122,7 +137,7 @@ public class Game : MonoBehaviour
             isLevel4Open = true;
             lock4.SetActive(false);
 
-            if ( isLevel5Open == false || isLevel6Open == false || isLevel7Open == false)
+            if ( isLevel5Open == false || isLevel6Open == false || isLevel7Open == false || isLevel8Open == false || isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
             {
                 car.transform.position = level4Button.transform.position;
                 tutorial = false;
@@ -133,6 +148,9 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = false;
                 level7 = false;
+                level8 = false;
+                level9 = false;
+                level10 = false;
                 levelBoss = false;
 
             }
@@ -146,7 +164,7 @@ public class Game : MonoBehaviour
             isLevel5Open = true;
             lock5.SetActive(false);
 
-            if (isLevel6Open == false || isLevel7Open == false)
+            if (isLevel6Open == false || isLevel7Open == false || isLevel8Open == false || isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
             {
                 car.transform.position = level5Button.transform.position;
                 tutorial = false;
@@ -157,6 +175,9 @@ public class Game : MonoBehaviour
                 level5 = true;
                 level6 = false;
                 level7 = false;
+                level8 = false;
+                level9 = false;
+                level10 = false;
                 levelBoss = false;
 
 
@@ -175,7 +196,7 @@ public class Game : MonoBehaviour
             isLevel6Open = true;
             lock6.SetActive(false);
 
-            if (isLevel7Open == false)
+            if (isLevel7Open == false || isLevel8Open == false || isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
             {
                 car.transform.position = level6Button.transform.position;
                 tutorial = false;
@@ -186,6 +207,9 @@ public class Game : MonoBehaviour
                 level5 = false;
                 level6 = true;
                 level7 = false;
+                level8 = false;
+                level9 = false;
+                level10 = false;
                 levelBoss = false;
 
             }
@@ -194,26 +218,125 @@ public class Game : MonoBehaviour
         {
             level6Button6.interactable = false;
         }
+
         if (PlayerPrefs.GetInt("Level7Open", 0) == 1)
         {
             isLevel7Open = true;
             lock7.SetActive(false);
-            car.transform.position = level7Button.transform.position;
-            tutorial = false;
-            level1 = false;
-            level2 = false;
-            level3 = false;
-            level4 = false;
-            level5 = false;
-            level6 = false;
-            level7 = true;
-            levelBoss = false;
+
+            if(isLevel8Open == false || isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
+            {
+                car.transform.position = level7Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+                level4 = false;
+                level5 = false;
+                level6 = false;
+                level7 = true;
+                level8 = false;
+                level9 = false;
+                level10 = false;
+                levelBoss = false;
+            }
+           
 
         }
         else
         {
             level7Button7.interactable = false;
         }
+
+        if (PlayerPrefs.GetInt("Level8Open", 0) == 1)
+        {
+            isLevel8Open = true;
+            lock8.SetActive(false);
+
+            if ( isLevel9Open == false || isLevel10Open == false || isLevelBossOpen == false)
+            {
+                car.transform.position = level8Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+                level4 = false;
+                level5 = false;
+                level6 = false;
+                level7 = false;
+                level8 = true;
+                level9 = false;
+                level10 = false;
+                levelBoss = false;
+            }
+
+
+        }
+        else
+        {
+            level8Button8.interactable = false;
+        }
+
+
+        if (PlayerPrefs.GetInt("Level9Open", 0) == 1)
+        {
+            isLevel9Open = true;
+            lock9.SetActive(false);
+
+            if (isLevel9Open == false || isLevelBossOpen == false)
+            {
+                car.transform.position = level9Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+                level4 = false;
+                level5 = false;
+                level6 = false;
+                level7 = false;
+                level8 = false;
+                level9 = true;
+                level10 = false;
+                levelBoss = false;
+            }
+
+
+        }
+        else
+        {
+            level9Button9.interactable = false;
+        }
+
+
+        if (PlayerPrefs.GetInt("Level10Open", 0) == 1)
+        {
+            isLevel10Open = true;
+            lock10.SetActive(false);
+
+            if (isLevelBossOpen == false)
+            {
+                car.transform.position = level10Button.transform.position;
+                tutorial = false;
+                level1 = false;
+                level2 = false;
+                level3 = false;
+                level4 = false;
+                level5 = false;
+                level6 = false;
+                level7 = false;
+                level8 = false;
+                level9 = false;
+                level10 = true;
+                levelBoss = false;
+            }
+
+
+        }
+        else
+        {
+            level10Button10.interactable = false;
+        }
+
 
         if (PlayerPrefs.GetInt("LevelBossOpen", 0) == 1)
         {
@@ -228,6 +351,9 @@ public class Game : MonoBehaviour
             level5 = false;
             level6 = false;
             level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
             levelBoss = true;
         }
         else
@@ -320,6 +446,9 @@ public class Game : MonoBehaviour
         level5 = false;
         level6 = false;
         level7 = false;
+        level8 = false;
+        level9 = false;
+        level10 = false;
         levelBoss = false;
 
 
@@ -331,17 +460,21 @@ public class Game : MonoBehaviour
         if (isLevel1Open)
         {
             car.transform.position = level1Button.transform.position;
+            tutorial = false;
+            level1 = true;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
         }
         
-        tutorial = false;
-        level1 = true;
-        level2 = false;
-        level3 = false;
-        level4 = false;
-        level5 = false;
-        level6 = false;
-        level7 = false;
-        levelBoss = false;
+        
 
 
     }
@@ -351,18 +484,22 @@ public class Game : MonoBehaviour
         if (isLevel2Open)
         {
             car.transform.position = level2Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = true;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
 
         }
 
-        tutorial = false;
-        level1 = false;
-        level2 = true;
-        level3 = false;
-        level4 = false;
-        level5 = false;
-        level6 = false;
-        level7 = false;
-        levelBoss = false;
+        
 
 
     }
@@ -372,17 +509,21 @@ public class Game : MonoBehaviour
         if (isLevel3Open)
         {
             car.transform.position = level3Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = true;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
 
         }
-        tutorial = false;
-        level1 = false;
-        level2 = false;
-        level3 = true;
-        level4 = false;
-        level5 = false;
-        level6 = false;
-        level7 = false;
-        levelBoss = false;
+        
 
     }
 
@@ -391,17 +532,21 @@ public class Game : MonoBehaviour
         if (isLevel4Open)
         {
             car.transform.position = level4Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = true;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
 
         }
-        tutorial = false;
-        level1 = false;
-        level2 = false;
-        level3 = false;
-        level4 = true;
-        level5 = false;
-        level6 = false;
-        level7 = false;
-        levelBoss = false;
+        
 
 
     }
@@ -410,17 +555,21 @@ public class Game : MonoBehaviour
         if (isLevel5Open)
         {
             car.transform.position = level5Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = true;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
 
         }
-        tutorial = false;
-        level1 = false;
-        level2 = false;
-        level3 = false;
-        level4 = false;
-        level5 = true;
-        level6 = false;
-        level7 = false;
-        levelBoss = false;
+        
 
 
     }
@@ -429,17 +578,21 @@ public class Game : MonoBehaviour
         if (isLevel6Open)
         {
             car.transform.position = level6Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = true;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
 
         }
-        tutorial = false;
-        level1 = false;
-        level2 = false;
-        level3 = false;
-        level4 = false;
-        level5 = false;
-        level6 = true;
-        level7 = false;
-        levelBoss = false;
+        
 
 
     }
@@ -449,17 +602,21 @@ public class Game : MonoBehaviour
         if (isLevel7Open)
         {
             car.transform.position = level7Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = true;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
 
         }
-        tutorial = false;
-        level1 = false;
-        level2 = false;
-        level3 = false;
-        level4 = false;
-        level5 = false;
-        level6 = false;
-        level7 = true;
-        levelBoss = false;
+        
 
     }
 
@@ -469,19 +626,35 @@ public class Game : MonoBehaviour
         if (isLevelBossOpen)
         {
             car.transform.position = levelBossButton.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = false;
+            levelBoss = true;
 
         }
-        tutorial = false;
-        level1 = false;
-        level2 = false;
-        level3 = false;
-        level4 = false;
-        level5 = false;
-        level6 = false;
-        level7 = false;
-        levelBoss = true;
+        
     }
 
+
+    public void faceButton()
+    {
+        skinContainer.SetActive(false);
+        faceContainer.SetActive(true);
+    }
+
+    public void skinButton()
+    {
+        skinContainer.SetActive(true);
+        faceContainer.SetActive(false);
+    }
     public void PlayGame()
     {
         if(tutorial == true)

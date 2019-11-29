@@ -18,8 +18,13 @@ using UnityEngine.Advertisements;
     [SerializeField] private Animator BridgeBoss1Controller;
     [SerializeField] private Animator BridgeBoss2Controller;
     [SerializeField] private Animator HPBarController;
-    
 
+    bool hint1Shown, hint2Shown, hint3Shown, hint4Shown;
+
+
+    public GameObject hint1TriggerObj, hint2TriggerObj, hint3TriggerObj, hint4TriggerObj;
+
+    public GameObject hint1, hint2, hint3, hint4;
 
     Rigidbody myBody;
 
@@ -284,9 +289,21 @@ using UnityEngine.Advertisements;
             }
             if (sceneName == "7th Level")
             {
+                PlayerPrefs.SetInt("Level8Open", 1);
+            }
+            if (sceneName == "8th Level")
+            {
+                PlayerPrefs.SetInt("Level9Open", 1);
+            }
+            if (sceneName == "9th Level")
+            {
+                PlayerPrefs.SetInt("Level10Open", 1);
+            }
+            if (sceneName == "10th Level")
+            {
                 PlayerPrefs.SetInt("LevelBossOpen", 1);
             }
-            if(sceneName == "BossW1 Level")
+            if (sceneName == "BossW1 Level")
             {
                 player.GetComponent<PlayerController>().score += 50;
                 PlayerPrefs.SetInt("score", player.GetComponent<PlayerController>().score);
@@ -294,9 +311,28 @@ using UnityEngine.Advertisements;
             }
 
         }
+
+        if(col.gameObject.tag == "Hint1Trigger")
+        {
+            hint1Trigger();
+        }
+        if (col.gameObject.tag == "Hint2Trigger")
+        {
+            hint2Trigger();
+        }
+        if (col.gameObject.tag == "Hint3Trigger")
+        {
+            hint3Trigger();
+        }
+        if (col.gameObject.tag == "Hint4Trigger")
+        {
+            hint4Trigger();
+        }
     }
 
    
+
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "shield" || collision.gameObject.tag == "Enemy2")
@@ -382,4 +418,68 @@ using UnityEngine.Advertisements;
     {
         SceneManager.LoadScene(sceneName);
     }
- }
+
+
+    public void hint1Panel()
+    {
+        hint1.SetActive(false);
+        Time.timeScale = 1;
+    }
+    public void hint2Panel()
+    {
+        hint2.SetActive(false);
+        Time.timeScale = 1;
+
+    }
+    public void hint3Panel()
+    {
+        hint3.SetActive(false);
+        Time.timeScale = 1;
+
+    }
+    public void hint4Panel()
+    {
+        hint4.SetActive(false);
+        Time.timeScale = 1;
+
+    }
+
+    public void hint1Trigger()
+    {
+        if(hint1Shown == false)
+        {
+            hint1.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
+        hint1Shown = true;
+    }
+    public void hint2Trigger()
+    {
+        if (hint2Shown == false)
+        {
+            hint2.SetActive(true);
+            Time.timeScale = 0;
+        }
+        hint2Shown = true;
+    }
+    public void hint3Trigger()
+    {
+        if (hint3Shown == false)
+        {
+            hint3.SetActive(true);
+            Time.timeScale = 0;
+        }
+        hint3Shown = true;
+    }
+    public void hint4Trigger()
+    {
+        if (hint4Shown == false)
+        {
+            hint4.SetActive(true);
+            Time.timeScale = 0;
+        }
+        hint4Shown = true;
+    }
+
+}

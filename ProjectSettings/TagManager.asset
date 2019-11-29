@@ -40,6 +40,10 @@ TagManager:
   - HPBarPlayer
   - HPBarBG
   - BeamCollider
+  - Hint1Trigger
+  - Hint2Trigger
+  - Hint3Trigger
+  - Hint4Trigger
   layers:
   - Default
   - TransparentFX

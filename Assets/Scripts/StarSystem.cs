@@ -18,6 +18,9 @@ public class StarSystem : MonoBehaviour
     int stars5thLevel;
     int stars6thLevel;
     int stars7thLevel;
+    int stars8thLevel;
+    int stars9thLevel;
+    int stars10thLevel;
     int starsBossLevel;
 
     int score;
@@ -37,6 +40,9 @@ public class StarSystem : MonoBehaviour
         stars5thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
         stars6thLevel = PlayerPrefs.GetInt("Stars6thLevel", 0);
         stars7thLevel = PlayerPrefs.GetInt("Stars7thLevel", 0);
+        stars8thLevel = PlayerPrefs.GetInt("Stars8thLevel", 0);
+        stars9thLevel = PlayerPrefs.GetInt("Stars9thLevel", 0);
+        stars10thLevel = PlayerPrefs.GetInt("Stars10thLevel", 0);
         starsBossLevel = PlayerPrefs.GetInt("StarsBossLevel", 0);
 
 
@@ -512,6 +518,177 @@ public class StarSystem : MonoBehaviour
                     if (stars7thLevel < 1)
                     {
                         PlayerPrefs.SetInt("Stars7thLevel", 1);
+                    }
+
+                }
+
+
+
+
+            }
+
+            //LEVEL 8
+            if (sceneName == "8th Level")
+            {
+                if (stars == 3)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+                    star3.SetActive(true);
+
+                    score += 15;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars8thLevel < 3)
+                    {
+                        PlayerPrefs.SetInt("Stars8thLevel", 3);
+                    }
+
+
+                }
+
+                if (stars == 2)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+
+                    score += 10;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars8thLevel < 2)
+                    {
+                        PlayerPrefs.SetInt("Stars8thLevel", 2);
+                    }
+
+                }
+
+                if (stars == 1)
+                {
+                    star1.SetActive(true);
+
+                    score += 5;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars8thLevel < 1)
+                    {
+                        PlayerPrefs.SetInt("Stars8thLevel", 1);
+                    }
+
+                }
+
+
+
+
+            }
+
+            //LEVEL 9
+            if (sceneName == "9th Level")
+            {
+                if (stars == 3)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+                    star3.SetActive(true);
+
+                    score += 15;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars9thLevel < 3)
+                    {
+                        PlayerPrefs.SetInt("Stars9thLevel", 3);
+                    }
+
+
+                }
+
+                if (stars == 2)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+
+                    score += 10;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars9thLevel < 2)
+                    {
+                        PlayerPrefs.SetInt("Stars9thLevel", 2);
+                    }
+
+                }
+
+                if (stars == 1)
+                {
+                    star1.SetActive(true);
+
+                    score += 5;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars9thLevel < 1)
+                    {
+                        PlayerPrefs.SetInt("Stars9thLevel", 1);
+                    }
+
+                }
+
+
+
+
+            }
+
+            //LEVEL 10
+            if (sceneName == "10th Level")
+            {
+                if (stars == 3)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+                    star3.SetActive(true);
+
+                    score += 15;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars10thLevel < 3)
+                    {
+                        PlayerPrefs.SetInt("Stars10thLevel", 3);
+                    }
+
+
+                }
+
+                if (stars == 2)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+
+                    score += 10;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars10thLevel < 2)
+                    {
+                        PlayerPrefs.SetInt("Stars10thLevel", 2);
+                    }
+
+                }
+
+                if (stars == 1)
+                {
+                    star1.SetActive(true);
+
+                    score += 5;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars10thLevel < 1)
+                    {
+                        PlayerPrefs.SetInt("Stars10thLevel", 1);
                     }
 
                 }

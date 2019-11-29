@@ -13,6 +13,10 @@ public class StarsLevelSelection : MonoBehaviour
     public GameObject star1Level5, star2Level5, star3Level5;
     public GameObject star1Level6, star2Level6, star3Level6;
     public GameObject star1Level7, star2Level7, star3Level7;
+    public GameObject star1Level8, star2Level8, star3Level8;
+    public GameObject star1Level9, star2Level9, star3Level9;
+    public GameObject star1Level10, star2Level10, star3Level10;
+
     public GameObject star1LevelBoss, star2LevelBoss, star3LevelBoss;
 
 
@@ -27,6 +31,9 @@ public class StarsLevelSelection : MonoBehaviour
     int stars5thLevel;
     int stars6thLevel;
     int stars7thLevel;
+    int stars8thLevel;
+    int stars9thLevel;
+    int stars10thLevel;
     int starsBossLevel;
 
 
@@ -42,6 +49,9 @@ public class StarsLevelSelection : MonoBehaviour
         stars5thLevel = PlayerPrefs.GetInt("Stars5thLevel", 0);
         stars6thLevel = PlayerPrefs.GetInt("Stars6thLevel", 0);
         stars7thLevel = PlayerPrefs.GetInt("Stars7thLevel", 0);
+        stars8thLevel = PlayerPrefs.GetInt("Stars8thLevel", 0);
+        stars9thLevel = PlayerPrefs.GetInt("Stars9thLevel", 0);
+        stars10thLevel = PlayerPrefs.GetInt("Stars10thLevel", 0);
         starsBossLevel = PlayerPrefs.GetInt("StarsBossLevel", 0);
 
 
@@ -213,6 +223,66 @@ public class StarsLevelSelection : MonoBehaviour
         if (stars7thLevel == 1)
         {
             star1Level7.SetActive(true);
+        }
+        //LEVEL 8
+
+
+        if (stars8thLevel == 3)
+        {
+            star1Level8.SetActive(true);
+            star2Level8.SetActive(true);
+            star3Level8.SetActive(true);
+        }
+
+        if (stars8thLevel == 2)
+        {
+            star1Level8.SetActive(true);
+            star2Level8.SetActive(true);
+        }
+
+        if (stars8thLevel == 1)
+        {
+            star1Level8.SetActive(true);
+        }
+        //LEVEL 9
+
+
+        if (stars9thLevel == 3)
+        {
+            star1Level9.SetActive(true);
+            star2Level9.SetActive(true);
+            star3Level9.SetActive(true);
+        }
+
+        if (stars9thLevel == 2)
+        {
+            star1Level9.SetActive(true);
+            star2Level9.SetActive(true);
+        }
+
+        if (stars9thLevel == 1)
+        {
+            star1Level9.SetActive(true);
+        }
+        //LEVEL 10
+
+
+        if (stars10thLevel == 3)
+        {
+            star1Level10.SetActive(true);
+            star2Level10.SetActive(true);
+            star3Level10.SetActive(true);
+        }
+
+        if (stars10thLevel == 2)
+        {
+            star1Level10.SetActive(true);
+            star2Level10.SetActive(true);
+        }
+
+        if (stars10thLevel == 1)
+        {
+            star1Level10.SetActive(true);
         }
 
         //Boss Level
