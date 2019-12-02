@@ -48,6 +48,7 @@ TagManager:
   - ScoreText
   - ExplodingBarrel
   - HealthBox
+  - BasicEmoji
   layers:
   - Default
   - TransparentFX

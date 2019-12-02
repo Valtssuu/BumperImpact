@@ -12,7 +12,8 @@ public class Game : MonoBehaviour
     public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText, dashText, rocketText;
     public int dashDmg;
-    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy;
+    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy, CosmeticBar;
+
     public int accept;
     public bool tutorial, level1, level2, level3, level4, level5, level6, level7, level8, level9, level10, levelBoss;
     public GameObject tutorialButton, level1Button, level2Button, level3Button , level4Button, level5Button, level6Button, level7Button, level8Button, level9Button, level10Button, levelBossButton;
@@ -919,6 +920,7 @@ public class Game : MonoBehaviour
     public void OpenGoldTickets()
     {
         GoldPanel.SetActive(true);
+        CosmeticBar.SetActive(false);
         NormalPanel.SetActive(false);
     }
 
@@ -926,5 +928,7 @@ public class Game : MonoBehaviour
     {
         GoldPanel.SetActive(false);
         NormalPanel.SetActive(true);
+        CosmeticBar.SetActive(true);
+
     }
 }

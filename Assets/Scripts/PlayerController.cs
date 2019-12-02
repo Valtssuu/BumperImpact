@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float moveForce, dashmeter, playerShieldLives, dashspeed;
     public GameObject MainCamera, hitParticle, dashParticle, dashbarover50, shield, Bar, Dust, dash, dashbar, pumpkinSkin;
     [SerializeField] private Animator HPBarController;
-
+    public GameObject basicEmoji;
     public TimeManager timeManager;
     public GameObject TM;
     public Rigidbody myBody;
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     public float poisonTime;
     void Start()
     {
+        basicEmoji = GameObject.FindWithTag("BasicEmoji");
         InvokeRepeating("addDash", 1.0f, 1f);
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
@@ -82,9 +83,8 @@ public class PlayerController : MonoBehaviour
             {
                 Child.SetActive(false);
             }
-            
-            
 
+            basicEmoji.SetActive(false);
             pumpkinSkin.SetActive(true);
         }
 

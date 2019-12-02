@@ -1449,12 +1449,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883693664779, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883693664779, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -6864,6 +6864,14 @@ MonoBehaviour:
   BridgeBoss1Controller: {fileID: 0}
   BridgeBoss2Controller: {fileID: 0}
   HPBarController: {fileID: 1118992582}
+  hint1TriggerObj: {fileID: 0}
+  hint2TriggerObj: {fileID: 0}
+  hint3TriggerObj: {fileID: 0}
+  hint4TriggerObj: {fileID: 0}
+  hint1: {fileID: 0}
+  hint2: {fileID: 0}
+  hint3: {fileID: 0}
+  hint4: {fileID: 0}
   winCanvas: {fileID: 1430647541}
   Bridge: {fileID: 0}
   Bridge2: {fileID: 0}
@@ -6904,6 +6912,7 @@ MonoBehaviour:
   dashbar: {fileID: 5620262653495829032}
   pumpkinSkin: {fileID: 411020373}
   HPBarController: {fileID: 1118992582}
+  basicEmoji: {fileID: 0}
   timeManager: {fileID: 0}
   TM: {fileID: 0}
   myBody: {fileID: 681278562}
@@ -11289,12 +11298,17 @@ PrefabInstance:
     - target: {fileID: -1303533798577211092, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
       propertyPath: m_TagString
-      value: PlayerChild
+      value: BasicEmoji
       objectReference: {fileID: 0}
     - target: {fileID: -1303533798577211092, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1303533798577211092, guid: d00f25a8175109044a17852fe86ff4c6,
+        type: 3}
+      propertyPath: m_Name
+      value: basic emoji
       objectReference: {fileID: 0}
     - target: {fileID: -6203755416157869376, guid: d00f25a8175109044a17852fe86ff4c6,
         type: 3}
