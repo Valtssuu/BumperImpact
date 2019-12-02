@@ -619,7 +619,72 @@ public class Game : MonoBehaviour
         
 
     }
+    public void Level8()
+    {
+        if (isLevel8Open)
+        {
+            car.transform.position = level8Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = true;
+            level9 = false;
+            level10 = false;
+            levelBoss = false;
 
+        }
+
+
+    }
+    public void Level9()
+    {
+        if (isLevel9Open)
+        {
+            car.transform.position = level9Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = true;
+            level10 = false;
+            levelBoss = false;
+
+        }
+
+
+    }
+    public void Level10()
+    {
+        if (isLevel10Open)
+        {
+            car.transform.position = level10Button.transform.position;
+            tutorial = false;
+            level1 = false;
+            level2 = false;
+            level3 = false;
+            level4 = false;
+            level5 = false;
+            level6 = false;
+            level7 = false;
+            level8 = false;
+            level9 = false;
+            level10 = true;
+            levelBoss = false;
+
+        }
+
+
+    }
 
     public void LevelBoss()
     {
@@ -712,6 +777,27 @@ public class Game : MonoBehaviour
             if (isLevel7Open)
             {
                 SceneManager.LoadScene("7th Level");
+            }
+        }
+        if (level8 == true)
+        {
+            if (isLevel8Open)
+            {
+                SceneManager.LoadScene("8th Level");
+            }
+        }
+        if (level9 == true)
+        {
+            if (isLevel9Open)
+            {
+                SceneManager.LoadScene("9th Level");
+            }
+        }
+        if (level10 == true)
+        {
+            if (isLevel10Open)
+            {
+                SceneManager.LoadScene("10th Level");
             }
         }
 

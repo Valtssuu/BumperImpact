@@ -1165,12 +1165,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883693664779, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883693664779, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -3938,6 +3938,14 @@ MonoBehaviour:
   BridgeBoss1Controller: {fileID: 1355885564}
   BridgeBoss2Controller: {fileID: 2094192940}
   HPBarController: {fileID: 1854040316}
+  hint1TriggerObj: {fileID: 0}
+  hint2TriggerObj: {fileID: 0}
+  hint3TriggerObj: {fileID: 0}
+  hint4TriggerObj: {fileID: 0}
+  hint1: {fileID: 0}
+  hint2: {fileID: 0}
+  hint3: {fileID: 0}
+  hint4: {fileID: 0}
   winCanvas: {fileID: 1657956761}
   Bridge: {fileID: 0}
   Bridge2: {fileID: 0}
@@ -12638,6 +12646,7 @@ MonoBehaviour:
   lookRadius: 20
   explosion: {fileID: 1114012025579778096, guid: d6c023910a3db694ba3877c9be703bc0,
     type: 3}
+  HPBar: {fileID: 1354553086}
   direction: {fileID: 0}
   player: {fileID: 8296172668094639039}
   boss1Speed: 25

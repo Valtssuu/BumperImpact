@@ -12,6 +12,7 @@ public class BossW1AI : MonoBehaviour
 
     public float lookRadius;
     public GameObject explosion;
+    public GameObject HPBar;
     public Transform direction = null;
     public GameObject player;
 
@@ -149,6 +150,7 @@ public class BossW1AI : MonoBehaviour
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 10;
+        HPBar.SetActive(false);
         Destroy(gameObject);
         Destroy(clone, 1f);
     }
@@ -276,5 +278,9 @@ public class BossW1AI : MonoBehaviour
         bossAnim.SetBool("isShooting", true);
         yield return new WaitForSeconds(1f);
         bossAnim.SetBool("isShooting", false);
+    }
+    private void OnDestroy()
+    {
+        HPBar.SetActive(false);
     }
 }
