@@ -8,7 +8,7 @@ using UnityEngine.Advertisements;
 public class Game : MonoBehaviour
 {
     public GameObject scroll, skinContainer, faceContainer;
-    public GameObject prettyBuyButton, cuteBuyButton, sadhappyBuyButton, prettyApplyButton, cuteAppyButton, sadhappyApplyButton;
+    public GameObject prettyBuyButton, cuteBuyButton, sadhappyBuyButton, prettyApplyButton, cuteAppyButton, sadhappyApplyButton, camoBuyButton, leopardBuyButton, hippieBuyButton, camoApplyButton, leopardApplyButton, hippieApplyButton;
     public int score;
     public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText, dashText, rocketText;
@@ -445,6 +445,22 @@ public class Game : MonoBehaviour
             {
                 cuteBuyButton.SetActive(false);
 
+            }
+
+            if(PlayerPrefs.GetInt("skinHippieBought",0) == 1)
+            {
+                hippieBuyButton.SetActive(false);
+
+            }
+
+            if(PlayerPrefs.GetInt("skinLeopardBought",0) == 1)
+            {
+                leopardBuyButton.SetActive(false);
+            }
+
+            if(PlayerPrefs.GetInt("skinCamoBought",0) == 1)
+            {
+                camoBuyButton.SetActive(false);
             }
         }
 
@@ -957,6 +973,75 @@ public class Game : MonoBehaviour
         NormalPanel.SetActive(true);
         CosmeticBar.SetActive(true);
 
+    }
+
+    public void BuyCamoSkin()
+    {
+        if(score >= 1)
+        {
+            score = score - 1;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+            PlayerPrefs.SetInt("skinCamoBought", 1);
+            camoBuyButton.SetActive(false);
+
+        }
+    }
+    public void BuyLeopardSkin()
+    {
+        if (score >= 1)
+        {
+            score = score - 1;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+            PlayerPrefs.SetInt("skinLeopardBought", 1);
+            leopardBuyButton.SetActive(false);
+        }
+    }
+    public void BuyHippieSkin()
+    {
+        if (score >= 1)
+        {
+            score = score - 1;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+            PlayerPrefs.SetInt("skinHippieBought", 1);
+            hippieBuyButton.SetActive(false);
+        }
+    }
+
+    public void ApplyCamoSkin()
+    {
+        PlayerPrefs.SetInt("skinCamo", 1);
+        PlayerPrefs.SetInt("skinLeopard", 0);
+        PlayerPrefs.SetInt("skinHippie", 0);
+        PlayerPrefs.SetInt("skinBasic", 0);
+
+    }
+
+    public void ApplyLeopardSkin()
+    {
+        PlayerPrefs.SetInt("skinCamo", 0);
+        PlayerPrefs.SetInt("skinLeopard", 1);
+        PlayerPrefs.SetInt("skinHippie", 0);
+        PlayerPrefs.SetInt("skinBasic", 0);
+
+    }
+    public void ApplyHippieSkin()
+    {
+        PlayerPrefs.SetInt("skinCamo", 0);
+        PlayerPrefs.SetInt("skinLeopard", 0);
+        PlayerPrefs.SetInt("skinHippie", 1);
+        PlayerPrefs.SetInt("skinBasic", 0);
+
+    }
+
+    public void ApplyBasicSkin()
+    {
+        PlayerPrefs.SetInt("skinCamo", 0);
+        PlayerPrefs.SetInt("skinLeopard", 0);
+        PlayerPrefs.SetInt("skinHippie", 0);
+        PlayerPrefs.SetInt("skinBasic", 1);
     }
 
     public void BuySadHappyEmoji()
