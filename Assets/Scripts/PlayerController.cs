@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float moveForce, dashmeter, playerShieldLives, dashspeed;
     public GameObject MainCamera, hitParticle, dashParticle, dashbarover50, shield, Bar, Dust, dash, dashbar, pumpkinSkin;
     [SerializeField] private Animator HPBarController;
-    public GameObject basicEmoji;
+    public GameObject basicEmoji, prettyEmoji, cuteEmoji, sadHappyEmoji;
     public TimeManager timeManager;
     public GameObject TM;
     public Rigidbody myBody;
@@ -53,6 +53,9 @@ public class PlayerController : MonoBehaviour
     public float poisonTime;
     void Start()
     {
+        sadHappyEmoji = GameObject.FindWithTag("SadHappyEmoji");
+        prettyEmoji = GameObject.FindWithTag("PrettyEmoji");
+        cuteEmoji = GameObject.FindWithTag("CuteEmoji");
         basicEmoji = GameObject.FindWithTag("BasicEmoji");
         InvokeRepeating("addDash", 1.0f, 1f);
         Scene currentScene = SceneManager.GetActiveScene();
@@ -85,7 +88,34 @@ public class PlayerController : MonoBehaviour
             }
 
             basicEmoji.SetActive(false);
+            sadHappyEmoji.SetActive(false);
+            prettyEmoji.SetActive(false);
+            cuteEmoji.SetActive(false);
             pumpkinSkin.SetActive(true);
+            
+        }
+        else
+        {
+            basicEmoji.SetActive(true);
+
+            if(PlayerPrefs.GetInt("sadHappyEmoji", 0) == 1)
+            {
+                sadHappyEmoji.SetActive(true);
+                basicEmoji.SetActive(false);
+            }
+            if (PlayerPrefs.GetInt("cuteEmoji", 0) == 1)
+            {
+                cuteEmoji.SetActive(true);
+                basicEmoji.SetActive(false);
+
+            }
+            if (PlayerPrefs.GetInt("prettyEmoji", 0) == 1)
+            {
+                prettyEmoji.SetActive(true);
+                basicEmoji.SetActive(false);
+
+            }
+
         }
 
     }

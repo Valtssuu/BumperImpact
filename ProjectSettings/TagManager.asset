@@ -49,6 +49,9 @@ TagManager:
   - ExplodingBarrel
   - HealthBox
   - BasicEmoji
+  - PrettyEmoji
+  - CuteEmoji
+  - SadHappyEmoji
   layers:
   - Default
   - TransparentFX

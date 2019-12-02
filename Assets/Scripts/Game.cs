@@ -931,4 +931,17 @@ public class Game : MonoBehaviour
         CosmeticBar.SetActive(true);
 
     }
+
+    public void BuySadHappyEmoji()
+    {
+        PlayerPrefs.SetInt("sadHappyEmoji", 1);
+    }
+    public void BuyPrettyEmoji()
+    {
+        PlayerPrefs.SetInt("prettyEmoji", 1);
+    }
+    public void BuyCuteEmoji()
+    {
+        PlayerPrefs.SetInt("cuteEmoji", 1);
+    }
 }
