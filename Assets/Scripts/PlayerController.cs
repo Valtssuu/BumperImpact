@@ -397,7 +397,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("50Fov"))
         {
-            if (GetComponent<Camera>().fieldOfView == 18)
+            if (MainCamera.GetComponent<Camera>().fieldOfView == 18)
             {
                 StartCoroutine("ZoomOut");
             }
@@ -405,7 +405,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("BackToNormal"))
         {
-            if (GetComponent<Camera>().fieldOfView == 38)
+            if (MainCamera.GetComponent<Camera>().fieldOfView == 38)
             {
                 StartCoroutine("ZoomIn");
             }
@@ -550,7 +550,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 30; i < 50; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            GetComponent<Camera>().fieldOfView++;
+            MainCamera.GetComponent<Camera>().fieldOfView++;
             MainCamera.GetComponent<CameraController>().distance--;
         }
 
@@ -560,7 +560,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 50; i > 30; i--)
         {
             yield return new WaitForSeconds(0.01f);
-            GetComponent<Camera>().fieldOfView--;
+            MainCamera.GetComponent<Camera>().fieldOfView--;
             MainCamera.GetComponent<CameraController>().distance++;
         }
     }

@@ -7,7 +7,7 @@ public class TargetIndicatorOffsreen : MonoBehaviour
     Vector3 screenPos;
     Vector2 onScreenPos;
     float max;
-    Camera camera;
+    private Camera camera;
 
     public List<Transform> enemyList;
     public List<Vector3> enemyDistanceList;

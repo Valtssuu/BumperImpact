@@ -142,7 +142,7 @@ using UnityEngine.Advertisements;
             changeCamera = true;
             if(sceneName != "BossW1 Level")
             {
-                player.GetComponent<PlayerController>().GetComponent<Camera>().fieldOfView = 18;
+                player.GetComponent<PlayerController>().MainCamera.GetComponent<Camera>().fieldOfView = 18;
                 MainCamera.GetComponent<CameraController>().distance = 46;
                 
 
