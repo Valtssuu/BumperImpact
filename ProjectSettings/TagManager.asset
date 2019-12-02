@@ -44,6 +44,10 @@ TagManager:
   - Hint2Trigger
   - Hint3Trigger
   - Hint4Trigger
+  - dashGlow
+  - ScoreText
+  - ExplodingBarrel
+  - HealthBox
   layers:
   - Default
   - TransparentFX
