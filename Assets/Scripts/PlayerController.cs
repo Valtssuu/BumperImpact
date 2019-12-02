@@ -97,32 +97,39 @@ public class PlayerController : MonoBehaviour
         */
         //else
         //{
-        basicEmoji.SetActive(false);
-        sadHappyEmoji.SetActive(false);
-        prettyEmoji.SetActive(false);
-        cuteEmoji.SetActive(false);
-        basicEmoji.SetActive(false);
-
         if(PlayerPrefs.GetInt("basicEmojiApplied", 0) == 1)
         {
             basicEmoji.SetActive(true);
+            sadHappyEmoji.SetActive(false);
+            prettyEmoji.SetActive(false);
+            cuteEmoji.SetActive(false);
         }
         if(PlayerPrefs.GetInt("sadHappyEmojiApplied", 0) == 1)
         {
+            basicEmoji.SetActive(false);
             sadHappyEmoji.SetActive(true);
+            prettyEmoji.SetActive(false);
+            cuteEmoji.SetActive(false);
         }
         if (PlayerPrefs.GetInt("cuteEmojiApplied", 0) == 1)
         {
+            basicEmoji.SetActive(false);
+
             cuteEmoji.SetActive(true);
+            sadHappyEmoji.SetActive(false);
+            prettyEmoji.SetActive(false);
 
         }
         if (PlayerPrefs.GetInt("prettyEmojiApplied", 0) == 1)
         {
             prettyEmoji.SetActive(true);
+            sadHappyEmoji.SetActive(false);
+            cuteEmoji.SetActive(false);
+            basicEmoji.SetActive(false);
 
         }
 
-//        }
+        //        }
 
     }
 

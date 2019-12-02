@@ -8,7 +8,7 @@ using UnityEngine.Advertisements;
 public class Game : MonoBehaviour
 {
     public GameObject scroll, skinContainer, faceContainer;
-    public GameObject prettyBuyButton, cuteBuyButton, sadhappyBuyButton, prettyApplyButton, cuteAppyButton, sadhappyApplyButton, camoBuyButton, leopardBuyButton, hippieBuyButton, camoApplyButton, leopardApplyButton, hippieApplyButton;
+    public GameObject prettyBuyButton, cuteBuyButton, sadhappyBuyButton, prettyApplyButton, cuteAppyButton, sadhappyApplyButton, camoBuyButton, leopardBuyButton, hippieBuyButton, camoApplyButton, leopardApplyButton, hippieApplyButton, skinBasicDisabled, skinCamoDisabled, skinHippieDisabled, skinLeopardDisabled, sadhappyDisabled, cuteDisabled, prettyDisabled, basicEmojiDisabled;
     public int score;
     public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText, dashText, rocketText;
@@ -461,6 +461,68 @@ public class Game : MonoBehaviour
             if(PlayerPrefs.GetInt("skinCamoBought",0) == 1)
             {
                 camoBuyButton.SetActive(false);
+            }
+            if (PlayerPrefs.GetInt("skinCamo", 0) == 1)
+            {
+                skinCamoDisabled.SetActive(true);
+                skinLeopardDisabled.SetActive(false);
+                skinHippieDisabled.SetActive(false);
+                skinBasicDisabled.SetActive(false);
+
+
+            }
+            if (PlayerPrefs.GetInt("skinLeopard", 0) == 1)
+            {
+                skinCamoDisabled.SetActive(false);
+                skinLeopardDisabled.SetActive(true);
+                skinHippieDisabled.SetActive(false);
+                skinBasicDisabled.SetActive(false);
+
+            }
+            if (PlayerPrefs.GetInt("skinHippie",0) == 1)
+            {
+                skinCamoDisabled.SetActive(false);
+                skinLeopardDisabled.SetActive(false);
+                skinHippieDisabled.SetActive(true);
+                skinBasicDisabled.SetActive(false);
+
+            }
+            if (PlayerPrefs.GetInt("skinBasic", 0) == 1)
+            {
+                skinCamoDisabled.SetActive(false);
+                skinLeopardDisabled.SetActive(false);
+                skinHippieDisabled.SetActive(false);
+                skinBasicDisabled.SetActive(true);
+            }
+
+
+            if(PlayerPrefs.GetInt("sadHappyEmojiApplied", 0) == 1)
+            {
+                sadhappyDisabled.SetActive(true);
+                cuteDisabled.SetActive(false);
+                basicEmojiDisabled.SetActive(false);
+                prettyDisabled.SetActive(false);
+            }
+            if (PlayerPrefs.GetInt("prettyEmojiApplied", 0) == 1)
+            {
+                sadhappyDisabled.SetActive(false);
+                cuteDisabled.SetActive(false);
+                basicEmojiDisabled.SetActive(false);
+                prettyDisabled.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("cuteEmojiApplied", 0) == 1)
+            {
+                sadhappyDisabled.SetActive(false);
+                cuteDisabled.SetActive(true);
+                basicEmojiDisabled.SetActive(false);
+                prettyDisabled.SetActive(false);
+            }
+            if (PlayerPrefs.GetInt("basicEmojiApplied", 0) == 1)
+            {
+                sadhappyDisabled.SetActive(false);
+                cuteDisabled.SetActive(false);
+                basicEmojiDisabled.SetActive(true);
+                prettyDisabled.SetActive(false);
             }
         }
 

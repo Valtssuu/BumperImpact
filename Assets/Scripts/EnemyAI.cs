@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
     public TimeManager timeManager;
     public GameObject TM;
     float poisonTimeE;
-
+    bool toohigh;
     float eForce;
 
     //private GameObject updatePoint;
@@ -64,6 +64,21 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (this.transform.position.y > 2)
+        {
+            toohigh = true;
+        }
+        else
+        {
+            toohigh = false;
+        }
+
+        if (toohigh == true)
+        {
+            KeepOnTheArena();
+        }
+
         if (enemyLives > enemyStartLives)
         {
             enemyLives = enemyStartLives;
@@ -261,5 +276,9 @@ public class EnemyAI : MonoBehaviour
 
 
     }
+    private void KeepOnTheArena()
+    {
+        eBody.AddRelativeForce(eBody.transform.TransformDirection(-Vector3.up) * 100);
 
+    }
 }

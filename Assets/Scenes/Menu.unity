@@ -1822,9 +1822,9 @@ RectTransform:
   m_Father: {fileID: 1840163545}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 24.7, y: -508}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 22.3, y: 34}
   m_SizeDelta: {x: 1212.4, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038114036
@@ -1848,10 +1848,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.6320754, g: 0.623131, b: 0.623131, a: 0.23921569}
-    m_PressedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0.44705883}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_SelectedColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2285,7 +2285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 24.7, y: 120}
+  m_AnchoredPosition: {x: 35.9, y: 57}
   m_SizeDelta: {x: 1239.6, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589785523
@@ -2309,10 +2309,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.23921569}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.44705883}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_SelectedColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2622,9 +2622,9 @@ RectTransform:
   m_Father: {fileID: 1840163545}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 24.7, y: 341}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 24.7, y: -230}
   m_SizeDelta: {x: 1217.2, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1740459066
@@ -2648,10 +2648,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.23921569}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.44705883}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_SelectedColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2754,9 +2754,9 @@ RectTransform:
   m_Father: {fileID: 1840163545}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.2, y: 263}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 15.25, y: -255}
   m_SizeDelta: {x: 1193.5, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1809351098
@@ -2780,10 +2780,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.23921569}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.44705883}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
+    m_SelectedColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2948,6 +2948,18 @@ MonoBehaviour:
   scroll: {fileID: 0}
   skinContainer: {fileID: 0}
   faceContainer: {fileID: 0}
+  prettyBuyButton: {fileID: 0}
+  cuteBuyButton: {fileID: 0}
+  sadhappyBuyButton: {fileID: 0}
+  prettyApplyButton: {fileID: 0}
+  cuteAppyButton: {fileID: 0}
+  sadhappyApplyButton: {fileID: 0}
+  camoBuyButton: {fileID: 0}
+  leopardBuyButton: {fileID: 0}
+  hippieBuyButton: {fileID: 0}
+  camoApplyButton: {fileID: 0}
+  leopardApplyButton: {fileID: 0}
+  hippieApplyButton: {fileID: 0}
   score: 0
   buyButton: {fileID: 0}
   buyDashButton: {fileID: 0}
@@ -2966,6 +2978,8 @@ MonoBehaviour:
   adButton: {fileID: 0}
   activeRocketBuy: {fileID: 0}
   disabledRocketBuy: {fileID: 0}
+  CosmeticBar: {fileID: 0}
+  sceneName: 
   accept: 0
   tutorial: 0
   level1: 0
@@ -2975,6 +2989,9 @@ MonoBehaviour:
   level5: 0
   level6: 0
   level7: 0
+  level8: 0
+  level9: 0
+  level10: 0
   levelBoss: 0
   tutorialButton: {fileID: 0}
   level1Button: {fileID: 0}
@@ -2984,6 +3001,9 @@ MonoBehaviour:
   level5Button: {fileID: 0}
   level6Button: {fileID: 0}
   level7Button: {fileID: 0}
+  level8Button: {fileID: 0}
+  level9Button: {fileID: 0}
+  level10Button: {fileID: 0}
   levelBossButton: {fileID: 0}
   tutorialButtonT: {fileID: 0}
   level1Button1: {fileID: 0}
@@ -2993,6 +3013,9 @@ MonoBehaviour:
   level5Button5: {fileID: 0}
   level6Button6: {fileID: 0}
   level7Button7: {fileID: 0}
+  level8Button8: {fileID: 0}
+  level9Button9: {fileID: 0}
+  level10Button10: {fileID: 0}
   levelBossButtonB: {fileID: 0}
   car: {fileID: 0}
   isLevel1Open: 0
@@ -3002,6 +3025,9 @@ MonoBehaviour:
   isLevel5Open: 0
   isLevel6Open: 0
   isLevel7Open: 0
+  isLevel8Open: 0
+  isLevel9Open: 0
+  isLevel10Open: 0
   isLevelBossOpen: 0
   timesBuyDash: 0
   lock1: {fileID: 0}
@@ -3011,6 +3037,9 @@ MonoBehaviour:
   lock5: {fileID: 0}
   lock6: {fileID: 0}
   lock7: {fileID: 0}
+  lock8: {fileID: 0}
+  lock9: {fileID: 0}
+  lock10: {fileID: 0}
   lockBoss: {fileID: 0}
 --- !u!1 &2055755089
 GameObject:

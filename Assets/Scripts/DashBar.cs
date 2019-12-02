@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DashBar : MonoBehaviour
 {
     public Image imgDashBar;
-    public Image imgDashBarOver50;
     public Text TxtDash;
 
     public float Min;
@@ -38,7 +37,6 @@ public class DashBar : MonoBehaviour
             
 
             imgDashBar.fillAmount = mCurrentPercent;
-            imgDashBarOver50.fillAmount = mCurrentPercent;
 
         }
     }
