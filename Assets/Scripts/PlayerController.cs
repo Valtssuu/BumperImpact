@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public int dragAmount;
     public Sprite image;
     SpriteRenderer sprite;
-    public Camera camera;
+    //public Camera camera;
     private bool toohigh;
     public int score;
     // force is how forcefully we will push the player away from the enemy.
@@ -101,23 +101,24 @@ public class PlayerController : MonoBehaviour
         sadHappyEmoji.SetActive(false);
         prettyEmoji.SetActive(false);
         cuteEmoji.SetActive(false);
-        basicEmoji.SetActive(true);
+        basicEmoji.SetActive(false);
 
-        if(PlayerPrefs.GetInt("sadHappyEmoji", 0) == 1)
+        if(PlayerPrefs.GetInt("basicEmojiApplied", 0) == 1)
+        {
+            basicEmoji.SetActive(true);
+        }
+        if(PlayerPrefs.GetInt("sadHappyEmojiApplied", 0) == 1)
         {
             sadHappyEmoji.SetActive(true);
-            basicEmoji.SetActive(false);
         }
-        if (PlayerPrefs.GetInt("cuteEmoji", 0) == 1)
+        if (PlayerPrefs.GetInt("cuteEmojiApplied", 0) == 1)
         {
             cuteEmoji.SetActive(true);
-            basicEmoji.SetActive(false);
 
         }
-        if (PlayerPrefs.GetInt("prettyEmoji", 0) == 1)
+        if (PlayerPrefs.GetInt("prettyEmojiApplied", 0) == 1)
         {
             prettyEmoji.SetActive(true);
-            basicEmoji.SetActive(false);
 
         }
 
@@ -396,7 +397,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("50Fov"))
         {
-            if (camera.fieldOfView == 18)
+            if (GetComponent<Camera>().fieldOfView == 18)
             {
                 StartCoroutine("ZoomOut");
             }
@@ -404,7 +405,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("BackToNormal"))
         {
-            if (camera.fieldOfView == 38)
+            if (GetComponent<Camera>().fieldOfView == 38)
             {
                 StartCoroutine("ZoomIn");
             }
@@ -549,7 +550,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 30; i < 50; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            camera.fieldOfView++;
+            GetComponent<Camera>().fieldOfView++;
             MainCamera.GetComponent<CameraController>().distance--;
         }
 
@@ -559,7 +560,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 50; i > 30; i--)
         {
             yield return new WaitForSeconds(0.01f);
-            camera.fieldOfView--;
+            GetComponent<Camera>().fieldOfView--;
             MainCamera.GetComponent<CameraController>().distance++;
         }
     }

@@ -8,11 +8,13 @@ using UnityEngine.Advertisements;
 public class Game : MonoBehaviour
 {
     public GameObject scroll, skinContainer, faceContainer;
+    public GameObject prettyBuyButton, cuteBuyButton, sadhappyBuyButton, prettyApplyButton, cuteAppyButton, sadhappyApplyButton;
     public int score;
     public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText, dashText, rocketText;
     public int dashDmg;
     public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy, CosmeticBar;
+    public string sceneName;
 
     public int accept;
     public bool tutorial, level1, level2, level3, level4, level5, level6, level7, level8, level9, level10, levelBoss;
@@ -27,6 +29,8 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         accept = PlayerPrefs.GetInt("AcceptTA", 0);
         score = PlayerPrefs.GetInt("score", 0);
         dashDmg = PlayerPrefs.GetInt("dashDmg", 0);
@@ -47,9 +51,11 @@ public class Game : MonoBehaviour
 
         tutorial = true;
 
+       
+        
+        
 
-
-        if(PlayerPrefs.GetInt("Level1Open", 0) == 1)
+        if (PlayerPrefs.GetInt("Level1Open", 0) == 1)
         {
             isLevel1Open = true;
             lock1.SetActive(false);
@@ -421,6 +427,27 @@ public class Game : MonoBehaviour
         }
 
         dashText.text = "DASH: " + PlayerPrefs.GetInt("timesBuyDash", 0);
+
+
+        if (sceneName == "Store")
+        {
+            if (PlayerPrefs.GetInt("sadHappyEmoji", 0) == 1)
+            {
+                sadhappyBuyButton.SetActive(false);
+
+            }
+            if (PlayerPrefs.GetInt("prettyEmoji", 0) == 1)
+            {
+                prettyBuyButton.SetActive(false);
+
+            }
+            if (PlayerPrefs.GetInt("cuteEmoji", 0) == 1)
+            {
+                cuteBuyButton.SetActive(false);
+
+            }
+        }
+
 
     }
 
@@ -934,14 +961,73 @@ public class Game : MonoBehaviour
 
     public void BuySadHappyEmoji()
     {
-        PlayerPrefs.SetInt("sadHappyEmoji", 1);
+
+
+        if (score >= 10)
+        {
+            score = score - 10;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+            PlayerPrefs.SetInt("sadHappyEmoji", 1);
+            sadhappyBuyButton.SetActive(false);
+        }
+        
     }
     public void BuyPrettyEmoji()
     {
-        PlayerPrefs.SetInt("prettyEmoji", 1);
+        if (score >= 10)
+        {
+            score = score - 10;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+
+            PlayerPrefs.SetInt("prettyEmoji", 1);
+            prettyBuyButton.SetActive(false);
+        }
     }
     public void BuyCuteEmoji()
     {
-        PlayerPrefs.SetInt("cuteEmoji", 1);
+        if (score >= 10)
+        {
+            score = score - 10;
+            PlayerPrefs.SetInt("score", score);
+            scoreText.text = score.ToString();
+            PlayerPrefs.SetInt("cuteEmoji", 1);
+            cuteBuyButton.SetActive(false);
+        }
+    }
+
+    public void ApplySadHappyEmoji()
+    {
+        PlayerPrefs.SetInt("sadHappyEmojiApplied", 1);
+        PlayerPrefs.SetInt("prettyEmojiApplied", 0);
+        PlayerPrefs.SetInt("cuteEmojiApplied", 0);
+        PlayerPrefs.SetInt("basicEmojiApplied", 0);
+
+
+    }
+    public void ApplyPrettyEmoji()
+    {
+        PlayerPrefs.SetInt("sadHappyEmojiApplied", 0);
+        PlayerPrefs.SetInt("prettyEmojiApplied", 1);
+        PlayerPrefs.SetInt("cuteEmojiApplied", 0);
+        PlayerPrefs.SetInt("basicEmojiApplied", 0);
+
+    }
+    public void ApplyCuteEmoji()
+    {
+        PlayerPrefs.SetInt("sadHappyEmojiApplied", 0);
+        PlayerPrefs.SetInt("prettyEmojiApplied", 0);
+        PlayerPrefs.SetInt("cuteEmojiApplied", 1);
+        PlayerPrefs.SetInt("basicEmojiApplied", 0);
+
+    }
+
+    public void ApplyBasicEmoji()
+    {
+        PlayerPrefs.SetInt("sadHappyEmojiApplied", 0);
+        PlayerPrefs.SetInt("prettyEmojiApplied", 0);
+        PlayerPrefs.SetInt("cuteEmojiApplied", 0);
+        PlayerPrefs.SetInt("basicEmojiApplied", 1);
     }
 }
