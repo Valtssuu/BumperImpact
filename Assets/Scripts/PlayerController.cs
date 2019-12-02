@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         score = PlayerPrefs.GetInt("score", 0);
         boostActivated = false;
         skin = PlayerPrefs.GetInt("skin", 0);
-        if (skin == 1)
+        /*if (skin == 1)
         {
             PlayerChildren = GameObject.FindGameObjectsWithTag("PlayerChild");
             foreach(GameObject Child in PlayerChildren)
@@ -94,29 +94,34 @@ public class PlayerController : MonoBehaviour
             pumpkinSkin.SetActive(true);
             
         }
-        else
+        */
+        //else
+        //{
+        basicEmoji.SetActive(false);
+        sadHappyEmoji.SetActive(false);
+        prettyEmoji.SetActive(false);
+        cuteEmoji.SetActive(false);
+        basicEmoji.SetActive(true);
+
+        if(PlayerPrefs.GetInt("sadHappyEmoji", 0) == 1)
         {
-            basicEmoji.SetActive(true);
-
-            if(PlayerPrefs.GetInt("sadHappyEmoji", 0) == 1)
-            {
-                sadHappyEmoji.SetActive(true);
-                basicEmoji.SetActive(false);
-            }
-            if (PlayerPrefs.GetInt("cuteEmoji", 0) == 1)
-            {
-                cuteEmoji.SetActive(true);
-                basicEmoji.SetActive(false);
-
-            }
-            if (PlayerPrefs.GetInt("prettyEmoji", 0) == 1)
-            {
-                prettyEmoji.SetActive(true);
-                basicEmoji.SetActive(false);
-
-            }
+            sadHappyEmoji.SetActive(true);
+            basicEmoji.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("cuteEmoji", 0) == 1)
+        {
+            cuteEmoji.SetActive(true);
+            basicEmoji.SetActive(false);
 
         }
+        if (PlayerPrefs.GetInt("prettyEmoji", 0) == 1)
+        {
+            prettyEmoji.SetActive(true);
+            basicEmoji.SetActive(false);
+
+        }
+
+//        }
 
     }
 
