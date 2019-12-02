@@ -14,10 +14,15 @@ public class PlatformAttachRound : MonoBehaviour
    
     private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject == player || other.gameObject.tag == "Enemy")
+        if (other.gameObject == player )
         {
 
             player.transform.SetParent(this.transform, true);
+
+        }
+
+        if(other.gameObject.tag == "ExplodingBarrel")
+        {
             other.transform.SetParent(this.transform, true);
 
         }
@@ -25,10 +30,14 @@ public class PlatformAttachRound : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        if (other.gameObject == player || other.gameObject.tag == "Enemy")
+        if (other.gameObject == player )
         {
             player.transform.parent = null;
+        }
+        if (other.gameObject.tag == "ExplodingBarrel")
+        {
             other.transform.parent = null;
+
         }
     }
 }
