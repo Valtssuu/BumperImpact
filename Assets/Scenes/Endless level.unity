@@ -1020,7 +1020,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220884720548116, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -1030,7 +1030,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220884720548116, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -3477,7 +3477,6 @@ MonoBehaviour:
   direction: {fileID: 5006512735895361964}
   dragAmount: 5
   image: {fileID: 21300000, guid: cf7da1a28462cfd429947f624d8a3cbd, type: 3}
-  camera: {fileID: 8155547554257170314}
   score: 0
   radius: 7.37
   ShockwaveForce: 3000
@@ -5121,7 +5120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943902490}
   m_LocalRotation: {x: -0, y: -0, z: 2.0372681e-10, w: 1}
-  m_LocalPosition: {x: -35.28, y: 1.49, z: -143.42}
+  m_LocalPosition: {x: 43.1, y: 1.49, z: -143.42}
   m_LocalScale: {x: 1.0006714, y: 1.0003774, z: 1.0007551}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8256,7 +8255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgDashBar: {fileID: 0}
-  imgDashBarOver50: {fileID: 0}
   TxtDash: {fileID: 0}
   Min: 0
   Max: 100
@@ -12427,7 +12425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgDashBar: {fileID: 5620262653175269197}
-  imgDashBarOver50: {fileID: 0}
   TxtDash: {fileID: 0}
   Min: 0
   Max: 100

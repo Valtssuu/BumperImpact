@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class NewEnemyAI : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class NewEnemyAI : MonoBehaviour
     float poisonTimeE;
 
 
+    public string sceneName;
 
     //public GameObject player;
 
@@ -39,7 +41,8 @@ public class NewEnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         enemyLives = enemyStartLives;
         shieldLives = 100;
 
@@ -154,6 +157,10 @@ public class NewEnemyAI : MonoBehaviour
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 2;
+        if (sceneName == "Endless level")
+        {
+            PlayerPrefs.SetInt("endlessKills", PlayerPrefs.GetInt("endlessKills") + 1);
+        }
         Destroy(gameObject);
         Destroy(clone, 1f);
 

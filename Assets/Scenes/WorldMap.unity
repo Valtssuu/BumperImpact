@@ -10315,6 +10315,26 @@ MonoBehaviour:
   scroll: {fileID: 756491469}
   skinContainer: {fileID: 0}
   faceContainer: {fileID: 0}
+  prettyBuyButton: {fileID: 0}
+  cuteBuyButton: {fileID: 0}
+  sadhappyBuyButton: {fileID: 0}
+  prettyApplyButton: {fileID: 0}
+  cuteAppyButton: {fileID: 0}
+  sadhappyApplyButton: {fileID: 0}
+  camoBuyButton: {fileID: 0}
+  leopardBuyButton: {fileID: 0}
+  hippieBuyButton: {fileID: 0}
+  camoApplyButton: {fileID: 0}
+  leopardApplyButton: {fileID: 0}
+  hippieApplyButton: {fileID: 0}
+  skinBasicDisabled: {fileID: 0}
+  skinCamoDisabled: {fileID: 0}
+  skinHippieDisabled: {fileID: 0}
+  skinLeopardDisabled: {fileID: 0}
+  sadhappyDisabled: {fileID: 0}
+  cuteDisabled: {fileID: 0}
+  prettyDisabled: {fileID: 0}
+  basicEmojiDisabled: {fileID: 0}
   score: 0
   buyButton: {fileID: 0}
   buyDashButton: {fileID: 0}
@@ -10333,6 +10353,8 @@ MonoBehaviour:
   adButton: {fileID: 0}
   activeRocketBuy: {fileID: 0}
   disabledRocketBuy: {fileID: 0}
+  CosmeticBar: {fileID: 0}
+  sceneName: 
   accept: 0
   tutorial: 0
   level1: 0

@@ -305,6 +305,7 @@ using UnityEngine.Advertisements;
             }
             if (sceneName == "BossW1 Level")
             {
+                PlayerPrefs.SetInt("bossDefeated", 1);
                 player.GetComponent<PlayerController>().score += 50;
                 PlayerPrefs.SetInt("score", player.GetComponent<PlayerController>().score);
                 player.GetComponent<PlayerController>().scoreText.text = player.GetComponent<PlayerController>().score.ToString("");

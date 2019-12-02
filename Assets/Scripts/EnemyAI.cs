@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class EnemyAI : MonoBehaviour
 {
@@ -26,6 +28,7 @@ public class EnemyAI : MonoBehaviour
     Rigidbody eBody;
 
     NavMeshAgent agent;
+    public string sceneName;
 
     Transform target;
 
@@ -36,7 +39,8 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         TM = GameObject.FindWithTag("TimeManager");
         timeManager = TM.GetComponent<TimeManager>();
         player = GameObject.FindWithTag("Player");
@@ -169,8 +173,15 @@ public class EnemyAI : MonoBehaviour
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 1;
         timeManager.DoSlowMotion();
 
+        if(sceneName == "Endless level")
+        {
+            PlayerPrefs.SetInt("endlessKills", PlayerPrefs.GetInt("endlessKills") + 1);
+        }
+
         Destroy(gameObject);
         Destroy(clone, 1f);
+
+
 
     }
     void OnCollisionEnter(Collision collision)

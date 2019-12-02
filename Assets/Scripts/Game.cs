@@ -13,7 +13,7 @@ public class Game : MonoBehaviour
     public Button buyButton, buyDashButton, buyRocketButton;
     public Text scoreText, dashText, rocketText;
     public int dashDmg;
-    public GameObject TApanel, GoldPanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy, CosmeticBar;
+    public GameObject TApanel, GoldPanel, ChallengePanel, NormalPanel, disabledButton, activeButton, activeDashBuy, disabledDashBuy, adButton, activeRocketBuy, disabledRocketBuy, CosmeticBar;
     public string sceneName;
 
     public int accept;
@@ -814,6 +814,14 @@ public class Game : MonoBehaviour
         
     }
 
+    public void DailyChallenges()
+    {
+        GoldPanel.SetActive(false);
+        CosmeticBar.SetActive(false);
+        NormalPanel.SetActive(false);
+        ChallengePanel.SetActive(true);
+    }
+
 
     public void faceButton()
     {
@@ -1027,6 +1035,8 @@ public class Game : MonoBehaviour
         GoldPanel.SetActive(true);
         CosmeticBar.SetActive(false);
         NormalPanel.SetActive(false);
+        ChallengePanel.SetActive(false);
+
     }
 
     public void OpenNormalTickets()
@@ -1034,6 +1044,7 @@ public class Game : MonoBehaviour
         GoldPanel.SetActive(false);
         NormalPanel.SetActive(true);
         CosmeticBar.SetActive(true);
+        ChallengePanel.SetActive(false);
 
     }
 
