@@ -258,6 +258,10 @@ using UnityEngine.Advertisements;
                 myBody.constraints = RigidbodyConstraints.FreezeAll;
 
             }
+            if(stars == 3)
+            {
+                PlayerPrefs.SetInt("threeStars", 1);
+            }
 
             if(sceneName == "tutorial")
             {

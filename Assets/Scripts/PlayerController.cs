@@ -97,7 +97,12 @@ public class PlayerController : MonoBehaviour
         */
         //else
         //{
-        if(PlayerPrefs.GetInt("basicEmojiApplied", 0) == 1)
+        basicEmoji.SetActive(true);
+        sadHappyEmoji.SetActive(false);
+        prettyEmoji.SetActive(false);
+        cuteEmoji.SetActive(false);
+
+        if (PlayerPrefs.GetInt("basicEmojiApplied", 0) == 1)
         {
             basicEmoji.SetActive(true);
             sadHappyEmoji.SetActive(false);

@@ -31,7 +31,6 @@ public class Game : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-        accept = PlayerPrefs.GetInt("AcceptTA", 0);
         
         dashDmg = PlayerPrefs.GetInt("dashDmg", 0);
         timesBuyDash = PlayerPrefs.GetInt("timesBuyDash", 0);
@@ -369,10 +368,7 @@ public class Game : MonoBehaviour
         }
 
 
-        if (accept == 0)
-        {
-            TApanel.SetActive(true);
-        }
+        
 
         if (PlayerPrefs.GetInt("skin") == 1)
         {
@@ -401,7 +397,21 @@ public class Game : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
+        accept = PlayerPrefs.GetInt("AcceptTA", 0);
+
+        if (sceneName == "Menu")
+        {
+            if (accept == 0)
+            {
+                TApanel.SetActive(true);
+            }
+            if(accept == 1)
+            {
+                TApanel.SetActive(false);
+            }
+        }
         score = PlayerPrefs.GetInt("score", 0);
 
         if (timesBuyDash == 3)
@@ -1189,5 +1199,10 @@ public class Game : MonoBehaviour
         PlayerPrefs.SetInt("prettyEmojiApplied", 0);
         PlayerPrefs.SetInt("cuteEmojiApplied", 0);
         PlayerPrefs.SetInt("basicEmojiApplied", 1);
+    }
+
+    public void ChallengeScroll()
+    {
+        SceneManager.LoadScene("Store");
     }
 }
