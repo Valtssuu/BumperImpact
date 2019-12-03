@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class DailyChallenges : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class DailyChallenges : MonoBehaviour
     int score;
     public Text scoreText;
     public Text challenge1Text;
+    int sysHour = System.DateTime.Now.Hour;
+    int sysDay = System.DateTime.Now.Day;
+    int sysMinute = System.DateTime.Now.Minute;
+
     void Start()
     {
         if(PlayerPrefs.GetInt("endlessKills", 0) < 40)
@@ -51,16 +56,31 @@ public class DailyChallenges : MonoBehaviour
             claim1Disabled.SetActive(false);
         }
 
-        if (PlayerPrefs.GetInt("bossDefeated", 0) == 1)
+        if (PlayerPrefs.GetInt("bossDefeated", 0) == 1) 
         {
             claim2Disabled.SetActive(false);
         }
-        if (PlayerPrefs.GetInt("timesBuyDash", 0) > 0)
+        if (PlayerPrefs.GetInt("threeStars", 0) == 1)
         {
 
             claim3Disabled.SetActive(false);
         }
 
+        Debug.Log(sysDay);
+
+
+        if (PlayerPrefs.GetInt("sysDay", 0) != sysDay)
+        {
+            PlayerPrefs.SetInt("claim1", 0);
+            PlayerPrefs.SetInt("claim2", 0);
+            PlayerPrefs.SetInt("claim3", 0);
+            PlayerPrefs.SetInt("endlessKills", 0);
+            PlayerPrefs.SetInt("bossDefeated", 0);
+            PlayerPrefs.SetInt("threeStars", 0);
+
+            PlayerPrefs.SetInt("sysDay", sysDay);
+        }
+        
 
     }
 
