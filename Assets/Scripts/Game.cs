@@ -32,7 +32,7 @@ public class Game : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         accept = PlayerPrefs.GetInt("AcceptTA", 0);
-        score = PlayerPrefs.GetInt("score", 0);
+        
         dashDmg = PlayerPrefs.GetInt("dashDmg", 0);
         timesBuyDash = PlayerPrefs.GetInt("timesBuyDash", 0);
         
@@ -402,6 +402,8 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        score = PlayerPrefs.GetInt("score", 0);
+
         if (timesBuyDash == 3)
         {
             activeDashBuy.SetActive(false);
@@ -418,15 +420,15 @@ public class Game : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("hasRocket", 0) == 0)
         {
-            rocketText.text = "ROCKET: 0";
+            rocketText.text = "Level: 0";
             
         }
         else
         {
-            rocketText.text = "ROCKET: 1";
+            rocketText.text = "Level: 1";
         }
 
-        dashText.text = "DASH: " + PlayerPrefs.GetInt("timesBuyDash", 0);
+        dashText.text = "Level: " + PlayerPrefs.GetInt("timesBuyDash", 0);
 
 
         if (sceneName == "Store")
