@@ -248,6 +248,65 @@ using UnityEngine.Advertisements;
 
             }
         }
+        if (sceneName == "8th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(34.4f, 2.799999f, -217.9f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(130f, 2.799999f, -243.2f);
+
+            }
+        }
+        if (sceneName == "9th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(130.1f, 2.7999999f, -92.8f);
+            }
+        }
+        if (sceneName == "10th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(129.2f, 2.7999999f, -92.1f);
+            }
+        }
+        if (sceneName == "11th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(128.5f, 2.7999999f, -152.1f);
+            }
+        }
+        if (sceneName == "12th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(128.1f, 2.7999999f, -92.1f);
+            }
+            if (col.gameObject.tag == "SpawnPoint2")
+            {
+                spawnPoint.transform.position = new Vector3(287.3f, 2.799999f, -92.1f);
+
+            }
+        }
+        if (sceneName == "13th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(197.3f, 2.7999999f, -92.1f);
+            }
+        }
+        if (sceneName == "14th Level") 
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(207.6f, 2.7999999f, -92.1f);
+            }
+        }
 
         if (col.gameObject.tag == "winTrigger")
         {

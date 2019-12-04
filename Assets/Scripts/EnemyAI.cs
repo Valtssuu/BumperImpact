@@ -150,7 +150,7 @@ public class EnemyAI : MonoBehaviour
 
         //dirDown = Vector3(0, -1, 0);
 
-        RaycastHit hit;
+        /*RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down, out hit, 20f))
         {
             Debug.DrawLine(transform.position + new Vector3(0, 2, 0), transform.position + Vector3.down * 20f, Color.cyan);
@@ -163,7 +163,7 @@ public class EnemyAI : MonoBehaviour
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = true;
             }
-        }
+        }*/
 
     }
 
