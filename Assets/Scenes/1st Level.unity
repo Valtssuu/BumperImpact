@@ -1735,12 +1735,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883693664779, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883693664779, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -9867,7 +9867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.30005, y: -39.799988}
+  m_AnchoredPosition: {x: -37.30005, y: -39.799927}
   m_SizeDelta: {x: 133, y: 153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863370941
@@ -13889,7 +13889,7 @@ PrefabInstance:
     - target: {fileID: 18452398474829069, guid: 4403c3cea02079441aa8651c0b0d5f30,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 18452398474829065, guid: 4403c3cea02079441aa8651c0b0d5f30,
         type: 3}
@@ -14081,6 +14081,11 @@ PrefabInstance:
       propertyPath: doubleButton
       value: 
       objectReference: {fileID: 1038785470}
+    - target: {fileID: 8771042728244545329, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.21972656
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4403c3cea02079441aa8651c0b0d5f30, type: 3}
 --- !u!1 &1130270004 stripped
