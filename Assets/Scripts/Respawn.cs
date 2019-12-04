@@ -47,9 +47,16 @@ using UnityEngine.Advertisements;
     public GameObject pausePanel;
 
     public string sceneName;
+
+    public int sessionScore;
+
+    int score;
      void Start ()
      {
         
+        score = PlayerPrefs.GetInt("score", 0);
+        sessionScore = score;
+
         loseCanvas.SetActive(false);
         winCanvas.SetActive(false);
         Time.timeScale = 1;
@@ -256,6 +263,9 @@ using UnityEngine.Advertisements;
                 winCanvas.SetActive(true);
                 myBody.velocity = Vector3.zero;
                 myBody.constraints = RigidbodyConstraints.FreezeAll;
+
+                sessionScore = PlayerPrefs.GetInt("score",0) - sessionScore;
+                Debug.Log(sessionScore);
 
             }
             if(stars == 3)
