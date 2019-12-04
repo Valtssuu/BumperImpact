@@ -32,21 +32,14 @@ public class CandyAdManager : MonoBehaviour
     public void ShowAd()
     {
         doubleButton.SetActive(false);
-        StartCoroutine(giveTickets());
-
+        player.GetComponent<Respawn>().sessionScore = sessionScore * 2;
+        sessionScoreText.text = sessionScore.ToString();
+        player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + sessionScore;
         if (Advertisement.IsReady("rewardedVideo"))
         {
             Advertisement.Show("rewardedVideo");
 
         }
     }
-    private IEnumerator giveTickets()
-    {
-        yield return new WaitForSeconds(10f);
-        player.GetComponent<Respawn>().sessionScore = sessionScore * 2;
-        sessionScoreText.text = sessionScore.ToString();
-        player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + sessionScore;
-        
-        
-    }
+    
 }

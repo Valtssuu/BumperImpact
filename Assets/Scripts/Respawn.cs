@@ -315,6 +315,22 @@ using UnityEngine.Advertisements;
             }
             if (sceneName == "10th Level")
             {
+                PlayerPrefs.SetInt("Level11Open", 1);
+            }
+            if (sceneName == "11th Level")
+            {
+                PlayerPrefs.SetInt("Level12Open", 1);
+            }
+            if (sceneName == "12th Level")
+            {
+                PlayerPrefs.SetInt("Level13Open", 1);
+            }
+            if (sceneName == "13th Level")
+            {
+                PlayerPrefs.SetInt("Level14Open", 1);
+            }
+            if (sceneName == "14th Level")
+            {
                 PlayerPrefs.SetInt("LevelBossOpen", 1);
             }
             if (sceneName == "BossW1 Level")
