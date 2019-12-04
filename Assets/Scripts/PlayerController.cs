@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
     public float range = 30;
     private string enemyTag = "Enemy";
 
-
     public Transform target;
 
     public float poisonTime;
@@ -77,6 +76,7 @@ public class PlayerController : MonoBehaviour
         rocketButtonClicks = 0;
         shieldButtonClicks = 0;
         score = PlayerPrefs.GetInt("score", 0);
+
         boostActivated = false;
         skin = PlayerPrefs.GetInt("skin", 0);
         /*if (skin == 1)
