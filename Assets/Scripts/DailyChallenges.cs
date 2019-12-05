@@ -110,7 +110,7 @@ public class DailyChallenges : MonoBehaviour
 
     public void Claim1Clicked()
     {
-        score += 50;
+        score += 30;
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString("");
         claim1.SetActive(false);
@@ -120,7 +120,7 @@ public class DailyChallenges : MonoBehaviour
     public void Claim2Clicked()
     {
         
-        score += 50;
+        score += 30;
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString("");
         claim2.SetActive(false);
@@ -133,7 +133,7 @@ public class DailyChallenges : MonoBehaviour
     public void Claim3Clicked()
     {
         
-        score += 50;
+        score += 30;
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString("");
         claim3.SetActive(false);
