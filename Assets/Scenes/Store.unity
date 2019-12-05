@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -762,7 +762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &90158404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2230,7 +2230,7 @@ PrefabInstance:
     - target: {fileID: 4659841629847048359, guid: 12b1ab56c277d474f803b643d95ea557,
         type: 3}
       propertyPath: m_FillAmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b1ab56c277d474f803b643d95ea557, type: 3}
@@ -2844,6 +2844,9 @@ MonoBehaviour:
   claim3Disabled: {fileID: 413442620}
   scoreText: {fileID: 561782840}
   challenge1Text: {fileID: 1703381502}
+  progressBar: {fileID: 2135092764}
+  MinP: 0
+  MaxP: 40
 --- !u!4 &428691099
 Transform:
   m_ObjectHideFlags: 0
@@ -3060,7 +3063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &479973934
 Transform:
   m_ObjectHideFlags: 0
@@ -5082,7 +5085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &689694359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13097,3 +13100,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126628880}
   m_CullTransparentMesh: 0
+--- !u!114 &2135092764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4659841629847048359, guid: 12b1ab56c277d474f803b643d95ea557,
+    type: 3}
+  m_PrefabInstance: {fileID: 356423239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

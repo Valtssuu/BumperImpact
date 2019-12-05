@@ -182,10 +182,13 @@ MonoBehaviour:
   lookRadius: 15
   explosion: {fileID: 187724478501812531, guid: af73bd1c2bae3874f8a44e3050910b16,
     type: 3}
+  ticket: {fileID: 5411609104257511602, guid: 2839a6eb7709fda44a6ccacb385b42a7, type: 3}
   direction: {fileID: 0}
   player: {fileID: 6670455420638857518, guid: 27531e62975c12e45a7e26013408c1b2, type: 3}
   timeManager: {fileID: 0}
   TM: {fileID: 0}
+  enemyCanvas: {fileID: 4642509482314319552}
+  sceneName: 
   playerBody: {fileID: 0}
 --- !u!1 &2466326518178759749
 GameObject:

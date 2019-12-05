@@ -1567,9 +1567,9 @@ public class Game : MonoBehaviour
 
     public void BuyCamoSkin()
     {
-        if(score >= 1)
+        if(score >= 50)
         {
-            score = score - 1;
+            score = score - 50;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("skinCamoBought", 1);
@@ -1579,9 +1579,9 @@ public class Game : MonoBehaviour
     }
     public void BuyLeopardSkin()
     {
-        if (score >= 1)
+        if (score >= 50)
         {
-            score = score - 1;
+            score = score - 50;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("skinLeopardBought", 1);
@@ -1590,9 +1590,9 @@ public class Game : MonoBehaviour
     }
     public void BuyHippieSkin()
     {
-        if (score >= 1)
+        if (score >= 50)
         {
-            score = score - 1;
+            score = score - 50;
             PlayerPrefs.SetInt("score", score);
             scoreText.text = score.ToString();
             PlayerPrefs.SetInt("skinHippieBought", 1);
