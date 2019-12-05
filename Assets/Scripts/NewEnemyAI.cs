@@ -210,7 +210,7 @@ public class NewEnemyAI : MonoBehaviour
 
             Collider myCollider = collision.contacts[0].thisCollider;
 
-            Debug.Log(myCollider);
+
 
             if (myCollider.gameObject.name == "shield")
             {

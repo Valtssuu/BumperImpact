@@ -390,6 +390,14 @@ using UnityEngine.Advertisements;
             }
             if (sceneName == "14th Level")
             {
+                PlayerPrefs.SetInt("Level15Open", 1);
+            }
+            if (sceneName == "15th Level")
+            {
+                PlayerPrefs.SetInt("Level16Open", 1);
+            }
+            if (sceneName == "16th Level")
+            {
                 PlayerPrefs.SetInt("LevelBossOpen", 1);
             }
             if (sceneName == "BossW1 Level")

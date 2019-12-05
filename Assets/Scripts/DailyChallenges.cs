@@ -15,9 +15,16 @@ public class DailyChallenges : MonoBehaviour
     int sysHour = System.DateTime.Now.Hour;
     int sysDay = System.DateTime.Now.Day;
     int sysMinute = System.DateTime.Now.Minute;
+    public Image progressBar;
+    public float MinP;
+    public float MaxP;
+    private float mCurrentValueP;
+    private float mCurrentPercentP;
+    float endlessKills;
 
     void Start()
     {
+        
         if(PlayerPrefs.GetInt("endlessKills", 0) < 40)
         {
             challenge1Text.text = "Destroy " + (40 - PlayerPrefs.GetInt("endlessKills", 0)) + " enemies \nin endless mode";
@@ -28,11 +35,14 @@ public class DailyChallenges : MonoBehaviour
             challenge1Text.text = "Destroy 0" + " enemies \nin endless mode";
 
         }
+        endlessKills = PlayerPrefs.GetInt("endlessKills", 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         score = PlayerPrefs.GetInt("score", 0);
 
         if(PlayerPrefs.GetInt("claim1", 0 ) == 1)
@@ -66,7 +76,7 @@ public class DailyChallenges : MonoBehaviour
             claim3Disabled.SetActive(false);
         }
 
-        Debug.Log(sysDay);
+
 
 
         if (PlayerPrefs.GetInt("sysDay", 0) != sysDay)
@@ -80,7 +90,21 @@ public class DailyChallenges : MonoBehaviour
 
             PlayerPrefs.SetInt("sysDay", sysDay);
         }
-        
+
+     
+            
+
+        if(PlayerPrefs.GetInt("endlessKills", 0 ) <= 40)
+        {
+            mCurrentPercentP = ((40 - endlessKills) / 40) ;
+        }
+        else
+        {
+            mCurrentPercentP = 0;
+        }
+
+        progressBar.fillAmount = mCurrentPercentP;
+
 
     }
 
@@ -117,4 +141,8 @@ public class DailyChallenges : MonoBehaviour
         
         
     }
+
+
+
+
 }

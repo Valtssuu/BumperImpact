@@ -25,6 +25,8 @@ public class StarSystem : MonoBehaviour
     int stars12thLevel;
     int stars13thLevel;
     int stars14thLevel;
+    int stars15thLevel;
+    int stars16thLevel;
     int starsBossLevel;
 
     int score;
@@ -51,6 +53,8 @@ public class StarSystem : MonoBehaviour
         stars12thLevel = PlayerPrefs.GetInt("Stars12thLevel", 0);
         stars13thLevel = PlayerPrefs.GetInt("Stars13thLevel", 0);
         stars14thLevel = PlayerPrefs.GetInt("Stars14thLevel", 0);
+        stars15thLevel = PlayerPrefs.GetInt("Stars15thLevel", 0);
+        stars16thLevel = PlayerPrefs.GetInt("Stars16thLevel", 0);
         starsBossLevel = PlayerPrefs.GetInt("StarsBossLevel", 0);
 
 
@@ -921,6 +925,120 @@ public class StarSystem : MonoBehaviour
                     if (stars14thLevel < 1)
                     {
                         PlayerPrefs.SetInt("Stars14thLevel", 1);
+                    }
+
+                }
+
+
+
+
+            }
+
+            //LEVEL 15
+            if (sceneName == "15th Level")
+            {
+                if (stars == 3)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+                    star3.SetActive(true);
+
+                    score += 15;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars15thLevel < 3)
+                    {
+                        PlayerPrefs.SetInt("Stars15thLevel", 3);
+                    }
+
+
+                }
+
+                if (stars == 2)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+
+                    score += 10;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars15thLevel < 2)
+                    {
+                        PlayerPrefs.SetInt("Stars15thLevel", 2);
+                    }
+
+                }
+
+                if (stars == 1)
+                {
+                    star1.SetActive(true);
+
+                    score += 5;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars15thLevel < 1)
+                    {
+                        PlayerPrefs.SetInt("Stars15thLevel", 1);
+                    }
+
+                }
+
+
+
+
+            }
+
+            //LEVEL 16
+            if (sceneName == "16th Level")
+            {
+                if (stars == 3)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+                    star3.SetActive(true);
+
+                    score += 15;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars16thLevel < 3)
+                    {
+                        PlayerPrefs.SetInt("Stars16thLevel", 3);
+                    }
+
+
+                }
+
+                if (stars == 2)
+                {
+                    star1.SetActive(true);
+                    star2.SetActive(true);
+
+                    score += 10;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars16thLevel < 2)
+                    {
+                        PlayerPrefs.SetInt("Stars16thLevel", 2);
+                    }
+
+                }
+
+                if (stars == 1)
+                {
+                    star1.SetActive(true);
+
+                    score += 5;
+                    PlayerPrefs.SetInt("score", score);
+                    scoreText.text = score.ToString("");
+
+                    if (stars16thLevel < 1)
+                    {
+                        PlayerPrefs.SetInt("Stars16thLevel", 1);
                     }
 
                 }

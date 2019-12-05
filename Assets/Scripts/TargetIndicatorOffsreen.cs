@@ -31,7 +31,7 @@ public class TargetIndicatorOffsreen : MonoBehaviour
         onScreenPos = new Vector2(screenPos.x - 0.5f, screenPos.y - 0.5f) * 2; //2D version, new mapping
         max = Mathf.Max(Mathf.Abs(onScreenPos.x), Mathf.Abs(onScreenPos.y)); //get largest offset
         onScreenPos = (onScreenPos / (max * 2)) + new Vector2(0.5f, 0.5f); //undo mapping
-        Debug.Log(onScreenPos);
+
 
         for (int i = 0; i < enemyList.Count; i ++)
         {
