@@ -15,7 +15,7 @@ public class HomingMissile : MonoBehaviour
 
     bool hasExploded = false;
     
-
+    
     
 
     // Start is called before the first frame update
@@ -54,11 +54,19 @@ public class HomingMissile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
-            Instantiate(explosionEffect, transform.position, transform.rotation);
+            //Instantiate(explosionEffect, transform.position, transform.rotation);
             if (!hasExploded)
             {
                 //Call AddExploForce function
-                Destroy(other.gameObject);
+                if (other.gameObject.CompareTag("Enemy"))
+                {
+                    other.gameObject.GetComponent<EnemyAI>().Explode();
+                }
+                if (other.gameObject.CompareTag("Enemy2"))
+                {
+                    other.gameObject.GetComponent<NewEnemyAI>().Explode();
+                }
+
                 Destroy(gameObject);
 
                 hasExploded = true;

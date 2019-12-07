@@ -43,15 +43,15 @@ public class PlayerController : MonoBehaviour
     public GameObject rocketButton;
     private int itemNumber;
     public string sceneName;
-
+    public GameObject player;
     public float range = 30;
     private string enemyTag = "Enemy";
-
     public Transform target;
-
+    public ParticleSystem hpEffect;
     public float poisonTime;
     void Start()
     {
+        player = this.gameObject;
         sadHappyEmoji = GameObject.FindWithTag("SadHappyEmoji");
         prettyEmoji = GameObject.FindWithTag("PrettyEmoji");
         cuteEmoji = GameObject.FindWithTag("CuteEmoji");
@@ -631,5 +631,10 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+    public void HealthBox()
+    {
+        hpEffect.Play();
 
+    }
+    
 }

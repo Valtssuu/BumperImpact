@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     public int enemyStartLives = 100;
     public float lookRadius = 15f;
     public GameObject explosion;
+    public GameObject ticket;
     public Transform direction = null;
     public GameObject player;
     public TimeManager timeManager;
@@ -20,7 +21,10 @@ public class EnemyAI : MonoBehaviour
     float poisonTimeE;
     bool toohigh;
     float eForce;
+    public GameObject enemyCanvas;
+    public Transform WhereToLook;
 
+    GameObject enemy;
     //private GameObject updatePoint;
 
     private Vector3 updatePointPos;
@@ -39,13 +43,15 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        WhereToLook = GameObject.FindWithTag("WhereToLook").GetComponent<Transform>();
+
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         TM = GameObject.FindWithTag("TimeManager");
         timeManager = TM.GetComponent<TimeManager>();
         player = GameObject.FindWithTag("Player");
         enemyLives = enemyStartLives;
-        
+        enemy = this.gameObject;
         eBody = this.GetComponent<Rigidbody>();
 
         //find target according to PlayerManager script
@@ -172,9 +178,13 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    void Explode()
+    public void Explode()
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
+        GameObject clone2 = (GameObject)Instantiate(ticket, enemy.transform.position, transform.rotation);
+        clone2.transform.LookAt(WhereToLook);
+
+        clone2.GetComponent<Rigidbody>().AddForce(transform.up * 300);
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 1;
         timeManager.DoSlowMotion();
 
@@ -185,6 +195,7 @@ public class EnemyAI : MonoBehaviour
 
         Destroy(gameObject);
         Destroy(clone, 1f);
+        Destroy(clone2, 0.4f);
 
 
 

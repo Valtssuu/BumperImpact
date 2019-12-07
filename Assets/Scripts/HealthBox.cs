@@ -22,6 +22,8 @@ public class HealthBox : MonoBehaviour
             Destroy(gameObject);
 
             PlayerHealth.Lives += 20;
+
+            collision.gameObject.GetComponent<PlayerController>().HealthBox();
         }
         
     }

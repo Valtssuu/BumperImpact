@@ -12,11 +12,14 @@ public class NewEnemyAI : MonoBehaviour
     public float lookRadius = 15f;
     public GameObject explosion;
     public Transform direction = null;
+    public GameObject ticket;
+    public Transform WhereToLook;
+
     public GameObject shield, player;
     public float shieldLives;
     private bool toohigh;
     float poisonTimeE;
-
+    GameObject enemy;
 
     public string sceneName;
 
@@ -41,6 +44,9 @@ public class NewEnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        WhereToLook = GameObject.FindWithTag("WhereToLook").GetComponent<Transform>();
+
+        enemy = this.gameObject;
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         enemyLives = enemyStartLives;
@@ -158,16 +164,20 @@ public class NewEnemyAI : MonoBehaviour
 
     }
 
-    void Explode()
+    public void Explode()
     {
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
+        GameObject clone2 = (GameObject)Instantiate(ticket, enemy.transform.position, transform.rotation);
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 2;
+        clone2.transform.LookAt(WhereToLook);
+        clone2.GetComponent<Rigidbody>().AddForce(transform.up * 8);
         if (sceneName == "Endless level")
         {
             PlayerPrefs.SetInt("endlessKills", PlayerPrefs.GetInt("endlessKills") + 1);
         }
         Destroy(gameObject);
         Destroy(clone, 1f);
+        Destroy(clone2, 0.4f);
 
     }
 
@@ -215,7 +225,7 @@ public class NewEnemyAI : MonoBehaviour
 
             Collider myCollider = collision.contacts[0].thisCollider;
 
-            Debug.Log(myCollider);
+
 
             if (myCollider.gameObject.name == "shield")
             {

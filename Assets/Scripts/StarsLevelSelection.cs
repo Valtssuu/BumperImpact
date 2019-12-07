@@ -20,6 +20,9 @@ public class StarsLevelSelection : MonoBehaviour
     public GameObject star1Level12, star2Level12, star3Level12;
     public GameObject star1Level13, star2Level13, star3Level13;
     public GameObject star1Level14, star2Level14, star3Level14;
+    public GameObject star1Level15, star2Level15, star3Level15;
+    public GameObject star1Level16, star2Level16, star3Level16;
+
 
     public GameObject star1LevelBoss, star2LevelBoss, star3LevelBoss;
 
@@ -42,6 +45,8 @@ public class StarsLevelSelection : MonoBehaviour
     int stars12thLevel;
     int stars13thLevel;
     int stars14thLevel;
+    int stars15thLevel;
+    int stars16thLevel;
 
     int starsBossLevel;
 
@@ -65,6 +70,9 @@ public class StarsLevelSelection : MonoBehaviour
         stars12thLevel = PlayerPrefs.GetInt("Stars12thLevel", 0);
         stars13thLevel = PlayerPrefs.GetInt("Stars13thLevel", 0);
         stars14thLevel = PlayerPrefs.GetInt("Stars14thLevel", 0);
+        stars15thLevel = PlayerPrefs.GetInt("Stars15thLevel", 0);
+        stars16thLevel = PlayerPrefs.GetInt("Stars16thLevel", 0);
+
 
         starsBossLevel = PlayerPrefs.GetInt("StarsBossLevel", 0);
 
@@ -378,7 +386,45 @@ public class StarsLevelSelection : MonoBehaviour
         {
             star1Level14.SetActive(true);
         }
+        //LEVEL 15
 
+
+        if (stars15thLevel == 3)
+        {
+            star1Level15.SetActive(true);
+            star2Level15.SetActive(true);
+            star3Level15.SetActive(true);
+        }
+
+        if (stars15thLevel == 2)
+        {
+            star1Level15.SetActive(true);
+            star2Level15.SetActive(true);
+        }
+
+        if (stars15thLevel == 1)
+        {
+            star1Level15.SetActive(true);
+        }//LEVEL 16
+
+
+        if (stars16thLevel == 3)
+        {
+            star1Level16.SetActive(true);
+            star2Level16.SetActive(true);
+            star3Level16.SetActive(true);
+        }
+
+        if (stars16thLevel == 2)
+        {
+            star1Level16.SetActive(true);
+            star2Level16.SetActive(true);
+        }
+
+        if (stars16thLevel == 1)
+        {
+            star1Level16.SetActive(true);
+        }
         //Boss Level
 
 
