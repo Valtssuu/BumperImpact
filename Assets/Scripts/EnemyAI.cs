@@ -123,7 +123,7 @@ public class EnemyAI : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            
+            agent.enabled = true;
             //disable patrol script
             this.GetComponent<Patrol>().enabled = false;
             
@@ -145,7 +145,12 @@ public class EnemyAI : MonoBehaviour
         else
         {
             this.GetComponent<Patrol>().enabled = true;
-            
+            if (sceneName == "16th Level")
+            {
+                agent.enabled = false;
+            }
+
+
         }
 
         //dirDown = Vector3(0, -1, 0);

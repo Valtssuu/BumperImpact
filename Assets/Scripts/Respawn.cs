@@ -307,11 +307,25 @@ using UnityEngine.Advertisements;
                 spawnPoint.transform.position = new Vector3(197.3f, 2.7999999f, -92.1f);
             }
         }
-        if (sceneName == "14th Level") 
+        if (sceneName == "14th Level")
         {
             if (col.gameObject.tag == "SpawnPoint1")
             {
                 spawnPoint.transform.position = new Vector3(207.6f, 2.7999999f, -92.1f);
+            }
+        }
+        if (sceneName == "15th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(179.8f, 2.7999999f, -92.1f);
+            }
+        }
+        if (sceneName == "16th Level")
+        {
+            if (col.gameObject.tag == "SpawnPoint1")
+            {
+                spawnPoint.transform.position = new Vector3(127.1f, 2.7999999f, -92.1f);
             }
         }
 
