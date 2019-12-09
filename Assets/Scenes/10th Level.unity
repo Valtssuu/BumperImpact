@@ -15985,6 +15985,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnQuitButtonClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 18452399258856099, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18452398495740446, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 18452397665486546, guid: 4403c3cea02079441aa8651c0b0d5f30,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4403c3cea02079441aa8651c0b0d5f30, type: 3}
 --- !u!1 &1355405203 stripped

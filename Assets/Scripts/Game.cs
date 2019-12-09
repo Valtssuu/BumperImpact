@@ -342,9 +342,10 @@ public class Game : MonoBehaviour
                 levelBoss = false;
             }
 
+            scroll.transform.position = scroll.transform.position + new Vector3(-1745, 0, 0);
 
         }
-        
+
 
 
         if (PlayerPrefs.GetInt("Level10Open", 0) == 1)
@@ -504,6 +505,7 @@ public class Game : MonoBehaviour
                 levelBoss = false;
             }
 
+            scroll.transform.position = scroll.transform.position + new Vector3(-1905, 0, 0);
 
         }
         if (PlayerPrefs.GetInt("Level15Open", 0) == 1)
