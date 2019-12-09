@@ -52,6 +52,7 @@ TagManager:
   - PrettyEmoji
   - CuteEmoji
   - SadHappyEmoji
+  - Hint5Trigger
   layers:
   - Default
   - TransparentFX

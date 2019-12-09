@@ -18,13 +18,13 @@ using UnityEngine.Advertisements;
     [SerializeField] private Animator BridgeBoss1Controller;
     [SerializeField] private Animator BridgeBoss2Controller;
     [SerializeField] private Animator HPBarController;
+    public bool allFreeze;
+    bool hint1Shown, hint2Shown, hint3Shown, hint4Shown, hint5Shown;
 
-    bool hint1Shown, hint2Shown, hint3Shown, hint4Shown;
-
-
+    
     public GameObject hint1TriggerObj, hint2TriggerObj, hint3TriggerObj, hint4TriggerObj;
 
-    public GameObject hint1, hint2, hint3, hint4;
+    public GameObject hint1, hint2, hint3, hint4, hint5, hintTemplate;
 
     Rigidbody myBody;
 
@@ -53,6 +53,15 @@ using UnityEngine.Advertisements;
     int score;
      void Start ()
      {
+        if(sceneName == "tutorial")
+        {
+            hintTemplate.SetActive(false);
+            hint1.SetActive(false);
+            hint2.SetActive(false);
+            hint3.SetActive(false);
+            hint4.SetActive(false);
+            hint5.SetActive(false);
+        }
         
         score = PlayerPrefs.GetInt("score", 0);
         sessionScore = score;
@@ -423,23 +432,38 @@ using UnityEngine.Advertisements;
             }
 
         }
+        if(sceneName == "tutorial")
+        {
+            if (col.gameObject.tag == "Hint1Trigger")
+            {
+                hint1Trigger();
 
-        if(col.gameObject.tag == "Hint1Trigger")
-        {
-            hint1Trigger();
+
+            }
+            if (col.gameObject.tag == "Hint2Trigger")
+            {
+                hint2Trigger();
+
+            }
+            if (col.gameObject.tag == "Hint3Trigger")
+            {
+                hint3Trigger();
+
+            }
+            if (col.gameObject.tag == "Hint4Trigger")
+            {
+                hint4Trigger();
+
+            }
+
+            if (col.gameObject.tag == "Hint5Trigger")
+            {
+                hint5Trigger();
+
+            }
         }
-        if (col.gameObject.tag == "Hint2Trigger")
-        {
-            hint2Trigger();
-        }
-        if (col.gameObject.tag == "Hint3Trigger")
-        {
-            hint3Trigger();
-        }
-        if (col.gameObject.tag == "Hint4Trigger")
-        {
-            hint4Trigger();
-        }
+       
+        
     }
 
    
@@ -532,36 +556,29 @@ using UnityEngine.Advertisements;
     }
 
 
-    public void hint1Panel()
+    public void hintPanelContinue()
     {
         hint1.SetActive(false);
-        Time.timeScale = 1;
-    }
-    public void hint2Panel()
-    {
         hint2.SetActive(false);
-        Time.timeScale = 1;
-
-    }
-    public void hint3Panel()
-    {
         hint3.SetActive(false);
-        Time.timeScale = 1;
-
-    }
-    public void hint4Panel()
-    {
         hint4.SetActive(false);
-        Time.timeScale = 1;
+        hintTemplate.SetActive(false);
+        allFreeze = false;
+        myBody.constraints = RigidbodyConstraints.None;
+        myBody.constraints = RigidbodyConstraints.FreezeRotation;
+
 
     }
+   
 
     public void hint1Trigger()
     {
         if(hint1Shown == false)
         {
+            hintTemplate.SetActive(true);
             hint1.SetActive(true);
-            Time.timeScale = 0;
+            allFreeze = true;
+            myBody.constraints = RigidbodyConstraints.FreezeAll;
         }
         
         hint1Shown = true;
@@ -570,8 +587,10 @@ using UnityEngine.Advertisements;
     {
         if (hint2Shown == false)
         {
+            hintTemplate.SetActive(true);
             hint2.SetActive(true);
-            Time.timeScale = 0;
+            allFreeze = true;
+            myBody.constraints = RigidbodyConstraints.FreezeAll;
         }
         hint2Shown = true;
     }
@@ -579,8 +598,10 @@ using UnityEngine.Advertisements;
     {
         if (hint3Shown == false)
         {
+            hintTemplate.SetActive(true);
             hint3.SetActive(true);
-            Time.timeScale = 0;
+            allFreeze = true;
+            myBody.constraints = RigidbodyConstraints.FreezeAll;
         }
         hint3Shown = true;
     }
@@ -588,10 +609,25 @@ using UnityEngine.Advertisements;
     {
         if (hint4Shown == false)
         {
+            hintTemplate.SetActive(true);
             hint4.SetActive(true);
-            Time.timeScale = 0;
+            allFreeze = true;
+            myBody.constraints = RigidbodyConstraints.FreezeAll;
+
         }
         hint4Shown = true;
     }
+    public void hint5Trigger()
+    {
+        if (hint5Shown == false)
+        {
+            hintTemplate.SetActive(true);
+            hint5.SetActive(true);
+            allFreeze = true;
+            myBody.constraints = RigidbodyConstraints.FreezeAll;
 
+        }
+        hint5Shown = true;
+    }
+    
 }

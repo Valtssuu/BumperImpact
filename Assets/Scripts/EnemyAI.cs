@@ -75,6 +75,15 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
 
+
+        if(player.GetComponent<Respawn>().allFreeze == true)
+        {
+            agent.enabled = false;
+        }
+        else
+        {
+            agent.enabled = true;
+        }
         if (this.transform.position.y > 2)
         {
             toohigh = true;
