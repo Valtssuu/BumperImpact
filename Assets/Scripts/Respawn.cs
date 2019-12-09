@@ -53,12 +53,16 @@ using UnityEngine.Advertisements;
     int score;
      void Start ()
      {
-        hintTemplate.SetActive(false);
-        hint1.SetActive(false);
-        hint2.SetActive(false);
-        hint3.SetActive(false);
-        hint4.SetActive(false);
-        hint5.SetActive(false);
+        if(sceneName == "tutorial")
+        {
+            hintTemplate.SetActive(false);
+            hint1.SetActive(false);
+            hint2.SetActive(false);
+            hint3.SetActive(false);
+            hint4.SetActive(false);
+            hint5.SetActive(false);
+        }
+        
         score = PlayerPrefs.GetInt("score", 0);
         sessionScore = score;
 
@@ -428,34 +432,37 @@ using UnityEngine.Advertisements;
             }
 
         }
-
-        if(col.gameObject.tag == "Hint1Trigger")
+        if(sceneName == "tutorial")
         {
-            hint1Trigger();
-            
+            if (col.gameObject.tag == "Hint1Trigger")
+            {
+                hint1Trigger();
 
-        }
-        if (col.gameObject.tag == "Hint2Trigger")
-        {
-            hint2Trigger();
 
-        }
-        if (col.gameObject.tag == "Hint3Trigger")
-        {
-            hint3Trigger();
+            }
+            if (col.gameObject.tag == "Hint2Trigger")
+            {
+                hint2Trigger();
 
-        }
-        if (col.gameObject.tag == "Hint4Trigger")
-        {
-            hint4Trigger();
+            }
+            if (col.gameObject.tag == "Hint3Trigger")
+            {
+                hint3Trigger();
 
-        }
-        
-        if (col.gameObject.tag == "Hint5Trigger")
-        {
-            hint5Trigger();
+            }
+            if (col.gameObject.tag == "Hint4Trigger")
+            {
+                hint4Trigger();
 
+            }
+
+            if (col.gameObject.tag == "Hint5Trigger")
+            {
+                hint5Trigger();
+
+            }
         }
+       
         
     }
 
