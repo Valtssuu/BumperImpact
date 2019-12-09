@@ -16,6 +16,7 @@ public class DailyChallenges : MonoBehaviour
     int sysDay = System.DateTime.Now.Day;
     int sysMinute = System.DateTime.Now.Minute;
     public Image progressBar;
+    public GameObject progressBarObject;
     public float MinP;
     public float MaxP;
     private float mCurrentValueP;
@@ -49,6 +50,7 @@ public class DailyChallenges : MonoBehaviour
         {
             claim1Disabled.SetActive(false);
             claim1.SetActive(false);
+            progressBarObject.SetActive(false);
         }
         if (PlayerPrefs.GetInt("claim2", 0) == 1)
         {
@@ -114,6 +116,7 @@ public class DailyChallenges : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         scoreText.text = score.ToString("");
         claim1.SetActive(false);
+        progressBarObject.SetActive(false);
 
         PlayerPrefs.SetInt("claim1", 1);
     }
