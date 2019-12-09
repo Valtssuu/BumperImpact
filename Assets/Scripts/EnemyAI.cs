@@ -82,7 +82,10 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            agent.enabled = true;
+            if (sceneName == "tutorial")
+            {
+                agent.enabled = true;
+            }
         }
         if (this.transform.position.y > 2)
         {
