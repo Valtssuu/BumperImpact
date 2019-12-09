@@ -129,7 +129,11 @@ public class EnemyAI : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            agent.enabled = true;
+            if (sceneName == "16th Level")
+            {
+                agent.enabled = true;
+            }
+            
             //disable patrol script
             this.GetComponent<Patrol>().enabled = false;
             
