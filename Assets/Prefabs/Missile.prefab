@@ -83,6 +83,8 @@ MonoBehaviour:
   player: {fileID: 0}
   explosionEffect: {fileID: 1170567192047786, guid: dfbdf2134f769dc4486867bd0989e1f4,
     type: 3}
+  missileClip: {fileID: 8300000, guid: 4166f52e365b22d4a86d8547021384a9, type: 3}
+  impactClip: {fileID: 8300000, guid: c92d58b5c5f40d4499835722b07b0eff, type: 3}
 --- !u!1 &5890195218391147586
 GameObject:
   m_ObjectHideFlags: 0

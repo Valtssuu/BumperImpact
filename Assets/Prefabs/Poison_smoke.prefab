@@ -4785,6 +4785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b826768d0e263c24e9daa0556c9f8830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrelExplosionClip: {fileID: 8300000, guid: f503c9b850ac6ee45abcefceb123c863, type: 3}
 --- !u!1 &6204018068805783780
 GameObject:
   m_ObjectHideFlags: 0

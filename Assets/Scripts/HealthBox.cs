@@ -6,7 +6,7 @@ public class HealthBox : MonoBehaviour
 {
     //public int Inventory;
     // Start is called before the first frame update
-
+    public AudioClip healClip;
     
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class HealthBox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(healClip, transform.position);
             Destroy(gameObject);
 
             PlayerHealth.Lives += 20;

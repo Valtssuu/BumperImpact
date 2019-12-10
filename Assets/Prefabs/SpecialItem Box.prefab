@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3698885700606990555}
   - component: {fileID: 8516201602907562434}
+  - component: {fileID: -2400620440801134063}
   m_Layer: 0
   m_Name: SpecialItem Box
   m_TagString: RealItems
@@ -46,6 +47,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0550642, y: 2.0533452, z: 2.0406942}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2400620440801134063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364313465179171528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3522d48c8c01f9419c808165400cd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialboxClip: {fileID: 8300000, guid: b88228197c2d471448219a1e2b816e85, type: 3}
 --- !u!1 &5752353540578745479
 GameObject:
   m_ObjectHideFlags: 0

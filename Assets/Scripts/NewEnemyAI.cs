@@ -41,6 +41,8 @@ public class NewEnemyAI : MonoBehaviour
 
     public Rigidbody playerBody;
 
+    public AudioClip shieldbumpClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -229,6 +231,7 @@ public class NewEnemyAI : MonoBehaviour
 
             if (myCollider.gameObject.name == "shield")
             {
+                AudioSource.PlayClipAtPoint(shieldbumpClip, transform.position);
                 PlayerController.force = 1000; //kysy thanhiltä
 
                 shieldLives -= 25;

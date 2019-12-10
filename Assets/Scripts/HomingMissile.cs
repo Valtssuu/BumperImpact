@@ -14,9 +14,9 @@ public class HomingMissile : MonoBehaviour
     public GameObject explosionEffect;
 
     bool hasExploded = false;
-    
-    
-    
+
+    public AudioClip missileClip;
+    public AudioClip impactClip;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class HomingMissile : MonoBehaviour
         target = player.GetComponent<PlayerController>().target;
         hasExploded = false;
         Invoke("SelfDestruct", 3);
+        AudioSource.PlayClipAtPoint(missileClip, transform.position);
     }
 
     // Update is called once per frame
@@ -54,10 +55,11 @@ public class HomingMissile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
-            //Instantiate(explosionEffect, transform.position, transform.rotation);
             if (!hasExploded)
             {
                 //Call AddExploForce function
+                Instantiate(explosionEffect, transform.position, transform.rotation);
+                AudioSource.PlayClipAtPoint(impactClip, transform.position);
                 if (other.gameObject.CompareTag("Enemy"))
                 {
                     other.gameObject.GetComponent<EnemyAI>().Explode();
@@ -79,6 +81,7 @@ public class HomingMissile : MonoBehaviour
         if (other.gameObject.CompareTag("Boss1"))
         {
             Instantiate(explosionEffect, transform.position, transform.rotation);
+            AudioSource.PlayClipAtPoint(impactClip, transform.position);
             if (!hasExploded)
             {
                 other.gameObject.GetComponent<BossW1AI>().boss1Lives -= 50;

@@ -929,6 +929,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97187020}
   m_Mesh: {fileID: -6592957211005202357, guid: 1949d37f9cac1f149811f9b0f8693206, type: 3}
+--- !u!1001 &99082878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5006512735895361964}
+    m_Modifications:
+    - target: {fileID: 3740069849447245371, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_Name
+      value: CryShark
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740069849447245371, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7069834
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 413271711990240296, guid: f92c7cb0127f57d43ae01828bf31c256,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f92c7cb0127f57d43ae01828bf31c256, type: 3}
 --- !u!1 &100364240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,12 +1244,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220884720548116, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4223220884720548116, guid: 45e25f79b6464ff4bbc210c4a56552af,
+    - target: {fileID: 4223220883582911964, guid: 45e25f79b6464ff4bbc210c4a56552af,
         type: 3}
       propertyPath: m_Layer
       value: 10
@@ -4086,6 +4160,7 @@ MonoBehaviour:
   BridgeBoss1Controller: {fileID: 1355885564}
   BridgeBoss2Controller: {fileID: 2094192940}
   HPBarController: {fileID: 1854040316}
+  allFreeze: 0
   hint1TriggerObj: {fileID: 0}
   hint2TriggerObj: {fileID: 0}
   hint3TriggerObj: {fileID: 0}
@@ -4094,6 +4169,8 @@ MonoBehaviour:
   hint2: {fileID: 0}
   hint3: {fileID: 0}
   hint4: {fileID: 0}
+  hint5: {fileID: 0}
+  hintTemplate: {fileID: 0}
   winCanvas: {fileID: 1657956761}
   Bridge: {fileID: 0}
   Bridge2: {fileID: 0}
@@ -4164,6 +4241,7 @@ MonoBehaviour:
   target: {fileID: 0}
   hpEffect: {fileID: 1851134659}
   poisonTime: 0
+  shieldbumpClip: {fileID: 8300000, guid: 195ca7a475c719c46806e4c0d3e02aa4, type: 3}
 --- !u!23 &681278566
 MeshRenderer:
   m_ObjectHideFlags: 0

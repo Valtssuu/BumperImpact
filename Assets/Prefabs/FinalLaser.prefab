@@ -325,6 +325,8 @@ MonoBehaviour:
   endPoint: {fileID: 0}
   laserCountdown: 5
   laserBeam: {fileID: 421383811202126652}
+  chargingClip: {fileID: 8300000, guid: 3481dc33b906051489da77c48f46bec5, type: 3}
+  firingClip: {fileID: 8300000, guid: 59966719885987a4db4121399a10d4e9, type: 3}
 --- !u!1 &421383809903970481
 GameObject:
   m_ObjectHideFlags: 0

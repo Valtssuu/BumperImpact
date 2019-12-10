@@ -21,11 +21,7 @@ public class Mine : MonoBehaviour
 
     public Rigidbody playerBody;
 
-    //public GameObject mine;
-
-    //public float enemy1Live;
-
-    //public float bigEnemyLive;
+    public AudioClip explosionClip;
     
     void Start()
     {
@@ -64,6 +60,7 @@ public class Mine : MonoBehaviour
             if (!hasExploded)
             {
                 //Call AddExploForce function
+                AudioSource.PlayClipAtPoint(explosionClip, transform.position);
                 MineExplosion();
                 
                 
@@ -92,6 +89,7 @@ public class Mine : MonoBehaviour
             {
                 GameObject exClone = Instantiate(explosionEffect, transform.position, transform.rotation);
                 Destroy(exClone, 1f);
+                AudioSource.PlayClipAtPoint(explosionClip, transform.position);
                 collision.gameObject.GetComponent<BossW1AI>().boss1Lives -= 70f;
                 Destroy(gameObject);
             }

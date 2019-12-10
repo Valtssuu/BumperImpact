@@ -13,6 +13,9 @@ public class LaserBeam : MonoBehaviour
     private bool laserShown = false;
 
     Animator laserAnimator;
+
+    public AudioClip chargingClip;
+    public AudioClip firingClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,8 +50,10 @@ public class LaserBeam : MonoBehaviour
     IEnumerator LaserShow()
     {
         laserAnimator.Play("laser_ON");
+        AudioSource.PlayClipAtPoint(chargingClip, transform.position);
         yield return new WaitForSeconds(2.6f);
         laserBeam.Play();
+        AudioSource.PlayClipAtPoint(firingClip, transform.position);
         yield return new WaitForSeconds(2f);
         laserBeam.Stop();
         laserAnimator.StopPlayback();

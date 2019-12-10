@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
     public Transform target;
     public ParticleSystem hpEffect;
     public float poisonTime;
+
+    public AudioClip shieldbumpClip;
     void Start()
     {
         player = this.gameObject;
@@ -339,6 +341,7 @@ public class PlayerController : MonoBehaviour
 
             if (myCollider.gameObject.name == "PlayerShield")
             {
+                AudioSource.PlayClipAtPoint(shieldbumpClip, transform.position);
                 playerShieldLives -= 25;
                 Debug.Log(playerShieldLives);
 
@@ -445,7 +448,7 @@ public class PlayerController : MonoBehaviour
                 shieldButton.SetActive(true);
             }
 
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             }
 
             
