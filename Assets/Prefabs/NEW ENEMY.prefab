@@ -209,6 +209,7 @@ MonoBehaviour:
   sceneName: 
   playerBody: {fileID: 0}
   shieldbumpClip: {fileID: 8300000, guid: 195ca7a475c719c46806e4c0d3e02aa4, type: 3}
+  explosionClip: {fileID: 8300000, guid: c92d58b5c5f40d4499835722b07b0eff, type: 3}
 --- !u!95 &5833840784570405437
 Animator:
   serializedVersion: 3

@@ -341,7 +341,7 @@ public class PlayerController : MonoBehaviour
 
             if (myCollider.gameObject.name == "PlayerShield")
             {
-                AudioSource.PlayClipAtPoint(shieldbumpClip, transform.position);
+                AudioSource.PlayClipAtPoint(shieldbumpClip, Camera.main.transform.position);
                 playerShieldLives -= 25;
                 Debug.Log(playerShieldLives);
 

@@ -8,7 +8,8 @@ public class PoisonMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioSource.PlayClipAtPoint(barrelExplosionClip, transform.position);
+        AudioSource.PlayClipAtPoint(barrelExplosionClip, Camera.main.transform.position);
+        //Debug.Break();
         Invoke("Move", 14f);
     }
 

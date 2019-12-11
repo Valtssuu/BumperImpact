@@ -188,8 +188,10 @@ MonoBehaviour:
   timeManager: {fileID: 0}
   TM: {fileID: 0}
   enemyCanvas: {fileID: 4642509482314319552}
+  WhereToLook: {fileID: 0}
   sceneName: 
   playerBody: {fileID: 0}
+  explosionClip: {fileID: 8300000, guid: c92d58b5c5f40d4499835722b07b0eff, type: 3}
 --- !u!1 &2466326518178759749
 GameObject:
   m_ObjectHideFlags: 0

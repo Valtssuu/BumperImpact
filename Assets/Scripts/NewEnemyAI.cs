@@ -43,6 +43,8 @@ public class NewEnemyAI : MonoBehaviour
 
     public AudioClip shieldbumpClip;
 
+    public AudioClip explosionClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -168,6 +170,7 @@ public class NewEnemyAI : MonoBehaviour
 
     public void Explode()
     {
+        AudioSource.PlayClipAtPoint(explosionClip, Camera.main.transform.position);
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
         GameObject clone2 = (GameObject)Instantiate(ticket, enemy.transform.position, transform.rotation);
         player.GetComponent<PlayerController>().score = player.GetComponent<PlayerController>().score + 2;
@@ -231,7 +234,7 @@ public class NewEnemyAI : MonoBehaviour
 
             if (myCollider.gameObject.name == "shield")
             {
-                AudioSource.PlayClipAtPoint(shieldbumpClip, transform.position);
+                AudioSource.PlayClipAtPoint(shieldbumpClip, Camera.main.transform.position);
                 PlayerController.force = 1000; //kysy thanhiltä
 
                 shieldLives -= 25;

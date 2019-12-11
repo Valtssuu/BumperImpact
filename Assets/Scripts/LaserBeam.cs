@@ -50,10 +50,10 @@ public class LaserBeam : MonoBehaviour
     IEnumerator LaserShow()
     {
         laserAnimator.Play("laser_ON");
-        AudioSource.PlayClipAtPoint(chargingClip, transform.position);
+        AudioSource.PlayClipAtPoint(chargingClip, Camera.main.transform.position);
         yield return new WaitForSeconds(2.6f);
         laserBeam.Play();
-        AudioSource.PlayClipAtPoint(firingClip, transform.position);
+        AudioSource.PlayClipAtPoint(firingClip, Camera.main.transform.position);
         yield return new WaitForSeconds(2f);
         laserBeam.Stop();
         laserAnimator.StopPlayback();

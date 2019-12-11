@@ -21,7 +21,7 @@ public class SpecialItemAudio : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            AudioSource.PlayClipAtPoint(specialboxClip, transform.position);
+            AudioSource.PlayClipAtPoint(specialboxClip, Camera.main.transform.position);
             Destroy(gameObject);
         }
 

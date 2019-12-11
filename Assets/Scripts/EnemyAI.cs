@@ -38,6 +38,8 @@ public class EnemyAI : MonoBehaviour
 
     public Rigidbody playerBody;
 
+    public AudioClip explosionClip;
+
     //Vector3 dirDown;
 
     // Start is called before the first frame update
@@ -196,6 +198,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Explode()
     {
+        AudioSource.PlayClipAtPoint(explosionClip, Camera.main.transform.position);
         GameObject clone = (GameObject)Instantiate(explosion, transform.position, transform.rotation);
         GameObject clone2 = (GameObject)Instantiate(ticket, enemy.transform.position, transform.rotation);
         clone2.transform.LookAt(WhereToLook);

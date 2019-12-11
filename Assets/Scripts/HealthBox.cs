@@ -19,7 +19,7 @@ public class HealthBox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            AudioSource.PlayClipAtPoint(healClip, transform.position);
+            AudioSource.PlayClipAtPoint(healClip, Camera.main.transform.position);
             Destroy(gameObject);
 
             PlayerHealth.Lives += 20;
