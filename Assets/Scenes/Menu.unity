@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -949,7 +949,7 @@ RectTransform:
   - {fileID: 2097430975}
   - {fileID: 901323506}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1323,7 +1323,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &629016120
 GameObject:
@@ -2453,7 +2453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328013711
 GameObject:
@@ -2630,7 +2630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589785521
 GameObject:
@@ -3103,6 +3103,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740459064}
   m_CullTransparentMesh: 0
+--- !u!1001 &1782400768
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3752534859352288246, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752534859352288244, guid: 808d29f8d95508e4dbd828513812a4ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 808d29f8d95508e4dbd828513812a4ea, type: 3}
 --- !u!1 &1809351096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,6 +3452,12 @@ MonoBehaviour:
   level8: 0
   level9: 0
   level10: 0
+  level11: 0
+  level12: 0
+  level13: 0
+  level14: 0
+  level15: 0
+  level16: 0
   levelBoss: 0
   tutorialButton: {fileID: 0}
   level1Button: {fileID: 0}
@@ -3395,19 +3470,13 @@ MonoBehaviour:
   level8Button: {fileID: 0}
   level9Button: {fileID: 0}
   level10Button: {fileID: 0}
+  level11Button: {fileID: 0}
+  level12Button: {fileID: 0}
+  level13Button: {fileID: 0}
+  level14Button: {fileID: 0}
+  level15Button: {fileID: 0}
+  level16Button: {fileID: 0}
   levelBossButton: {fileID: 0}
-  tutorialButtonT: {fileID: 0}
-  level1Button1: {fileID: 0}
-  level2Button2: {fileID: 0}
-  level3Button3: {fileID: 0}
-  level4Button4: {fileID: 0}
-  level5Button5: {fileID: 0}
-  level6Button6: {fileID: 0}
-  level7Button7: {fileID: 0}
-  level8Button8: {fileID: 0}
-  level9Button9: {fileID: 0}
-  level10Button10: {fileID: 0}
-  levelBossButtonB: {fileID: 0}
   car: {fileID: 0}
   isLevel1Open: 0
   isLevel2Open: 0
@@ -3419,6 +3488,12 @@ MonoBehaviour:
   isLevel8Open: 0
   isLevel9Open: 0
   isLevel10Open: 0
+  isLevel11Open: 0
+  isLevel12Open: 0
+  isLevel13Open: 0
+  isLevel14Open: 0
+  isLevel15Open: 0
+  isLevel16Open: 0
   isLevelBossOpen: 0
   timesBuyDash: 0
   lock1: {fileID: 0}
@@ -3431,6 +3506,12 @@ MonoBehaviour:
   lock8: {fileID: 0}
   lock9: {fileID: 0}
   lock10: {fileID: 0}
+  lock11: {fileID: 0}
+  lock12: {fileID: 0}
+  lock13: {fileID: 0}
+  lock14: {fileID: 0}
+  lock15: {fileID: 0}
+  lock16: {fileID: 0}
   lockBoss: {fileID: 0}
 --- !u!1 &2055755089
 GameObject:

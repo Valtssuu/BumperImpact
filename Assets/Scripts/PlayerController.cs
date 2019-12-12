@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     public float poisonTime;
 
     public AudioClip shieldbumpClip;
+    public AudioClip dashClip;
+    public AudioClip bumpClip;
     void Start()
     {
         player = this.gameObject;
@@ -224,7 +226,7 @@ public class PlayerController : MonoBehaviour
             dashbarover50.SetActive(true);
             if (isBoosting == true)
             {
-                
+                AudioSource.PlayClipAtPoint(dashClip, Camera.main.transform.position);
                 myBody.AddForce(-direction.forward * dashspeed);
                 dashmeter -= 10;
                 //dash.SetActive(true);
@@ -317,6 +319,10 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2") || other.gameObject.CompareTag("Boss1"))
         {
+
+
+            
+
             if(boostActivated == true)
             {
                 if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
@@ -337,8 +343,6 @@ public class PlayerController : MonoBehaviour
 
             Collider myCollider = other.contacts[0].thisCollider;
 
-
-
             if (myCollider.gameObject.name == "PlayerShield")
             {
                 AudioSource.PlayClipAtPoint(shieldbumpClip, Camera.main.transform.position);
@@ -354,7 +358,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if(boostActivated == false)
+                AudioSource.PlayClipAtPoint(bumpClip, Camera.main.transform.position);
+                if (boostActivated == false)
                 {
                     PlayerHealth.Lives = PlayerHealth.Lives - 5;
                     StartCoroutine("hpBar");
